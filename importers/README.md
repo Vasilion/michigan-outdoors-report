@@ -22,3 +22,19 @@ never rehost a DNR PDF. Link to it.
 
 `IMPORTER_USE_CACHE=1` makes `fetchText` read from `/raw-cache` instead of the network, which
 is how you iterate on a parser without hammering a DNR server.
+
+## Importers today
+
+| Importer       | Source                                                           | Cadence   |
+| -------------- | ---------------------------------------------------------------- | --------- |
+| `counties`     | ArcGIS `Michigan_Counties/0`                                     | quarterly |
+| `public-lands` | ArcGIS wildlife properties + park hunting land                   | monthly   |
+| `lakes`        | ArcGIS `FISHHydrographyOPENDATA/3`, named waters over 10 acres   | quarterly |
+| `access-sites` | ArcGIS DNR boating access sites                                  | monthly   |
+| `harvest`      | DNR eLicense deer harvest summary                                | daily     |
+| `stocking`     | DNR fish stocking database (ArcGIS dashboard table), 2016 onward | weekly    |
+| `curated`      | `content/species.yaml` and `content/seasons/*.yaml`              | on change |
+
+An importer that owns its whole table also sweeps rows whose `fetched_at` predates the run, so
+renamed or withdrawn records do not linger. The 30 percent drop guard runs immediately after,
+which is what makes the sweep safe.

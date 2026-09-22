@@ -2,7 +2,15 @@ import Link from "next/link";
 import { use } from "react";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { CalendarDays, Map as MapIcon, Target, TreePine } from "lucide-react";
+import {
+  Anchor,
+  CalendarDays,
+  Fish,
+  Map as MapIcon,
+  Target,
+  TreePine,
+  Waves,
+} from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { CountyLocator } from "@/components/map/county-map";
 import { Badge } from "@/components/ui/badge";
@@ -32,12 +40,13 @@ import { getCounties } from "@/lib/data/snapshot";
 import type {
   County,
   HarvestSnapshot,
+  Lake,
   PublicLand,
   Season,
   Species,
 } from "@/lib/data/schemas";
 import { buildCountyView } from "@/lib/views/county";
-import type { CountyView, HarvestSeries } from "@/lib/views/county";
+import type { CountyFishSpecies, CountyView, HarvestSeries } from "@/lib/views/county";
 import { seasonStatus } from "@/lib/season";
 import type { SeasonStatus } from "@/lib/season";
 import { SITE } from "@/lib/site";
@@ -163,9 +172,9 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
   const deer: HarvestSeries | undefined = view.harvest.get("deer");
   const latest: HarvestSnapshot | null = deer?.latestFinal ?? null;
   const facts: StatProps[] = [
-    { label: "Peninsula", value: view.peninsula, icon: MapIcon },
     {
       label: "Land area",
+      icon: MapIcon,
       value:
         view.county.areaSqMi === null
           ? "Not published"
@@ -178,6 +187,11 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
         view.publicLandAcres > 0
           ? `${formatCount(Math.round(view.publicLandAcres))} acres`
           : "None mapped",
+    },
+    {
+      label: "Lakes mapped",
+      value: view.lakes.length === 0 ? "None" : formatCount(view.lakes.length),
+      icon: Waves,
     },
     {
       label: latest === null ? "Deer harvest" : `${latest.seasonYear} deer harvest`,
@@ -322,6 +336,73 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
               </li>
             ))}
           </ul>
+        </Section>
+      )}
+
+      {view.lakes.length === 0 && view.fishSpecies.length === 0 ? null : (
+        <Section
+          eyebrow={`${formatCount(view.lakes.length)} lakes mapped`}
+          title="Fishing"
+          icon={Fish}
+          description={`Stocked waters, lakes and public access in ${view.county.name} County.`}
+        >
+          {view.fishSpecies.length === 0 ? null : (
+            <ul className="grid gap-3 md:grid-cols-3">
+              {view.fishSpecies
+                .slice(0, 6)
+                .map((species: CountyFishSpecies): ReactElement => (
+                  <li
+                    key={species.speciesSlug}
+                    className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
+                  >
+                    <Link
+                      href={`/county/${view.county.slug}/${species.speciesSlug}-fishing/`}
+                      prefetch={false}
+                      className="font-semibold"
+                    >
+                      {species.speciesName}
+                    </Link>
+                    <p className="numeric font-display text-pine-800 mt-1 text-2xl">
+                      {formatCount(species.fish)}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      stocked in {formatCount(species.waters)}{" "}
+                      {species.waters === 1 ? "water" : "waters"} since 2016
+                    </p>
+                  </li>
+                ))}
+            </ul>
+          )}
+          {view.lakes.length === 0 ? null : (
+            <div className="mt-6">
+              <p className="eyebrow">Lakes with a page, largest first</p>
+              <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                {view.lakes.map((lake: Lake): ReactElement => (
+                  <li key={lake.slug}>
+                    <Link
+                      href={`/lake/${lake.countySlug}/${lake.slug}/`}
+                      prefetch={false}
+                    >
+                      {lake.name}
+                    </Link>
+                    {lake.acres === null ? null : (
+                      <span className="text-muted-foreground">
+                        {" "}
+                        {formatCount(Math.round(lake.acres))} ac
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {view.accessSites.length === 0 ? null : (
+            <p className="text-muted-foreground mt-5 flex items-center gap-2 text-sm">
+              <Anchor aria-hidden="true" className="text-lake-600 h-4 w-4" />
+              {formatCount(view.accessSites.length)} DNR public access{" "}
+              {view.accessSites.length === 1 ? "site" : "sites"} in the county.
+            </p>
+          )}
         </Section>
       )}
 

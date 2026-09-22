@@ -110,6 +110,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'name', l.name,
         'slug', l.slug,
         'countySlug', c.slug,
+        'peninsula', l.peninsula,
         'acres', l.acres,
         'maxDepthFt', l.max_depth_ft,
         'centroid', CASE WHEN l.geom_point IS NULL THEN NULL ELSE json_build_object(
@@ -180,6 +181,7 @@ export const EXPORTS: readonly ExportSpec[] = [
           'lat', round(ST_Y(a.geom)::numeric, 5),
           'lng', round(ST_X(a.geom)::numeric, 5)),
         'lakeSlug', lk.slug,
+        'lakeCountySlug', lkc.slug,
         'riverSlug', rv.slug,
         'countySlug', c.slug,
         'amenities', a.amenities,
@@ -188,7 +190,8 @@ export const EXPORTS: readonly ExportSpec[] = [
       ) AS row
       FROM access_sites a
       JOIN counties c ON c.id = a.county_id
-      LEFT JOIN lakes lk ON lk.id = a.lake_id
+      LEFT JOIN lakes lk ON lk.id = a.lake_id AND lk.county_id IS NOT NULL
+      LEFT JOIN counties lkc ON lkc.id = lk.county_id
       LEFT JOIN rivers rv ON rv.id = a.river_id
       ORDER BY a.slug`,
   },
@@ -199,6 +202,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'waterType', e.water_type,
         'waterName', e.water_name,
         'lakeSlug', lk.slug,
+        'lakeCountySlug', lkc.slug,
         'riverSlug', rv.slug,
         'countySlug', c.slug,
         'speciesSlug', s.slug,
@@ -209,11 +213,12 @@ export const EXPORTS: readonly ExportSpec[] = [
         'sourceUrl', e.source_url
       ) AS row
       FROM stocking_events e
-      JOIN counties c ON c.id = e.county_id
+      LEFT JOIN counties c ON c.id = e.county_id
       JOIN species s ON s.id = e.species_id
-      LEFT JOIN lakes lk ON lk.id = e.lake_id
+      LEFT JOIN lakes lk ON lk.id = e.lake_id AND lk.county_id IS NOT NULL
+      LEFT JOIN counties lkc ON lkc.id = lk.county_id
       LEFT JOIN rivers rv ON rv.id = e.river_id
-      ORDER BY e.stocked_on, c.slug, s.slug, e.water_name`,
+      ORDER BY e.stocked_on, e.water_name, s.slug, e.source_record_id`,
   },
   {
     file: "harvest-snapshots.json",
@@ -325,8 +330,18 @@ export function collectDataDates(rows: readonly SnapshotRow[]): readonly string[
   return dates;
 }
 
+const COMPACT_ROW_THRESHOLD: number = 400;
+
+function serialize(value: unknown): string {
+  if (Array.isArray(value) && value.length > COMPACT_ROW_THRESHOLD) {
+    const lines: string[] = value.map((row: unknown): string => JSON.stringify(row));
+    return `[\n${lines.join(",\n")}\n]`;
+  }
+  return JSON.stringify(value, null, 2);
+}
+
 function writeJson(file: string, value: unknown): void {
-  writeFileSync(join(DATA_DIR, file), `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeFileSync(join(DATA_DIR, file), `${serialize(value)}\n`, "utf8");
 }
 
 function main(): void {

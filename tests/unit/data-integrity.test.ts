@@ -4,6 +4,7 @@ import {
   checkCountyCount,
   checkDuplicateSlugs,
   checkReferences,
+  checkWaterCountyPairs,
   errorsOnly,
   runIntegrityChecks,
 } from "../../src/lib/data/integrity";
@@ -48,6 +49,7 @@ function lake(slug: string, countySlug: string): Lake {
     name: slug,
     slug,
     countySlug,
+    peninsula: "LP",
     acres: 100,
     maxDepthFt: null,
     centroid: null,
@@ -84,6 +86,34 @@ describe("integrity primitives", (): void => {
     const known: ReadonlySet<string> = new Set<string>(["kent"]);
     expect(checkReferences("lake.countySlug", ["kent"], known).length).toBe(0);
     expect(checkReferences("lake.countySlug", ["ottawa"], known).length).toBe(1);
+  });
+
+  it("refuses a water reference that points at another county's lake of the same name", (): void => {
+    const lakeKeys: ReadonlySet<string> = new Set<string>([
+      "cheboygan::silver-lake",
+      "washtenaw::silver-lake",
+    ]);
+    expect(
+      checkWaterCountyPairs(
+        "stockingEvent",
+        [{ lakeCountySlug: "cheboygan", lakeSlug: "silver-lake" }],
+        lakeKeys,
+      ).length,
+    ).toBe(0);
+    expect(
+      checkWaterCountyPairs(
+        "stockingEvent",
+        [{ lakeCountySlug: "kent", lakeSlug: "silver-lake" }],
+        lakeKeys,
+      ).length,
+    ).toBe(1);
+    expect(
+      checkWaterCountyPairs(
+        "accessSite",
+        [{ lakeCountySlug: null, lakeSlug: "silver-lake" }],
+        lakeKeys,
+      ).length,
+    ).toBe(1);
   });
 
   it("flags a lake whose county does not exist", (): void => {

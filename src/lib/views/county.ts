@@ -1,10 +1,14 @@
 import {
+  accessSitesByCounty,
   harvestByCountySpecies,
   harvestKey,
+  lakesByCounty,
   publicLandsByCounty,
   sumAcres,
 } from "../data/aggregate";
+import { lakeGateFor, stockingByCountySpecies, stockingKey, totalFish } from "./water";
 import { findCounty, getMeta, getSeasons, getSpecies } from "../data/snapshot";
+import type { AccessSite, Lake, StockingEvent } from "../data/schemas";
 import type {
   County,
   HarvestSnapshot,
@@ -52,6 +56,13 @@ export function harvestSeries(countySlug: string, speciesSlug: string): HarvestS
   };
 }
 
+export type CountyFishSpecies = {
+  readonly speciesSlug: string;
+  readonly speciesName: string;
+  readonly waters: number;
+  readonly fish: number;
+};
+
 export type CountyView = {
   readonly county: County;
   readonly peninsula: PeninsulaLabel;
@@ -61,6 +72,9 @@ export type CountyView = {
   readonly seasons: readonly Season[];
   readonly gameSpecies: readonly Species[];
   readonly harvest: ReadonlyMap<string, HarvestSeries>;
+  readonly lakes: readonly Lake[];
+  readonly accessSites: readonly AccessSite[];
+  readonly fishSpecies: readonly CountyFishSpecies[];
   readonly dataDate: string;
 };
 
@@ -89,10 +103,38 @@ export function buildCountyView(slug: string): CountyView | null {
     harvest.set(species.slug, harvestSeries(slug, species.slug));
   }
 
+  const lakes: readonly Lake[] = [...(lakesByCounty().get(slug) ?? [])]
+    .filter((lake: Lake): boolean => lakeGateFor(lake).indexed)
+    .sort((a: Lake, b: Lake): number => (b.acres ?? 0) - (a.acres ?? 0));
+  const sites: readonly AccessSite[] = accessSitesByCounty().get(slug) ?? [];
+  const stocking: Map<string, StockingEvent[]> = stockingByCountySpecies();
+  const fishSpecies: CountyFishSpecies[] = [];
+  for (const species of getSpecies()) {
+    if (species.kind !== "fish") {
+      continue;
+    }
+    const events: StockingEvent[] = stocking.get(stockingKey(slug, species.slug)) ?? [];
+    if (events.length === 0) {
+      continue;
+    }
+    fishSpecies.push({
+      speciesSlug: species.slug,
+      speciesName: species.name,
+      waters: new Set(events.map((event: StockingEvent): string => event.waterName)).size,
+      fish: totalFish(events),
+    });
+  }
+  fishSpecies.sort(
+    (a: CountyFishSpecies, b: CountyFishSpecies): number => b.fish - a.fish,
+  );
+
   return {
     county,
     peninsula: peninsulaLabel(county.peninsula),
     neighbors,
+    lakes,
+    accessSites: sites,
+    fishSpecies,
     publicLands: lands,
     publicLandAcres: sumAcres(lands),
     seasons: getSeasons().filter((season: Season): boolean =>

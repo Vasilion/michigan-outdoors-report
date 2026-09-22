@@ -112,3 +112,73 @@ test("county pages link up to the statewide hub and out to neighbours", ({
         /Michigan white-tailed deer harvest by county/i,
       ),
     ));
+
+test("a lake page shows stocking, access and nearby waters", ({
+  page,
+}: {
+  page: Page;
+}): Promise<void> =>
+  page
+    .goto("/lake/roscommon/higgins-lake/")
+    .then((): Promise<void> => expect(page.locator("h1")).toHaveText(/Higgins Lake/i))
+    .then((): Promise<void> =>
+      expect(page.getByRole("heading", { name: "Stocking history" })).toBeVisible(),
+    )
+    .then((): Promise<void> =>
+      expect(page.getByRole("heading", { name: "Public access" })).toBeVisible(),
+    )
+    .then((): Promise<number> => page.locator("table").count())
+    .then((tables: number): void => {
+      expect(tables).toBeGreaterThanOrEqual(2);
+    }));
+
+test("a county fishing page lists stocked waters", ({
+  page,
+}: {
+  page: Page;
+}): Promise<void> =>
+  page
+    .goto("/county/roscommon/walleye-fishing/")
+    .then((): Promise<void> =>
+      expect(page.locator("h1")).toHaveText(/Roscommon County walleye stocking/i),
+    )
+    .then((): Promise<void> =>
+      expect(page.getByRole("heading", { name: "Waters stocked" })).toBeVisible(),
+    )
+    .then((): Promise<void> =>
+      expect(
+        page.getByRole("link", { name: /Statewide walleye stocking/i }),
+      ).toBeVisible(),
+    ));
+
+test("the statewide fish hub maps stocking by county", ({
+  page,
+}: {
+  page: Page;
+}): Promise<void> =>
+  page
+    .goto("/fishing/walleye/")
+    .then((): Promise<void> =>
+      expect(page.locator("h1")).toHaveText(/Michigan walleye stocking/i),
+    )
+    .then((): Promise<void> => expect(page.locator("svg a").first()).toBeVisible())
+    .then((): Promise<void> =>
+      expect(
+        page.getByRole("heading", { name: /Waters that got the most/i }),
+      ).toBeVisible(),
+    ));
+
+test("the county hub links its lakes and fish species", ({
+  page,
+}: {
+  page: Page;
+}): Promise<void> =>
+  page
+    .goto("/county/roscommon/")
+    .then((): Promise<void> =>
+      expect(page.getByRole("heading", { name: "Fishing", exact: true })).toBeVisible(),
+    )
+    .then((): Promise<void> =>
+      page.getByRole("link", { name: "Higgins Lake", exact: true }).first().click(),
+    )
+    .then((): Promise<void> => expect(page.locator("h1")).toHaveText(/Higgins Lake/i)));

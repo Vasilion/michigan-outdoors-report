@@ -113,13 +113,10 @@ export function CountyChoropleth({
               value === undefined
                 ? `${name} County, no data`
                 : `${name} County, ${formatCount(value)} ${unitLabel}`;
+            const href: string =
+              value === undefined ? `/county/${shape.slug}/` : hrefFor(shape.slug);
             return (
-              <a
-                key={shape.slug}
-                className="county-link"
-                href={hrefFor(shape.slug)}
-                aria-label={label}
-              >
+              <a key={shape.slug} className="county-link" href={href} aria-label={label}>
                 <path
                   className="county-path"
                   d={ringsToPath(shape.rings, frame, MICHIGAN_MID_LATITUDE)}

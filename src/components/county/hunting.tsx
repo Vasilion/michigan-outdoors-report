@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { use } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -37,23 +36,17 @@ import { buildCountyView, harvestSeries } from "@/lib/views/county";
 import type { CountyView, HarvestSeries } from "@/lib/views/county";
 import { SITE } from "@/lib/site";
 
-const HUNT_SUFFIX: string = "-hunting";
-
 export type HuntParams = {
   readonly county: string;
-  readonly hunt: string;
+  readonly speciesSlug: string;
 };
 
 export type HuntPageProps = {
-  readonly params: Promise<HuntParams>;
+  readonly params: HuntParams;
 };
 
-export function speciesSlugFromSegment(segment: string): string | null {
-  return segment.endsWith(HUNT_SUFFIX) ? segment.slice(0, -HUNT_SUFFIX.length) : null;
-}
-
-export function generateStaticParams(): HuntParams[] {
-  const params: HuntParams[] = [];
+export function huntingParams(): readonly { county: string; speciesSlug: string }[] {
+  const params: { county: string; speciesSlug: string }[] = [];
   for (const county of getCounties()) {
     for (const species of getSpecies()) {
       if (species.kind !== "game") {
@@ -62,7 +55,7 @@ export function generateStaticParams(): HuntParams[] {
       if (harvestSeries(county.slug, species.slug).finalRows.length < 2) {
         continue;
       }
-      params.push({ county: county.slug, hunt: `${species.slug}${HUNT_SUFFIX}` });
+      params.push({ county: county.slug, speciesSlug: species.slug });
     }
   }
   return params;
@@ -75,11 +68,8 @@ type HuntView = {
   readonly path: string;
 };
 
-function buildHuntView(params: HuntParams): HuntView | null {
-  const speciesSlug: string | null = speciesSlugFromSegment(params.hunt);
-  if (speciesSlug === null) {
-    return null;
-  }
+export function buildHuntView(params: HuntParams): HuntView | null {
+  const speciesSlug: string = params.speciesSlug;
   const county: CountyView | null = buildCountyView(params.county);
   if (county === null) {
     return null;
@@ -98,7 +88,7 @@ function buildHuntView(params: HuntParams): HuntView | null {
     county,
     species,
     series,
-    path: `/county/${params.county}/${params.hunt}/`,
+    path: `/county/${params.county}/${params.speciesSlug}-hunting/`,
   };
 }
 
@@ -148,14 +138,14 @@ function faqItems(view: HuntView): readonly FaqItem[] {
   return items;
 }
 
-export function generateMetadata({ params }: HuntPageProps): Promise<Metadata> {
-  return params.then((resolved: HuntParams): Metadata => {
+export function huntingMetadata(resolved: HuntParams): Metadata {
+  {
     const view: HuntView | null = buildHuntView(resolved);
     if (view === null) {
       return buildMetadata({
         title: "Page not found",
         description: "This page does not exist.",
-        path: `/county/${resolved.county}/${resolved.hunt}/`,
+        path: `/county/${resolved.county}/${resolved.speciesSlug}-hunting/`,
         indexable: false,
       });
     }
@@ -167,7 +157,7 @@ export function generateMetadata({ params }: HuntPageProps): Promise<Metadata> {
       indexable: true,
       dateModified: latest.snapshotDate,
     });
-  });
+  }
 }
 
 const HARVEST_COLUMNS: readonly TableColumn[] = [
@@ -179,9 +169,8 @@ const HARVEST_COLUMNS: readonly TableColumn[] = [
   { key: "status", label: "Status" },
 ];
 
-export default function CountyHuntPage({ params }: HuntPageProps): ReactElement {
-  const resolved: HuntParams = use(params);
-  const view: HuntView | null = buildHuntView(resolved);
+export function CountyHunting({ params }: HuntPageProps): ReactElement {
+  const view: HuntView | null = buildHuntView(params);
   if (view === null) {
     notFound();
   }

@@ -125,6 +125,33 @@ export function checkReferences(
   );
 }
 
+export function checkWaterCountyPairs(
+  label: string,
+  pairs: readonly {
+    readonly lakeCountySlug: string | null;
+    readonly lakeSlug: string | null;
+  }[],
+  lakeKeys: ReadonlySet<string>,
+): readonly Issue[] {
+  const problems: Set<string> = new Set<string>();
+  for (const pair of pairs) {
+    if (pair.lakeSlug === null) {
+      continue;
+    }
+    if (pair.lakeCountySlug === null) {
+      problems.add(`${label} links lake ${pair.lakeSlug} with no lake county`);
+      continue;
+    }
+    const key: string = `${pair.lakeCountySlug}::${pair.lakeSlug}`;
+    if (!lakeKeys.has(key)) {
+      problems.add(
+        `${label} links ${pair.lakeSlug} to ${pair.lakeCountySlug}, which has no such lake`,
+      );
+    }
+  }
+  return [...problems].map((message: string): Issue => error("lake-county-mismatch", message));
+}
+
 export function runIntegrityChecks(bundle: SnapshotBundle): readonly Issue[] {
   const issues: Issue[] = [];
   const countySlugs: Set<string> = new Set<string>(
@@ -137,7 +164,13 @@ export function runIntegrityChecks(bundle: SnapshotBundle): readonly Issue[] {
     bundle.lakes.map((lake: Lake): string => lake.slug),
   );
 
+  const lakeKeys: Set<string> = new Set<string>(
+    bundle.lakes.map((lake: Lake): string => `${lake.countySlug}::${lake.slug}`),
+  );
+
   issues.push(...checkCountyCount(bundle.counties));
+  issues.push(...checkWaterCountyPairs("stockingEvent", bundle.stockingEvents, lakeKeys));
+  issues.push(...checkWaterCountyPairs("accessSite", bundle.accessSites, lakeKeys));
   issues.push(
     ...checkDuplicateSlugs(
       "county",

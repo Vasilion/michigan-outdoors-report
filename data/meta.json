@@ -3,6 +3,12 @@
   "snapshotVersion": 1,
   "runs": [
     {
+      "importer": "access-sites",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 1325,
+      "status": "ok"
+    },
+    {
       "importer": "counties",
       "finishedAt": "2026-09-22",
       "rowsUpserted": 83,
@@ -21,9 +27,21 @@
       "status": "ok"
     },
     {
+      "importer": "lakes",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 5229,
+      "status": "ok"
+    },
+    {
       "importer": "public-lands",
       "finishedAt": "2026-09-22",
       "rowsUpserted": 305,
+      "status": "ok"
+    },
+    {
+      "importer": "stocking",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 12669,
       "status": "ok"
     }
   ]

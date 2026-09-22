@@ -7,7 +7,10 @@
         "http://localhost:4322/",
         "http://localhost:4322/county/kent/",
         "http://localhost:4322/county/kent/deer-hunting/",
+        "http://localhost:4322/county/roscommon/walleye-fishing/",
         "http://localhost:4322/hunting/deer/",
+        "http://localhost:4322/fishing/walleye/",
+        "http://localhost:4322/lake/roscommon/higgins-lake/",
         "http://localhost:4322/public-land/allegan-state-game-area/",
         "http://localhost:4322/seasons/deer/",
         "http://localhost:4322/data/"

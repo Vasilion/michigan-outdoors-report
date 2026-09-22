@@ -7,6 +7,7 @@ import {
   listingsByCategoryCounty,
   publicLandsByCounty,
   stockingByLake,
+  waterKey,
 } from "../data/aggregate";
 import {
   getCounties,
@@ -30,12 +31,14 @@ import type {
 } from "../data/schemas";
 import {
   countyGate,
+  countySpeciesFishingGate,
   countySpeciesHuntingGate,
   directoryIndexGate,
   lakeGate,
   publicLandGate,
 } from "../quality-gate";
 import type { GateResult, TemplateName } from "../quality-gate";
+import { stockingByCountySpecies, stockingBySpecies, stockingKey } from "../views/water";
 
 export type RouteEntry = {
   readonly path: string;
@@ -151,10 +154,11 @@ export function lakeRoutes(): readonly RouteEntry[] {
   const stocking: Map<string, StockingEvent[]> = stockingByLake();
   const sites: Map<string, AccessSite[]> = accessSitesByLake();
   return getLakes().map((lake: Lake): RouteEntry => {
-    const events: StockingEvent[] = stocking.get(lake.slug) ?? [];
+    const key: string = waterKey(lake.countySlug, lake.slug);
+    const events: StockingEvent[] = stocking.get(key) ?? [];
     const gate: GateResult = lakeGate({
       stockingEvents: events.length,
-      accessSites: (sites.get(lake.slug) ?? []).length,
+      accessSites: (sites.get(key) ?? []).length,
       hasDnrMapUrl: lake.dnrMapUrl !== null,
       acres: lake.acres,
       hasGeometry: lake.centroid !== null,
@@ -182,15 +186,57 @@ export function publicLandRoutes(): readonly RouteEntry[] {
   });
 }
 
+export function countySpeciesFishingRoutes(): readonly RouteEntry[] {
+  const grouped: Map<string, StockingEvent[]> = stockingByCountySpecies();
+  const fishSpecies: readonly Species[] = getSpecies().filter(
+    (species: Species): boolean => species.kind === "fish",
+  );
+  const routes: RouteEntry[] = [];
+  for (const county of getCounties()) {
+    for (const species of fishSpecies) {
+      const events: StockingEvent[] =
+        grouped.get(stockingKey(county.slug, species.slug)) ?? [];
+      if (events.length === 0) {
+        continue;
+      }
+      const waters: Set<string> = new Set<string>(
+        events.map((event: StockingEvent): string => event.waterName),
+      );
+      const gate: GateResult = countySpeciesFishingGate({
+        stockingEvents: events.length,
+        watersWithSpecies: waters.size,
+      });
+      const lastmod: string = newest(
+        events.map((event: StockingEvent): string => event.stockedOn),
+        county.updatedAt,
+      );
+      routes.push(
+        entry(
+          "/county/" + county.slug + "/" + species.slug + "-fishing/",
+          "county-species-fishing",
+          lastmod,
+          gate,
+        ),
+      );
+    }
+  }
+  return routes;
+}
+
 export function speciesHubRoutes(): readonly RouteEntry[] {
   const harvest: Map<string, HarvestSnapshot[]> = harvestByCountySpecies();
+  const stocked: Map<string, StockingEvent[]> = stockingBySpecies();
   return getSpecies().map((species: Species): RouteEntry => {
     const prefix: string = species.kind === "game" ? "hunting" : "fishing";
     let hasData: boolean = false;
-    for (const key of harvest.keys()) {
-      if (key.endsWith("::" + species.slug)) {
-        hasData = true;
+    if (species.kind === "game") {
+      for (const key of harvest.keys()) {
+        if (key.endsWith("::" + species.slug)) {
+          hasData = true;
+        }
       }
+    } else {
+      hasData = (stocked.get(species.slug) ?? []).length > 0;
     }
     const gate: GateResult = hasData
       ? { indexed: true, reasons: [] }
@@ -312,6 +358,7 @@ export function listRoutes(): readonly RouteEntry[] {
     ...staticRoutes(),
     ...countyRoutes(),
     ...countySpeciesHuntingRoutes(),
+    ...countySpeciesFishingRoutes(),
     ...lakeRoutes(),
     ...publicLandRoutes(),
     ...speciesHubRoutes(),

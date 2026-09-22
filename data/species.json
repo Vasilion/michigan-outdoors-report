@@ -1,11 +1,254 @@
 [
   {
+    "name": "Arctic Grayling",
+    "slug": "arctic-grayling",
+    "kind": "fish",
+    "pluralName": "arctic grayling",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Atlantic Salmon",
+    "slug": "atlantic-salmon",
+    "kind": "fish",
+    "pluralName": "atlantic salmon",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Black Crappie",
+    "slug": "black-crappie",
+    "kind": "fish",
+    "pluralName": "black crappie",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Bluegill",
+    "slug": "bluegill",
+    "kind": "fish",
+    "pluralName": "bluegill",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Brook Trout",
+    "slug": "brook-trout",
+    "kind": "fish",
+    "pluralName": "brook trout",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Brown Trout",
+    "slug": "brown-trout",
+    "kind": "fish",
+    "pluralName": "brown trout",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Channel Catfish",
+    "slug": "channel-catfish",
+    "kind": "fish",
+    "pluralName": "channel catfish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Chinook Salmon",
+    "slug": "chinook-salmon",
+    "kind": "fish",
+    "pluralName": "chinook salmon",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Coho Salmon",
+    "slug": "coho-salmon",
+    "kind": "fish",
+    "pluralName": "coho salmon",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
     "name": "White-tailed Deer",
     "slug": "deer",
     "kind": "game",
     "pluralName": "deer",
     "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
     "sameAsUrl": "https://en.wikipedia.org/wiki/White-tailed_deer",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Fathead Minnow",
+    "slug": "fathead-minnow",
+    "kind": "fish",
+    "pluralName": "fathead minnow",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Golden Shiner",
+    "slug": "golden-shiner",
+    "kind": "fish",
+    "pluralName": "golden shiner",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Hybrid Sunfish",
+    "slug": "hybrid-sunfish",
+    "kind": "fish",
+    "pluralName": "hybrid sunfish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lake Herring",
+    "slug": "lake-herring",
+    "kind": "fish",
+    "pluralName": "lake herring",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lake Sturgeon",
+    "slug": "lake-sturgeon",
+    "kind": "fish",
+    "pluralName": "lake sturgeon",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lake Trout",
+    "slug": "lake-trout",
+    "kind": "fish",
+    "pluralName": "lake trout",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lake Whitefish",
+    "slug": "lake-whitefish",
+    "kind": "fish",
+    "pluralName": "lake whitefish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Largemouth Bass",
+    "slug": "largemouth-bass",
+    "kind": "fish",
+    "pluralName": "largemouth bass",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Muskellunge",
+    "slug": "muskellunge",
+    "kind": "fish",
+    "pluralName": "muskellunge",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Northern Pike",
+    "slug": "northern-pike",
+    "kind": "fish",
+    "pluralName": "northern pike",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Rainbow Trout",
+    "slug": "rainbow-trout",
+    "kind": "fish",
+    "pluralName": "rainbow trout",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Redear Sunfish",
+    "slug": "redear-sunfish",
+    "kind": "fish",
+    "pluralName": "redear sunfish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Smallmouth Bass",
+    "slug": "smallmouth-bass",
+    "kind": "fish",
+    "pluralName": "smallmouth bass",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Splake",
+    "slug": "splake",
+    "kind": "fish",
+    "pluralName": "splake",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Tiger Muskellunge",
+    "slug": "tiger-muskellunge",
+    "kind": "fish",
+    "pluralName": "tiger muskellunge",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Walleye",
+    "slug": "walleye",
+    "kind": "fish",
+    "pluralName": "walleye",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "White Sucker",
+    "slug": "white-sucker",
+    "kind": "fish",
+    "pluralName": "white sucker",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Yellow Perch",
+    "slug": "yellow-perch",
+    "kind": "fish",
+    "pluralName": "yellow perch",
+    "officialUrl": null,
+    "sameAsUrl": null,
     "updatedAt": "2026-09-22"
   }
 ]

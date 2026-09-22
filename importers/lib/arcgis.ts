@@ -31,13 +31,19 @@ export function layerUrl(layer: ArcGisLayer): string {
   return `${DNR_SERVICES}/${layer.service}/FeatureServer/${layer.layerId}`;
 }
 
+export type LayerQuery = {
+  readonly where?: string;
+  readonly includeGeometry?: boolean;
+};
+
 export function queryUrl(
   layer: ArcGisLayer,
   offset: number,
   includeGeometry: boolean,
+  where: string = "1=1",
 ): string {
   const params: string[] = [
-    "where=1%3D1",
+    `where=${encodeURIComponent(where)}`,
     "outFields=*",
     `returnGeometry=${includeGeometry ? "true" : "false"}`,
     "outSR=4326",
@@ -51,10 +57,11 @@ export function queryUrl(
 function fetchPage(
   layer: ArcGisLayer,
   includeGeometry: boolean,
+  where: string,
   offset: number,
   collected: GeoJsonFeature[],
 ): Promise<readonly GeoJsonFeature[]> {
-  const url: string = queryUrl(layer, offset, includeGeometry);
+  const url: string = queryUrl(layer, offset, includeGeometry, where);
   return fetchJson<GeoJsonFeatureCollection>(url, {
     cacheKey: `${layer.service}-${layer.layerId}-${offset}`,
   }).then((page: GeoJsonFeatureCollection): Promise<readonly GeoJsonFeature[]> => {
@@ -63,15 +70,16 @@ function fetchPage(
     if (features.length < PAGE_SIZE) {
       return Promise.resolve(next);
     }
-    return fetchPage(layer, includeGeometry, offset + PAGE_SIZE, next);
+    return fetchPage(layer, includeGeometry, where, offset + PAGE_SIZE, next);
   });
 }
 
 export function fetchLayer(
   layer: ArcGisLayer,
   includeGeometry: boolean,
+  where: string = "1=1",
 ): Promise<readonly GeoJsonFeature[]> {
-  return fetchPage(layer, includeGeometry, 0, []);
+  return fetchPage(layer, includeGeometry, where, 0, []);
 }
 
 export function stringField(

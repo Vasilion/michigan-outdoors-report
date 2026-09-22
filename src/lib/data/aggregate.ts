@@ -44,22 +44,34 @@ export function accessSitesByCounty(): Map<string, AccessSite[]> {
   return groupBy(getAccessSites(), (site: AccessSite): string => site.countySlug);
 }
 
+export function waterKey(countySlug: string, lakeSlug: string): string {
+  return `${countySlug}::${lakeSlug}`;
+}
+
 export function accessSitesByLake(): Map<string, AccessSite[]> {
   const sited: AccessSite[] = getAccessSites().filter(
     (site: AccessSite): boolean => site.lakeSlug !== null,
   );
-  return groupBy(sited, (site: AccessSite): string => site.lakeSlug as string);
+  return groupBy(sited, (site: AccessSite): string =>
+    waterKey(site.lakeCountySlug ?? site.countySlug, site.lakeSlug as string),
+  );
 }
 
 export function stockingByLake(): Map<string, StockingEvent[]> {
   const events: StockingEvent[] = getStockingEvents().filter(
-    (event: StockingEvent): boolean => event.lakeSlug !== null,
+    (event: StockingEvent): boolean =>
+      event.lakeSlug !== null && event.lakeCountySlug !== null,
   );
-  return groupBy(events, (event: StockingEvent): string => event.lakeSlug as string);
+  return groupBy(events, (event: StockingEvent): string =>
+    waterKey(event.lakeCountySlug as string, event.lakeSlug as string),
+  );
 }
 
 export function stockingByCounty(): Map<string, StockingEvent[]> {
-  return groupBy(getStockingEvents(), (event: StockingEvent): string => event.countySlug);
+  const placed: StockingEvent[] = getStockingEvents().filter(
+    (event: StockingEvent): boolean => event.countySlug !== null,
+  );
+  return groupBy(placed, (event: StockingEvent): string => event.countySlug as string);
 }
 
 export function publicLandsByCounty(): Map<string, PublicLand[]> {
