@@ -4,10 +4,8 @@ import { OUT_DIR, isNoindex, loadPages } from "./lib/html-index";
 import type { PageInfo } from "./lib/html-index";
 import { listRoutes } from "../src/lib/routes/registry";
 import type { RouteEntry } from "../src/lib/routes/registry";
-import { DESCRIPTION_MAX, TITLE_MAX } from "../src/lib/seo";
+import { DESCRIPTION_MAX, TITLE_HARD_MAX, TITLE_MAX } from "../src/lib/seo";
 import { SITE, absoluteUrl } from "../src/lib/site";
-
-const TITLE_HARD_MAX: number = 75;
 
 type Problem = {
   readonly where: string;

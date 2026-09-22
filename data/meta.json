@@ -1,5 +1,30 @@
 {
   "generatedAt": "2026-09-22T00:00:00.000Z",
   "snapshotVersion": 1,
-  "runs": []
+  "runs": [
+    {
+      "importer": "counties",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 83,
+      "status": "ok"
+    },
+    {
+      "importer": "curated",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 10,
+      "status": "ok"
+    },
+    {
+      "importer": "harvest-deer",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 415,
+      "status": "ok"
+    },
+    {
+      "importer": "public-lands",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 305,
+      "status": "ok"
+    }
+  ]
 }

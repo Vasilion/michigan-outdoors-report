@@ -120,3 +120,78 @@ than the one that produced it.
 - Map tile provider (OpenFreeMap / MapTiler / Stadia terms not yet reviewed).
 - Analytics and newsletter providers.
 - IndexNow key, Search Console and Bing Webmaster verification.
+
+## 2026-09-22 — Phase 1, deer season
+
+### Sources, all verified before a line of importer code was written
+
+| What         | Where                                                                                                                | Notes                                                          |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Counties     | ArcGIS `Michigan_Counties/0` on the state org `Jdnp1TjADvSDxMAX`                                                     | 83 features with `NAME`, `PENIN`, `ACRES` and polygon geometry |
+| Public land  | `DNRWILDLandsOPENDATA/1` (wildlife properties) + `DNRBoundariesParksHuntableLandsOPENDATA/2` (parks)                 | parcel level, dissolved by property name                       |
+| Deer harvest | `POST https://www.mdnr-elicense.com/HarvestReportSummary/DeerHarvestReportSummary` with `LicenseYear` and `AreaId=1` | JSON, no auth, no robots.txt on the host (404)                 |
+| Season dates | 2026 Michigan Deer Hunting Regulations Summary, page 6                                                               | transcribed by hand into `content/seasons/deer.yaml`           |
+
+Mandatory deer harvest reporting started in the 2022 season, so every county has four
+complete seasons (2022-2025) plus a live 2026 count. That is what clears the two-season
+gate on all 83 county deer pages.
+
+### Peninsula is UP/LP, because that is what the source says
+
+The schema originally had `UP/NLP/SLP`. The DNR county layer publishes only `UP` and `LP`,
+and the 2026 digest eliminated the limited firearms deer zone, so every 2026 deer season is
+scoped statewide, Lower Peninsula or Upper Peninsula. Season zones now map exactly onto the
+county field, with nothing derived and nothing invented. Migration `0002` changes the enum.
+
+### michigan.gov blocks bot user agents; season dates are curated anyway
+
+`www.michigan.gov` returns 403 at the edge to any request whose user agent identifies a bot,
+including for robots.txt. That is fine: season dates are curated by hand each license year per
+the spec, not scraped. The digest was read once as a person would read it, and the dates carry
+`source_url` plus `last_verified` in the YAML. Do not build a recurring importer that spoofs a
+browser against michigan.gov.
+
+### Upserts alone leak rows; importers that own a table sweep it
+
+The first public-land run wrote 308 units. After the name cleanup changed 12 slugs, the table
+held 317: the 12 old rows had nothing to update them. `deleteStalePublicLands` now removes any
+row whose `fetched_at` predates the current run, which is safe because the 30% drop guard runs
+right after. Any future importer that owns its whole table needs the same sweep.
+
+### Parenthetical DNR working notes are stripped from names
+
+Source property names carry internal remarks: "Hillcrest State Game Area (owned but no show in
+MiHunt)", "Allegan State Game Area (north unit; general)". Those are notes to DNR staff, not
+names, and they blew the title budget. `cleanName` strips a parenthetical group and the parcels
+then dissolve into the correctly named unit.
+
+### Harvest is a time series; the snapshot exports only the latest row per season
+
+`harvest_snapshots` keeps one row per county, species, season and snapshot date, so a daily
+in-season importer builds a history. The site only ever shows the newest figure per season, so
+`export-snapshot.ts` uses `DISTINCT ON` to export exactly that. Without it the committed
+snapshot would grow by 415 rows a day for a page that shows five numbers.
+
+### Every page links every public land unit in its county
+
+The county hub first linked only its 12 largest units, which orphaned four small ones. The
+orphan check caught it. The hub now links every unit it lists.
+
+### `generateStaticParams` cannot return a readonly array
+
+Next's generated route validator requires `any[] | Promise<any[]>`. A `readonly T[]` return
+type fails the build with a type error in `.next/types/validator.ts`, so these five functions
+return mutable arrays while everything around them stays readonly.
+
+### `<svg height="auto">` is invalid and Lighthouse notices
+
+The trend chart set `width="100%" height="auto"`, which logs a console error and cost a best
+practices point. The chart now sizes with `className="h-auto w-full"` and a viewBox.
+
+### Still open after Phase 1
+
+- Directory listings are empty. Processor and taxidermist listings must be seeded from public
+  sources by hand; nothing will be invented to fill the category.
+- Hunter Access Program parcels are imported by neither name nor page. They are private land
+  open to hunting and do not belong in a "public land" count without a clear label.
+- OG images, IndexNow and Search Console submission are Phase 3 and need the live domain.

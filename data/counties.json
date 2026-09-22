@@ -1,1 +1,1522 @@
-[]
+[
+  {
+    "name": "Alcona",
+    "slug": "alcona",
+    "peninsula": "LP",
+    "areaSqMi": 694,
+    "centroid": {
+      "lat": 44.68387,
+      "lng": -83.58364
+    },
+    "neighborSlugs": [
+      "alpena",
+      "iosco",
+      "oscoda"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Alger",
+    "slug": "alger",
+    "peninsula": "UP",
+    "areaSqMi": 936,
+    "centroid": {
+      "lat": 46.42463,
+      "lng": -86.88847
+    },
+    "neighborSlugs": [
+      "delta",
+      "luce",
+      "marquette",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Allegan",
+    "slug": "allegan",
+    "peninsula": "LP",
+    "areaSqMi": 842,
+    "centroid": {
+      "lat": 42.59486,
+      "lng": -85.8847
+    },
+    "neighborSlugs": [
+      "barry",
+      "kalamazoo",
+      "kent",
+      "ottawa",
+      "van-buren"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Alpena",
+    "slug": "alpena",
+    "peninsula": "LP",
+    "areaSqMi": 594,
+    "centroid": {
+      "lat": 45.0317,
+      "lng": -83.66712
+    },
+    "neighborSlugs": [
+      "alcona",
+      "montmorency",
+      "presque-isle"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Antrim",
+    "slug": "antrim",
+    "peninsula": "LP",
+    "areaSqMi": 525,
+    "centroid": {
+      "lat": 45.01063,
+      "lng": -85.11363
+    },
+    "neighborSlugs": [
+      "charlevoix",
+      "grand-traverse",
+      "kalkaska",
+      "otsego"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Arenac",
+    "slug": "arenac",
+    "peninsula": "LP",
+    "areaSqMi": 367,
+    "centroid": {
+      "lat": 44.0368,
+      "lng": -83.92265
+    },
+    "neighborSlugs": [
+      "bay",
+      "gladwin",
+      "iosco",
+      "ogemaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Baraga",
+    "slug": "baraga",
+    "peninsula": "UP",
+    "areaSqMi": 917,
+    "centroid": {
+      "lat": 46.69329,
+      "lng": -88.33477
+    },
+    "neighborSlugs": [
+      "houghton",
+      "iron",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Barry",
+    "slug": "barry",
+    "peninsula": "LP",
+    "areaSqMi": 577,
+    "centroid": {
+      "lat": 42.58888,
+      "lng": -85.30914
+    },
+    "neighborSlugs": [
+      "allegan",
+      "calhoun",
+      "eaton",
+      "ionia",
+      "kalamazoo",
+      "kent"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Bay",
+    "slug": "bay",
+    "peninsula": "LP",
+    "areaSqMi": 448,
+    "centroid": {
+      "lat": 43.7382,
+      "lng": -84.05574
+    },
+    "neighborSlugs": [
+      "arenac",
+      "gladwin",
+      "midland",
+      "saginaw",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Benzie",
+    "slug": "benzie",
+    "peninsula": "LP",
+    "areaSqMi": 347,
+    "centroid": {
+      "lat": 44.64639,
+      "lng": -86.03521
+    },
+    "neighborSlugs": [
+      "grand-traverse",
+      "leelanau",
+      "manistee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Berrien",
+    "slug": "berrien",
+    "peninsula": "LP",
+    "areaSqMi": 580,
+    "centroid": {
+      "lat": 42.00364,
+      "lng": -86.38875
+    },
+    "neighborSlugs": [
+      "cass",
+      "van-buren"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Branch",
+    "slug": "branch",
+    "peninsula": "LP",
+    "areaSqMi": 519,
+    "centroid": {
+      "lat": 41.91958,
+      "lng": -85.05884
+    },
+    "neighborSlugs": [
+      "calhoun",
+      "hillsdale",
+      "st-joseph"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Calhoun",
+    "slug": "calhoun",
+    "peninsula": "LP",
+    "areaSqMi": 718,
+    "centroid": {
+      "lat": 42.24646,
+      "lng": -85.00703
+    },
+    "neighborSlugs": [
+      "barry",
+      "branch",
+      "eaton",
+      "hillsdale",
+      "jackson",
+      "kalamazoo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Cass",
+    "slug": "cass",
+    "peninsula": "LP",
+    "areaSqMi": 508,
+    "centroid": {
+      "lat": 41.91874,
+      "lng": -85.99187
+    },
+    "neighborSlugs": [
+      "berrien",
+      "st-joseph",
+      "van-buren"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Charlevoix",
+    "slug": "charlevoix",
+    "peninsula": "LP",
+    "areaSqMi": 454,
+    "centroid": {
+      "lat": 45.24387,
+      "lng": -85.05889
+    },
+    "neighborSlugs": [
+      "antrim",
+      "cheboygan",
+      "emmet",
+      "otsego"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Cheboygan",
+    "slug": "cheboygan",
+    "peninsula": "LP",
+    "areaSqMi": 796,
+    "centroid": {
+      "lat": 45.49493,
+      "lng": -84.48977
+    },
+    "neighborSlugs": [
+      "charlevoix",
+      "emmet",
+      "montmorency",
+      "otsego",
+      "presque-isle"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Chippewa",
+    "slug": "chippewa",
+    "peninsula": "UP",
+    "areaSqMi": 1580,
+    "centroid": {
+      "lat": 46.36101,
+      "lng": -84.73585
+    },
+    "neighborSlugs": [
+      "luce",
+      "mackinac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Clare",
+    "slug": "clare",
+    "peninsula": "LP",
+    "areaSqMi": 575,
+    "centroid": {
+      "lat": 43.99282,
+      "lng": -84.84714
+    },
+    "neighborSlugs": [
+      "gladwin",
+      "isabella",
+      "missaukee",
+      "osceola",
+      "roscommon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Clinton",
+    "slug": "clinton",
+    "peninsula": "LP",
+    "areaSqMi": 574,
+    "centroid": {
+      "lat": 42.94947,
+      "lng": -84.60163
+    },
+    "neighborSlugs": [
+      "eaton",
+      "gratiot",
+      "ingham",
+      "ionia",
+      "shiawassee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Crawford",
+    "slug": "crawford",
+    "peninsula": "LP",
+    "areaSqMi": 563,
+    "centroid": {
+      "lat": 44.67664,
+      "lng": -84.61068
+    },
+    "neighborSlugs": [
+      "kalkaska",
+      "oscoda",
+      "otsego",
+      "roscommon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Delta",
+    "slug": "delta",
+    "peninsula": "UP",
+    "areaSqMi": 1180,
+    "centroid": {
+      "lat": 45.85487,
+      "lng": -87.17086
+    },
+    "neighborSlugs": [
+      "alger",
+      "marquette",
+      "menominee",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Dickinson",
+    "slug": "dickinson",
+    "peninsula": "UP",
+    "areaSqMi": 776,
+    "centroid": {
+      "lat": 45.97877,
+      "lng": -87.86724
+    },
+    "neighborSlugs": [
+      "iron",
+      "marquette",
+      "menominee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Eaton",
+    "slug": "eaton",
+    "peninsula": "LP",
+    "areaSqMi": 579,
+    "centroid": {
+      "lat": 42.58929,
+      "lng": -84.83869
+    },
+    "neighborSlugs": [
+      "barry",
+      "calhoun",
+      "clinton",
+      "ingham",
+      "ionia",
+      "jackson"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Emmet",
+    "slug": "emmet",
+    "peninsula": "LP",
+    "areaSqMi": 483,
+    "centroid": {
+      "lat": 45.53069,
+      "lng": -84.92118
+    },
+    "neighborSlugs": [
+      "charlevoix",
+      "cheboygan"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Genesee",
+    "slug": "genesee",
+    "peninsula": "LP",
+    "areaSqMi": 649,
+    "centroid": {
+      "lat": 43.00686,
+      "lng": -83.69328
+    },
+    "neighborSlugs": [
+      "lapeer",
+      "livingston",
+      "oakland",
+      "saginaw",
+      "shiawassee",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Gladwin",
+    "slug": "gladwin",
+    "peninsula": "LP",
+    "areaSqMi": 516,
+    "centroid": {
+      "lat": 43.99075,
+      "lng": -84.38637
+    },
+    "neighborSlugs": [
+      "arenac",
+      "bay",
+      "clare",
+      "midland",
+      "ogemaw",
+      "roscommon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Gogebic",
+    "slug": "gogebic",
+    "peninsula": "UP",
+    "areaSqMi": 1145,
+    "centroid": {
+      "lat": 46.4315,
+      "lng": -89.76442
+    },
+    "neighborSlugs": [
+      "iron",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Grand Traverse",
+    "slug": "grand-traverse",
+    "peninsula": "LP",
+    "areaSqMi": 490,
+    "centroid": {
+      "lat": 44.75197,
+      "lng": -85.69019
+    },
+    "neighborSlugs": [
+      "antrim",
+      "benzie",
+      "kalkaska",
+      "leelanau",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Gratiot",
+    "slug": "gratiot",
+    "peninsula": "LP",
+    "areaSqMi": 571,
+    "centroid": {
+      "lat": 43.28997,
+      "lng": -84.60232
+    },
+    "neighborSlugs": [
+      "clinton",
+      "isabella",
+      "midland",
+      "montcalm",
+      "saginaw",
+      "shiawassee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Hillsdale",
+    "slug": "hillsdale",
+    "peninsula": "LP",
+    "areaSqMi": 607,
+    "centroid": {
+      "lat": 41.89118,
+      "lng": -84.59351
+    },
+    "neighborSlugs": [
+      "branch",
+      "calhoun",
+      "jackson",
+      "lenawee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Houghton",
+    "slug": "houghton",
+    "peninsula": "UP",
+    "areaSqMi": 1041,
+    "centroid": {
+      "lat": 46.85483,
+      "lng": -88.74226
+    },
+    "neighborSlugs": [
+      "baraga",
+      "iron",
+      "keweenaw",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Huron",
+    "slug": "huron",
+    "peninsula": "LP",
+    "areaSqMi": 838,
+    "centroid": {
+      "lat": 43.86825,
+      "lng": -83.0014
+    },
+    "neighborSlugs": [
+      "sanilac",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Ingham",
+    "slug": "ingham",
+    "peninsula": "LP",
+    "areaSqMi": 560,
+    "centroid": {
+      "lat": 42.59826,
+      "lng": -84.37367
+    },
+    "neighborSlugs": [
+      "clinton",
+      "eaton",
+      "jackson",
+      "livingston",
+      "shiawassee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Ionia",
+    "slug": "ionia",
+    "peninsula": "LP",
+    "areaSqMi": 580,
+    "centroid": {
+      "lat": 42.95114,
+      "lng": -85.07474
+    },
+    "neighborSlugs": [
+      "barry",
+      "clinton",
+      "eaton",
+      "kent",
+      "montcalm"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Iosco",
+    "slug": "iosco",
+    "peninsula": "LP",
+    "areaSqMi": 566,
+    "centroid": {
+      "lat": 44.33662,
+      "lng": -83.60858
+    },
+    "neighborSlugs": [
+      "alcona",
+      "arenac",
+      "ogemaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Iron",
+    "slug": "iron",
+    "peninsula": "UP",
+    "areaSqMi": 1211,
+    "centroid": {
+      "lat": 46.16705,
+      "lng": -88.55423
+    },
+    "neighborSlugs": [
+      "baraga",
+      "dickinson",
+      "gogebic",
+      "houghton",
+      "marquette",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Isabella",
+    "slug": "isabella",
+    "peninsula": "LP",
+    "areaSqMi": 577,
+    "centroid": {
+      "lat": 43.64673,
+      "lng": -84.84728
+    },
+    "neighborSlugs": [
+      "clare",
+      "gratiot",
+      "mecosta",
+      "midland",
+      "montcalm"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Jackson",
+    "slug": "jackson",
+    "peninsula": "LP",
+    "areaSqMi": 723,
+    "centroid": {
+      "lat": 42.24823,
+      "lng": -84.42386
+    },
+    "neighborSlugs": [
+      "calhoun",
+      "eaton",
+      "hillsdale",
+      "ingham",
+      "lenawee",
+      "livingston",
+      "washtenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Kalamazoo",
+    "slug": "kalamazoo",
+    "peninsula": "LP",
+    "areaSqMi": 580,
+    "centroid": {
+      "lat": 42.23869,
+      "lng": -85.53145
+    },
+    "neighborSlugs": [
+      "allegan",
+      "barry",
+      "calhoun",
+      "st-joseph",
+      "van-buren"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Kalkaska",
+    "slug": "kalkaska",
+    "peninsula": "LP",
+    "areaSqMi": 570,
+    "centroid": {
+      "lat": 44.68411,
+      "lng": -85.09159
+    },
+    "neighborSlugs": [
+      "antrim",
+      "crawford",
+      "grand-traverse",
+      "missaukee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Kent",
+    "slug": "kent",
+    "peninsula": "LP",
+    "areaSqMi": 872,
+    "centroid": {
+      "lat": 43.03763,
+      "lng": -85.55044
+    },
+    "neighborSlugs": [
+      "allegan",
+      "barry",
+      "ionia",
+      "montcalm",
+      "muskegon",
+      "newaygo",
+      "ottawa"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Keweenaw",
+    "slug": "keweenaw",
+    "peninsula": "UP",
+    "areaSqMi": 563,
+    "centroid": {
+      "lat": 47.34112,
+      "lng": -88.19818
+    },
+    "neighborSlugs": [
+      "houghton"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lake",
+    "slug": "lake",
+    "peninsula": "LP",
+    "areaSqMi": 574,
+    "centroid": {
+      "lat": 44.00277,
+      "lng": -85.80137
+    },
+    "neighborSlugs": [
+      "manistee",
+      "mason",
+      "newaygo",
+      "osceola",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lapeer",
+    "slug": "lapeer",
+    "peninsula": "LP",
+    "areaSqMi": 663,
+    "centroid": {
+      "lat": 43.10722,
+      "lng": -83.2262
+    },
+    "neighborSlugs": [
+      "genesee",
+      "macomb",
+      "oakland",
+      "sanilac",
+      "st-clair",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Leelanau",
+    "slug": "leelanau",
+    "peninsula": "LP",
+    "areaSqMi": 375,
+    "centroid": {
+      "lat": 44.99319,
+      "lng": -85.70649
+    },
+    "neighborSlugs": [
+      "benzie",
+      "grand-traverse"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Lenawee",
+    "slug": "lenawee",
+    "peninsula": "LP",
+    "areaSqMi": 761,
+    "centroid": {
+      "lat": 41.9008,
+      "lng": -84.06582
+    },
+    "neighborSlugs": [
+      "hillsdale",
+      "jackson",
+      "monroe",
+      "washtenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Livingston",
+    "slug": "livingston",
+    "peninsula": "LP",
+    "areaSqMi": 585,
+    "centroid": {
+      "lat": 42.60361,
+      "lng": -83.91105
+    },
+    "neighborSlugs": [
+      "genesee",
+      "ingham",
+      "jackson",
+      "oakland",
+      "shiawassee",
+      "washtenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Luce",
+    "slug": "luce",
+    "peninsula": "UP",
+    "areaSqMi": 927,
+    "centroid": {
+      "lat": 46.49828,
+      "lng": -85.55224
+    },
+    "neighborSlugs": [
+      "alger",
+      "chippewa",
+      "mackinac",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Mackinac",
+    "slug": "mackinac",
+    "peninsula": "UP",
+    "areaSqMi": 1060,
+    "centroid": {
+      "lat": 46.04231,
+      "lng": -84.90173
+    },
+    "neighborSlugs": [
+      "chippewa",
+      "luce",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Macomb",
+    "slug": "macomb",
+    "peninsula": "LP",
+    "areaSqMi": 484,
+    "centroid": {
+      "lat": 42.67288,
+      "lng": -82.91986
+    },
+    "neighborSlugs": [
+      "lapeer",
+      "oakland",
+      "st-clair",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Manistee",
+    "slug": "manistee",
+    "peninsula": "LP",
+    "areaSqMi": 557,
+    "centroid": {
+      "lat": 44.34169,
+      "lng": -86.04588
+    },
+    "neighborSlugs": [
+      "benzie",
+      "lake",
+      "mason",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Marquette",
+    "slug": "marquette",
+    "peninsula": "UP",
+    "areaSqMi": 1869,
+    "centroid": {
+      "lat": 46.44197,
+      "lng": -87.61658
+    },
+    "neighborSlugs": [
+      "alger",
+      "baraga",
+      "delta",
+      "dickinson",
+      "iron",
+      "menominee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Mason",
+    "slug": "mason",
+    "peninsula": "LP",
+    "areaSqMi": 510,
+    "centroid": {
+      "lat": 43.99832,
+      "lng": -86.26063
+    },
+    "neighborSlugs": [
+      "lake",
+      "manistee",
+      "oceana"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Mecosta",
+    "slug": "mecosta",
+    "peninsula": "LP",
+    "areaSqMi": 571,
+    "centroid": {
+      "lat": 43.64207,
+      "lng": -85.32448
+    },
+    "neighborSlugs": [
+      "isabella",
+      "montcalm",
+      "newaygo",
+      "osceola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Menominee",
+    "slug": "menominee",
+    "peninsula": "UP",
+    "areaSqMi": 1051,
+    "centroid": {
+      "lat": 45.54024,
+      "lng": -87.53523
+    },
+    "neighborSlugs": [
+      "delta",
+      "dickinson",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Midland",
+    "slug": "midland",
+    "peninsula": "LP",
+    "areaSqMi": 528,
+    "centroid": {
+      "lat": 43.64824,
+      "lng": -84.38762
+    },
+    "neighborSlugs": [
+      "bay",
+      "gladwin",
+      "gratiot",
+      "isabella",
+      "saginaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Missaukee",
+    "slug": "missaukee",
+    "peninsula": "LP",
+    "areaSqMi": 573,
+    "centroid": {
+      "lat": 44.34261,
+      "lng": -85.09591
+    },
+    "neighborSlugs": [
+      "clare",
+      "kalkaska",
+      "osceola",
+      "roscommon",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Monroe",
+    "slug": "monroe",
+    "peninsula": "LP",
+    "areaSqMi": 544,
+    "centroid": {
+      "lat": 41.90941,
+      "lng": -83.56786
+    },
+    "neighborSlugs": [
+      "lenawee",
+      "washtenaw",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Montcalm",
+    "slug": "montcalm",
+    "peninsula": "LP",
+    "areaSqMi": 720,
+    "centroid": {
+      "lat": 43.2932,
+      "lng": -85.079
+    },
+    "neighborSlugs": [
+      "gratiot",
+      "ionia",
+      "isabella",
+      "kent",
+      "mecosta",
+      "newaygo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Montmorency",
+    "slug": "montmorency",
+    "peninsula": "LP",
+    "areaSqMi": 562,
+    "centroid": {
+      "lat": 45.02872,
+      "lng": -84.12986
+    },
+    "neighborSlugs": [
+      "alpena",
+      "cheboygan",
+      "oscoda",
+      "otsego",
+      "presque-isle"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Muskegon",
+    "slug": "muskegon",
+    "peninsula": "LP",
+    "areaSqMi": 527,
+    "centroid": {
+      "lat": 43.2963,
+      "lng": -86.21083
+    },
+    "neighborSlugs": [
+      "kent",
+      "newaygo",
+      "oceana",
+      "ottawa"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Newaygo",
+    "slug": "newaygo",
+    "peninsula": "LP",
+    "areaSqMi": 861,
+    "centroid": {
+      "lat": 43.55445,
+      "lng": -85.80128
+    },
+    "neighborSlugs": [
+      "kent",
+      "lake",
+      "mecosta",
+      "montcalm",
+      "muskegon",
+      "oceana"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Oakland",
+    "slug": "oakland",
+    "peninsula": "LP",
+    "areaSqMi": 907,
+    "centroid": {
+      "lat": 42.65982,
+      "lng": -83.38687
+    },
+    "neighborSlugs": [
+      "genesee",
+      "lapeer",
+      "livingston",
+      "macomb",
+      "washtenaw",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Oceana",
+    "slug": "oceana",
+    "peninsula": "LP",
+    "areaSqMi": 546,
+    "centroid": {
+      "lat": 43.64474,
+      "lng": -86.29005
+    },
+    "neighborSlugs": [
+      "mason",
+      "muskegon",
+      "newaygo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Ogemaw",
+    "slug": "ogemaw",
+    "peninsula": "LP",
+    "areaSqMi": 575,
+    "centroid": {
+      "lat": 44.33521,
+      "lng": -84.12654
+    },
+    "neighborSlugs": [
+      "arenac",
+      "gladwin",
+      "iosco",
+      "oscoda",
+      "roscommon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Ontonagon",
+    "slug": "ontonagon",
+    "peninsula": "UP",
+    "areaSqMi": 1328,
+    "centroid": {
+      "lat": 46.68686,
+      "lng": -89.36421
+    },
+    "neighborSlugs": [
+      "gogebic",
+      "houghton",
+      "iron"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Osceola",
+    "slug": "osceola",
+    "peninsula": "LP",
+    "areaSqMi": 573,
+    "centroid": {
+      "lat": 43.99466,
+      "lng": -85.32528
+    },
+    "neighborSlugs": [
+      "clare",
+      "lake",
+      "mecosta",
+      "missaukee",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Oscoda",
+    "slug": "oscoda",
+    "peninsula": "LP",
+    "areaSqMi": 571,
+    "centroid": {
+      "lat": 44.67998,
+      "lng": -84.12992
+    },
+    "neighborSlugs": [
+      "alcona",
+      "crawford",
+      "montmorency",
+      "ogemaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Otsego",
+    "slug": "otsego",
+    "peninsula": "LP",
+    "areaSqMi": 526,
+    "centroid": {
+      "lat": 45.0283,
+      "lng": -84.60944
+    },
+    "neighborSlugs": [
+      "antrim",
+      "charlevoix",
+      "cheboygan",
+      "crawford",
+      "montmorency"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Ottawa",
+    "slug": "ottawa",
+    "peninsula": "LP",
+    "areaSqMi": 577,
+    "centroid": {
+      "lat": 42.98671,
+      "lng": -86.00561
+    },
+    "neighborSlugs": [
+      "allegan",
+      "kent",
+      "muskegon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Presque Isle",
+    "slug": "presque-isle",
+    "peninsula": "LP",
+    "areaSqMi": 685,
+    "centroid": {
+      "lat": 45.41245,
+      "lng": -84.01664
+    },
+    "neighborSlugs": [
+      "alpena",
+      "cheboygan",
+      "montmorency"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Roscommon",
+    "slug": "roscommon",
+    "peninsula": "LP",
+    "areaSqMi": 580,
+    "centroid": {
+      "lat": 44.34261,
+      "lng": -84.61217
+    },
+    "neighborSlugs": [
+      "clare",
+      "crawford",
+      "gladwin",
+      "missaukee",
+      "ogemaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Saginaw",
+    "slug": "saginaw",
+    "peninsula": "LP",
+    "areaSqMi": 815,
+    "centroid": {
+      "lat": 43.34827,
+      "lng": -84.03395
+    },
+    "neighborSlugs": [
+      "bay",
+      "genesee",
+      "gratiot",
+      "midland",
+      "shiawassee",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Sanilac",
+    "slug": "sanilac",
+    "peninsula": "LP",
+    "areaSqMi": 964,
+    "centroid": {
+      "lat": 43.42198,
+      "lng": -82.82324
+    },
+    "neighborSlugs": [
+      "huron",
+      "lapeer",
+      "st-clair",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Schoolcraft",
+    "slug": "schoolcraft",
+    "peninsula": "UP",
+    "areaSqMi": 1221,
+    "centroid": {
+      "lat": 46.13653,
+      "lng": -86.17757
+    },
+    "neighborSlugs": [
+      "alger",
+      "delta",
+      "luce",
+      "mackinac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Shiawassee",
+    "slug": "shiawassee",
+    "peninsula": "LP",
+    "areaSqMi": 541,
+    "centroid": {
+      "lat": 42.9482,
+      "lng": -84.14773
+    },
+    "neighborSlugs": [
+      "clinton",
+      "genesee",
+      "gratiot",
+      "ingham",
+      "livingston",
+      "saginaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "St. Clair",
+    "slug": "st-clair",
+    "peninsula": "LP",
+    "areaSqMi": 725,
+    "centroid": {
+      "lat": 42.88845,
+      "lng": -82.60652
+    },
+    "neighborSlugs": [
+      "lapeer",
+      "macomb",
+      "sanilac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "St. Joseph",
+    "slug": "st-joseph",
+    "peninsula": "LP",
+    "areaSqMi": 521,
+    "centroid": {
+      "lat": 41.91825,
+      "lng": -85.52643
+    },
+    "neighborSlugs": [
+      "branch",
+      "cass",
+      "kalamazoo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Tuscola",
+    "slug": "tuscola",
+    "peninsula": "LP",
+    "areaSqMi": 814,
+    "centroid": {
+      "lat": 43.47547,
+      "lng": -83.40365
+    },
+    "neighborSlugs": [
+      "bay",
+      "genesee",
+      "huron",
+      "lapeer",
+      "saginaw",
+      "sanilac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Van Buren",
+    "slug": "van-buren",
+    "peninsula": "LP",
+    "areaSqMi": 623,
+    "centroid": {
+      "lat": 42.24631,
+      "lng": -86.06413
+    },
+    "neighborSlugs": [
+      "allegan",
+      "berrien",
+      "cass",
+      "kalamazoo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Washtenaw",
+    "slug": "washtenaw",
+    "peninsula": "LP",
+    "areaSqMi": 722,
+    "centroid": {
+      "lat": 42.25612,
+      "lng": -83.83742
+    },
+    "neighborSlugs": [
+      "jackson",
+      "lenawee",
+      "livingston",
+      "monroe",
+      "oakland",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Wayne",
+    "slug": "wayne",
+    "peninsula": "LP",
+    "areaSqMi": 617,
+    "centroid": {
+      "lat": 42.24181,
+      "lng": -83.34368
+    },
+    "neighborSlugs": [
+      "macomb",
+      "monroe",
+      "oakland",
+      "washtenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Wexford",
+    "slug": "wexford",
+    "peninsula": "LP",
+    "areaSqMi": 575,
+    "centroid": {
+      "lat": 44.33992,
+      "lng": -85.57898
+    },
+    "neighborSlugs": [
+      "grand-traverse",
+      "lake",
+      "manistee",
+      "missaukee",
+      "osceola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/Michigan_Counties/FeatureServer/0",
+    "updatedAt": "2026-09-22"
+  }
+]

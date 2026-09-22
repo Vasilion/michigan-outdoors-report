@@ -83,3 +83,42 @@ export function fetchText(url: string, options: FetchOptions = {}): Promise<stri
 export function fetchJson<T>(url: string, options: FetchOptions = {}): Promise<T> {
   return fetchText(url, options).then((body: string): T => JSON.parse(body) as T);
 }
+
+export function postForm(
+  url: string,
+  form: Readonly<Record<string, string>>,
+): Promise<string> {
+  const body: string = Object.entries(form)
+    .map(
+      ([key, value]: [string, string]): string =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+    )
+    .join("&");
+  return waitForSlot()
+    .then((): Promise<Response> =>
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "user-agent": userAgent(),
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          accept: "application/json",
+        },
+        body,
+      }),
+    )
+    .then((response: Response): Promise<string> => {
+      if (!response.ok) {
+        return Promise.reject(
+          new Error(`POST ${url} failed with ${response.status} ${response.statusText}`),
+        );
+      }
+      return response.text();
+    });
+}
+
+export function postJson<T>(
+  url: string,
+  form: Readonly<Record<string, string>>,
+): Promise<T> {
+  return postForm(url, form).then((body: string): T => JSON.parse(body) as T);
+}

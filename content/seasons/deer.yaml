@@ -1,0 +1,51 @@
+species: deer
+source_url: https://www.michigan.gov/dnr/things-to-do/hunting/deer
+source_document: 2026 Michigan Deer Hunting Regulations Summary, page 6
+last_verified: 2026-09-22
+license_year: 2026
+seasons:
+  - name: Archery (early segment)
+    zone: Statewide
+    start_date: 2026-10-01
+    end_date: 2026-11-14
+    notes: null
+  - name: Liberty Hunt
+    zone: Statewide
+    start_date: 2026-09-12
+    end_date: 2026-09-13
+    notes: Qualified youth and hunters with disabilities only.
+  - name: Early antlerless firearm
+    zone: Lower Peninsula
+    start_date: 2026-09-12
+    end_date: 2026-09-13
+    notes: Lower Peninsula DMUs excluding 145 and 245. Open on public and private lands.
+  - name: Independence Hunt
+    zone: Statewide
+    start_date: 2026-10-15
+    end_date: 2026-10-18
+    notes: Qualified hunters with disabilities only. Open on public land by permit and on private land.
+  - name: Regular firearm
+    zone: Statewide
+    start_date: 2026-11-15
+    end_date: 2026-11-30
+    notes: null
+  - name: Archery (late segment)
+    zone: Statewide
+    start_date: 2026-12-01
+    end_date: 2027-01-01
+    notes: null
+  - name: Muzzleloader
+    zone: Upper Peninsula
+    start_date: 2026-12-04
+    end_date: 2026-12-06
+    notes: Upper Peninsula DMUs. Equipment restrictions apply.
+  - name: December firearm
+    zone: Lower Peninsula
+    start_date: 2026-12-04
+    end_date: 2026-12-06
+    notes: Lower Peninsula DMUs. Equipment restrictions apply.
+  - name: Late antlerless firearm
+    zone: Lower Peninsula
+    start_date: 2026-12-07
+    end_date: 2027-01-01
+    notes: Lower Peninsula DMUs excluding 145 and 245. Open on public and private lands.

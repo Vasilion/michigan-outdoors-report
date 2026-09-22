@@ -1,0 +1,41 @@
+{
+  "Success": true,
+  "Result": [
+    {
+      "AreaUnit": "Calhoun",
+      "AntleredCount": 2867,
+      "AntlerlessCount": 2917,
+      "TotalCount": 5784,
+      "LicenseYear": 2025,
+      "HuntingSeason": "ALL",
+      "ReportDateTimeFormatted": "09/22/2026 01:30 PM"
+    },
+    {
+      "AreaUnit": "Grand Traverse",
+      "AntleredCount": 1200,
+      "AntlerlessCount": 800,
+      "TotalCount": 2000,
+      "LicenseYear": 2025,
+      "HuntingSeason": "ALL",
+      "ReportDateTimeFormatted": "09/22/2026 01:30 PM"
+    },
+    {
+      "AreaUnit": "Calhoun",
+      "AntleredCount": 10,
+      "AntlerlessCount": 5,
+      "TotalCount": 15,
+      "LicenseYear": 2025,
+      "HuntingSeason": "Deer Damage",
+      "ReportDateTimeFormatted": "09/22/2026 01:30 PM"
+    },
+    {
+      "AreaUnit": "   ",
+      "AntleredCount": 1,
+      "AntlerlessCount": 1,
+      "TotalCount": 2,
+      "LicenseYear": 2025,
+      "HuntingSeason": "ALL",
+      "ReportDateTimeFormatted": "09/22/2026 01:30 PM"
+    }
+  ]
+}

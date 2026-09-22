@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "name": "White-tailed Deer",
+    "slug": "deer",
+    "kind": "game",
+    "pluralName": "deer",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/White-tailed_deer",
+    "updatedAt": "2026-09-22"
+  }
+]

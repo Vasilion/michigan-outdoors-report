@@ -43,6 +43,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'slug', s.slug,
         'kind', s.kind,
         'pluralName', s.plural_name,
+        'officialUrl', s.official_url,
         'sameAsUrl', s.same_as_url,
         'updatedAt', to_char(s.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
       ) AS row
@@ -95,6 +96,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'name', p.name,
         'slug', p.slug,
         'type', p.type,
+        'typeLabel', p.type_label,
         'acres', p.acres,
         'countySlugs', COALESCE((
           SELECT json_agg(c.slug ORDER BY c.slug)
@@ -102,6 +104,8 @@ export const EXPORTS: readonly ExportSpec[] = [
           JOIN counties c ON c.id = pc.county_id
           WHERE pc.public_land_id = p.id), '[]'::json),
         'managingAgency', p.managing_agency,
+        'region', p.region,
+        'huntingStatus', p.hunting_status,
         'officialUrl', p.official_url,
         'centroid', CASE WHEN p.centroid IS NULL THEN NULL ELSE json_build_object(
           'lat', round(ST_Y(p.centroid)::numeric, 5),
@@ -161,6 +165,11 @@ export const EXPORTS: readonly ExportSpec[] = [
   {
     file: "harvest-snapshots.json",
     sql: `
+      WITH latest AS (
+        SELECT DISTINCT ON (h.county_id, h.species_id, h.season_year) h.*
+        FROM harvest_snapshots h
+        ORDER BY h.county_id, h.species_id, h.season_year, h.snapshot_date DESC
+      )
       SELECT json_build_object(
         'countySlug', c.slug,
         'speciesSlug', s.slug,
@@ -172,10 +181,10 @@ export const EXPORTS: readonly ExportSpec[] = [
         'isFinal', h.is_final,
         'sourceUrl', h.source_url
       ) AS row
-      FROM harvest_snapshots h
+      FROM latest h
       JOIN counties c ON c.id = h.county_id
       JOIN species s ON s.id = h.species_id
-      ORDER BY c.slug, s.slug, h.season_year, h.snapshot_date`,
+      ORDER BY c.slug, s.slug, h.season_year`,
   },
   {
     file: "seasons.json",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SITE, absoluteUrl } from "./site";
 
 export const TITLE_MAX: number = 60;
+export const TITLE_HARD_MAX: number = 75;
 export const DESCRIPTION_MAX: number = 155;
 
 export type PageSeo = {
@@ -25,7 +26,7 @@ export function truncateAtWord(value: string, max: number): string {
 
 export function buildMetadata(seo: PageSeo): Metadata {
   const canonical: string = absoluteUrl(seo.path);
-  const title: string = truncateAtWord(seo.title, TITLE_MAX + 20);
+  const title: string = truncateAtWord(seo.title, TITLE_HARD_MAX);
   const description: string = truncateAtWord(seo.description, DESCRIPTION_MAX);
   const images: string[] = [absoluteUrl(seo.ogImagePath ?? "/og-default.png")];
   return {

@@ -72,9 +72,27 @@ tests/e2e/       Playwright against out/
 
 ## Phase status
 
-Phase 0 (foundation) is complete: tooling, lint rules, CI, migrations, base layout and design
+**Phase 0 (foundation) — done.** Tooling, lint rules, CI, migrations, base layout and design
 system, sitemap/robots/llms.txt generation, schema builders, quality gate framework, data
-snapshot layer and checkers. Neon, Amplify and the domain are not provisioned yet.
+snapshot layer and checkers.
 
-Phase 1 (deer season) is next: counties, public land, harvest importer, season YAML, county
-hubs, county x deer pages, statewide deer hub, processor and taxidermist directory.
+**Phase 1 (deer season) — done.** 486 pages built, 482 indexable:
+
+| Template           | Pages |
+| ------------------ | ----- |
+| County hub         | 83    |
+| County x deer      | 83    |
+| Public land unit   | 305   |
+| Statewide deer hub | 1     |
+| Season pages       | 2     |
+| Editorial          | 8     |
+
+Importers: `counties` (ArcGIS, quarterly), `public-lands` (ArcGIS, monthly), `harvest`
+(DNR eLicense, daily), `curated` (species and season YAML). Four complete deer seasons
+(2022-2025) plus the live 2026 count, every county.
+
+Not yet done: directory listings (must be seeded by hand from public sources), lakes and
+stocking (Phase 2), OG images and IndexNow (Phase 3, needs the live domain).
+
+Neon, Amplify and the domain are still unprovisioned. Importers run against a local Postgres,
+see `docs/local-database.md`.

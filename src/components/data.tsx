@@ -100,10 +100,8 @@ export function TrendChart({
         role="img"
         aria-label={`${title}. ${description}.`}
         viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
-        width="100%"
-        height="auto"
         preserveAspectRatio="xMidYMid meet"
-        className="mt-3 block"
+        className="mt-3 block h-auto w-full"
       >
         <title>{title}</title>
         <desc>{description}</desc>

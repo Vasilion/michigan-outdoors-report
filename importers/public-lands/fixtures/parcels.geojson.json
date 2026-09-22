@@ -1,0 +1,109 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "PropertyName": "Allegan State Game Area",
+        "PropertyType": "State Game Area",
+        "Landowner": "State",
+        "Region": "SW-LP",
+        "County": "Allegan",
+        "Acres": 30000.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.9, 42.5],
+            [-85.8, 42.5],
+            [-85.8, 42.6],
+            [-85.9, 42.6],
+            [-85.9, 42.5]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PropertyName": "Allegan State Game Area (north unit; general)",
+        "PropertyType": "State Game Area",
+        "Landowner": "State",
+        "Region": "SW-LP",
+        "County": "Allegan",
+        "Acres": 25090.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.7, 42.5],
+            [-85.6, 42.5],
+            [-85.6, 42.6],
+            [-85.7, 42.6],
+            [-85.7, 42.5]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PropertyName": "(temp polygon do not publish)",
+        "PropertyType": "(temp polygon)",
+        "Landowner": "pvt",
+        "Region": null,
+        "County": null,
+        "Acres": 12.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.5, 42.5],
+            [-85.4, 42.5],
+            [-85.4, 42.6],
+            [-85.5, 42.6],
+            [-85.5, 42.5]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PropertyName": "Somewhere Private Tract",
+        "PropertyType": "Pvt w/ Reserved State Rights",
+        "Landowner": "pvt",
+        "Region": null,
+        "County": "Kent",
+        "Acres": 40.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.3, 42.5],
+            [-85.2, 42.5],
+            [-85.2, 42.6],
+            [-85.3, 42.6],
+            [-85.3, 42.5]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PropertyName": "No Geometry Game Area",
+        "PropertyType": "State Game Area",
+        "Landowner": "State",
+        "Region": "NE-LP",
+        "County": "Alcona",
+        "Acres": 500.0
+      },
+      "geometry": null
+    }
+  ]
+}

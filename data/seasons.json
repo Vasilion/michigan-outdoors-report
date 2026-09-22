@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "speciesSlug": "deer",
+    "name": "Early antlerless firearm",
+    "zone": "Lower Peninsula",
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-13",
+    "notes": "Lower Peninsula DMUs excluding 145 and 245. Open on public and private lands.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Liberty Hunt",
+    "zone": "Statewide",
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-13",
+    "notes": "Qualified youth and hunters with disabilities only.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Archery (early segment)",
+    "zone": "Statewide",
+    "startDate": "2026-10-01",
+    "endDate": "2026-11-14",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Independence Hunt",
+    "zone": "Statewide",
+    "startDate": "2026-10-15",
+    "endDate": "2026-10-18",
+    "notes": "Qualified hunters with disabilities only. Open on public land by permit and on private land.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Regular firearm",
+    "zone": "Statewide",
+    "startDate": "2026-11-15",
+    "endDate": "2026-11-30",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Archery (late segment)",
+    "zone": "Statewide",
+    "startDate": "2026-12-01",
+    "endDate": "2027-01-01",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "December firearm",
+    "zone": "Lower Peninsula",
+    "startDate": "2026-12-04",
+    "endDate": "2026-12-06",
+    "notes": "Lower Peninsula DMUs. Equipment restrictions apply.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Muzzleloader",
+    "zone": "Upper Peninsula",
+    "startDate": "2026-12-04",
+    "endDate": "2026-12-06",
+    "notes": "Upper Peninsula DMUs. Equipment restrictions apply.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "deer",
+    "name": "Late antlerless firearm",
+    "zone": "Lower Peninsula",
+    "startDate": "2026-12-07",
+    "endDate": "2027-01-01",
+    "notes": "Lower Peninsula DMUs excluding 145 and 245. Open on public and private lands.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  }
+]

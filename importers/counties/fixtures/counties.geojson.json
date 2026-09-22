@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "KENT",
+        "PENIN": "LP",
+        "ACRES": 558154.4,
+        "CO_NUMBER": "41"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.8, 42.8],
+            [-85.3, 42.8],
+            [-85.3, 43.2],
+            [-85.8, 43.2],
+            [-85.8, 42.8]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "GRAND TRAVERSE",
+        "PENIN": "LP",
+        "ACRES": 297000.0,
+        "CO_NUMBER": "28"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.8, 44.6],
+            [-85.3, 44.6],
+            [-85.3, 44.9],
+            [-85.8, 44.9],
+            [-85.8, 44.6]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "KEWEENAW",
+        "PENIN": "UP",
+        "ACRES": 360279.5,
+        "CO_NUMBER": "42"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": { "NAME": "BROKEN", "PENIN": "XX", "ACRES": null, "CO_NUMBER": null },
+      "geometry": null
+    }
+  ]
+}

@@ -34,7 +34,7 @@ function county(slug: string): County {
   return {
     name: slug,
     slug,
-    peninsula: "NLP",
+    peninsula: "LP",
     areaSqMi: 500,
     centroid: { lat: 44.5, lng: -85.5 },
     neighborSlugs: [],

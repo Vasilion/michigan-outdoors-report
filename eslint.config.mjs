@@ -69,27 +69,9 @@ const config = [
     },
   },
   {
-    files: ["src/lib/data/schemas.ts"],
+    files: ["src/lib/data/schemas.ts", "importers/curated/parse.ts"],
     rules: {
       "@typescript-eslint/typedef": "off",
-    },
-  },
-  {
-    files: ["tests/e2e/**/*.ts", "scripts/**/*.ts", "importers/**/*.ts"],
-    rules: {
-      "@typescript-eslint/typedef": [
-        "error",
-        {
-          arrayDestructuring: false,
-          arrowParameter: true,
-          memberVariableDeclaration: true,
-          objectDestructuring: false,
-          parameter: true,
-          propertyDeclaration: true,
-          variableDeclaration: true,
-          variableDeclarationIgnoreFunction: true,
-        },
-      ],
     },
   },
 ];
