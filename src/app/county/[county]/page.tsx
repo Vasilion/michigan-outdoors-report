@@ -2,18 +2,22 @@ import Link from "next/link";
 import { use } from "react";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
+import { CalendarDays, Map as MapIcon, Target, TreePine } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { CountyLocator } from "@/components/map/county-map";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   AnswerSummary,
   Breadcrumbs,
   LastUpdated,
-  QuickFacts,
   Section,
   SourceNote,
 } from "@/components/layout";
-import type { QuickFact } from "@/components/layout";
+import { Stat, StatGrid } from "@/components/ui/stat";
+import type { StatProps } from "@/components/ui/stat";
 import { DataTable, FaqBlock } from "@/components/data";
-import type { FaqItem, TableColumn, TableRow } from "@/components/data";
+import type { FaqItem, TableColumn, TableRowData } from "@/components/data";
 import {
   breadcrumbSchema,
   datasetSchema,
@@ -158,8 +162,8 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
 
   const deer: HarvestSeries | undefined = view.harvest.get("deer");
   const latest: HarvestSnapshot | null = deer?.latestFinal ?? null;
-  const facts: QuickFact[] = [
-    { label: "Peninsula", value: view.peninsula },
+  const facts: StatProps[] = [
+    { label: "Peninsula", value: view.peninsula, icon: MapIcon },
     {
       label: "Land area",
       value:
@@ -169,6 +173,7 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
     },
     {
       label: "Public land",
+      icon: TreePine,
       value:
         view.publicLandAcres > 0
           ? `${formatCount(Math.round(view.publicLandAcres))} acres`
@@ -176,50 +181,83 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
     },
     {
       label: latest === null ? "Deer harvest" : `${latest.seasonYear} deer harvest`,
+      icon: Target,
+      tone: "accent",
       value: latest === null ? "Not published" : formatCount(latest.total),
     },
   ];
 
-  const landRows: readonly TableRow[] = view.publicLands.map(
-    (land: PublicLand): TableRow => ({
+  const landRows: readonly TableRowData[] = view.publicLands.map(
+    (land: PublicLand): TableRowData => ({
       name: land.name,
       type: land.typeLabel,
       acres: land.acres === null ? "Not published" : formatCount(land.acres),
     }),
   );
 
-  const seasonRows: readonly TableRow[] = view.seasons.map((season: Season): TableRow => {
-    const status: SeasonStatus = seasonStatus(season, view.dataDate);
-    return {
-      season: season.name,
-      zone: season.zone,
-      opens: formatLongDate(season.startDate),
-      closes: formatLongDate(season.endDate),
-      status:
-        status.state === "open"
-          ? "Open now"
-          : status.state === "upcoming"
-            ? `Opens in ${status.daysUntilOpen ?? 0} days`
-            : "Closed",
-    };
-  });
+  const seasonRows: readonly TableRowData[] = view.seasons.map(
+    (season: Season): TableRowData => {
+      const status: SeasonStatus = seasonStatus(season, view.dataDate);
+      return {
+        season: season.name,
+        zone: season.zone,
+        opens: formatLongDate(season.startDate),
+        closes: formatLongDate(season.endDate),
+        status: (
+          <Badge
+            variant={
+              status.state === "open"
+                ? "open"
+                : status.state === "upcoming"
+                  ? "upcoming"
+                  : "closed"
+            }
+          >
+            {status.state === "open"
+              ? "Open now"
+              : status.state === "upcoming"
+                ? `In ${status.daysUntilOpen ?? 0} days`
+                : "Closed"}
+          </Badge>
+        ),
+      };
+    },
+  );
 
   const faqs: readonly FaqItem[] = faqItems(view);
 
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs items={[...crumbs(view)]} />
-      <h1 className="text-4xl">{view.county.name} County hunting and fishing</h1>
-      <div className="mt-6">
-        <AnswerSummary text={summaryText(view)} />
+      <div className="grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_auto]">
+        <div>
+          <p className="eyebrow">{view.peninsula}</p>
+          <h1 className="mt-2 text-4xl md:text-5xl">
+            {view.county.name} County hunting and fishing
+          </h1>
+          <div className="mt-6">
+            <AnswerSummary text={summaryText(view)} />
+          </div>
+        </div>
+        <Card className="hidden self-start md:block">
+          <CardContent className="p-3">
+            <CountyLocator countySlug={view.county.slug} countyName={view.county.name} />
+          </CardContent>
+        </Card>
       </div>
       <div className="mt-8">
-        <QuickFacts facts={facts} />
+        <StatGrid>
+          {facts.map((fact: StatProps): ReactElement => (
+            <Stat key={fact.label} {...fact} />
+          ))}
+        </StatGrid>
       </div>
 
       <Section
+        eyebrow="Reported harvest"
         title="Hunting"
-        description={`Reported harvest and public land for ${view.county.name} County.`}
+        icon={Target}
+        description={`What hunters reported in ${view.county.name} County, by species.`}
       >
         <ul className="grid gap-4 md:grid-cols-2">
           {view.gameSpecies.map((species: Species): ReactElement => {
@@ -227,7 +265,10 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
             const seriesLatest: HarvestSnapshot | null = series?.latestFinal ?? null;
             if (seriesLatest === null) {
               return (
-                <li key={species.slug} className="card">
+                <li
+                  key={species.slug}
+                  className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
+                >
                   <h3 className="text-lg">{species.name}</h3>
                   <p className="mt-2 text-bark-600">
                     No reported harvest published for this county yet.
@@ -236,7 +277,10 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
               );
             }
             return (
-              <li key={species.slug} className="card">
+              <li
+                key={species.slug}
+                className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
+              >
                 <h3 className="text-lg">
                   <Link
                     href={`/county/${view.county.slug}/${species.slug}-hunting/`}
@@ -259,7 +303,9 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
 
       {view.publicLands.length === 0 ? null : (
         <Section
+          eyebrow={`${formatCount(view.publicLands.length)} units`}
           title="Public land"
+          icon={TreePine}
           description={`State-managed land open to the public in ${view.county.name} County.`}
         >
           <DataTable
@@ -281,7 +327,9 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
 
       {view.seasons.length === 0 ? null : (
         <Section
+          eyebrow="Verified against the digest"
           title="Season dates"
+          icon={CalendarDays}
           description={`Deer seasons that apply in ${view.county.name} County, which is in the ${view.peninsula}.`}
         >
           <DataTable
@@ -300,7 +348,11 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
       )}
 
       {view.neighbors.length === 0 ? null : (
-        <Section title="Neighboring counties" description="Counties sharing a border.">
+        <Section
+          title="Neighboring counties"
+          icon={MapIcon}
+          description="Counties sharing a border."
+        >
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             {view.neighbors.map((neighbor: County): ReactElement => (
               <li key={neighbor.slug}>
@@ -349,6 +401,6 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
           faqSchema(faqs),
         ]}
       />
-    </>
+    </div>
   );
 }

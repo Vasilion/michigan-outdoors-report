@@ -1,5 +1,19 @@
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
+import { HelpCircle } from "lucide-react";
 import { formatCount } from "@/lib/format";
+import { cn } from "@/lib/cn";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableRowHeader,
+  TableWrap,
+} from "@/components/ui/table";
+import { Card, CardContent } from "@/components/ui/card";
 
 export type TableColumn = {
   readonly key: string;
@@ -7,76 +21,78 @@ export type TableColumn = {
   readonly numeric?: boolean;
 };
 
-export type TableRow = Readonly<Record<string, string>>;
+export type TableCellValue = ReactNode;
+export type TableRowData = Readonly<Record<string, TableCellValue>>;
 
 export type DataTableProps = {
   readonly caption: string;
   readonly columns: readonly TableColumn[];
-  readonly rows: readonly TableRow[];
+  readonly rows: readonly TableRowData[];
 };
 
 export function DataTable({ caption, columns, rows }: DataTableProps): ReactElement {
+  const firstColumn: TableColumn = columns[0] as TableColumn;
   return (
-    <div className="overflow-x-auto">
-      <table className="data-table">
-        <caption>{caption}</caption>
-        <thead>
-          <tr>
+    <TableWrap>
+      <Table>
+        <TableHeader>
+          <TableRow>
             {columns.map((column: TableColumn): ReactElement => (
-              <th
+              <TableHead
                 key={column.key}
                 scope="col"
-                className={column.numeric === true ? "numeric" : undefined}
+                className={column.numeric === true ? "text-right" : undefined}
               >
                 {column.label}
-              </th>
+              </TableHead>
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row: TableRow, rowIndex: number): ReactElement => {
-            const firstColumn: TableColumn = columns[0] as TableColumn;
-            return (
-              <tr key={rowIndex}>
-                <th scope="row">{row[firstColumn.key] ?? ""}</th>
-                {columns.slice(1).map((column: TableColumn): ReactElement => (
-                  <td
-                    key={column.key}
-                    className={column.numeric === true ? "numeric" : undefined}
-                  >
-                    {row[column.key] ?? ""}
-                  </td>
-                ))}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.map((row: TableRowData, rowIndex: number): ReactElement => (
+            <TableRow key={rowIndex}>
+              <TableRowHeader>{row[firstColumn.key] ?? ""}</TableRowHeader>
+              {columns.slice(1).map((column: TableColumn): ReactElement => (
+                <TableCell
+                  key={column.key}
+                  className={column.numeric === true ? "text-right" : undefined}
+                >
+                  {row[column.key] ?? ""}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+        <TableCaption>{caption}</TableCaption>
+      </Table>
+    </TableWrap>
   );
 }
 
 export type TrendPoint = {
   readonly label: string;
   readonly value: number;
+  readonly muted?: boolean;
 };
 
 export type TrendChartProps = {
   readonly title: string;
   readonly unitLabel: string;
   readonly points: readonly TrendPoint[];
+  readonly className?: string;
 };
 
 const CHART_WIDTH: number = 720;
-const CHART_HEIGHT: number = 260;
-const PADDING_LEFT: number = 56;
-const PADDING_BOTTOM: number = 32;
-const PADDING_TOP: number = 16;
+const CHART_HEIGHT: number = 230;
+const PADDING_LEFT: number = 58;
+const PADDING_BOTTOM: number = 30;
+const PADDING_TOP: number = 20;
 
 export function TrendChart({
   title,
   unitLabel,
   points,
+  className,
 }: TrendChartProps): ReactElement | null {
   if (points.length === 0) {
     return null;
@@ -85,85 +101,105 @@ export function TrendChart({
     ...points.map((point: TrendPoint): number => point.value),
     1,
   );
-  const plotWidth: number = CHART_WIDTH - PADDING_LEFT - 8;
+  const plotWidth: number = CHART_WIDTH - PADDING_LEFT - 10;
   const plotHeight: number = CHART_HEIGHT - PADDING_BOTTOM - PADDING_TOP;
   const slotWidth: number = plotWidth / points.length;
-  const barWidth: number = Math.max(6, slotWidth * 0.6);
+  const barWidth: number = Math.max(8, Math.min(76, slotWidth * 0.62));
   const description: string = points
     .map((point: TrendPoint): string => `${point.label}: ${formatCount(point.value)}`)
     .join(", ");
+  const gridValues: readonly number[] = [0.25, 0.5, 0.75, 1];
 
   return (
-    <figure className="card">
-      <figcaption className="text-sm text-bark-500">{title}</figcaption>
-      <svg
-        role="img"
-        aria-label={`${title}. ${description}.`}
-        viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
-        preserveAspectRatio="xMidYMid meet"
-        className="mt-3 block h-auto w-full"
-      >
-        <title>{title}</title>
-        <desc>{description}</desc>
-        <line
-          x1={PADDING_LEFT}
-          y1={PADDING_TOP}
-          x2={PADDING_LEFT}
-          y2={CHART_HEIGHT - PADDING_BOTTOM}
-          stroke="#d4cab5"
-          strokeWidth={1}
-        />
-        <line
-          x1={PADDING_LEFT}
-          y1={CHART_HEIGHT - PADDING_BOTTOM}
-          x2={CHART_WIDTH - 8}
-          y2={CHART_HEIGHT - PADDING_BOTTOM}
-          stroke="#d4cab5"
-          strokeWidth={1}
-        />
-        <text x={4} y={PADDING_TOP + 10} fontSize={12} fill="#6b6354">
-          {formatCount(maxValue)}
-        </text>
-        <text x={4} y={CHART_HEIGHT - PADDING_BOTTOM} fontSize={12} fill="#6b6354">
-          0
-        </text>
-        <text
-          x={CHART_WIDTH - 8}
-          y={PADDING_TOP + 10}
-          fontSize={12}
-          fill="#6b6354"
-          textAnchor="end"
-        >
-          {unitLabel}
-        </text>
-        {points.map((point: TrendPoint, index: number): ReactElement => {
-          const barHeight: number = (point.value / maxValue) * plotHeight;
-          const x: number = PADDING_LEFT + index * slotWidth + (slotWidth - barWidth) / 2;
-          const y: number = CHART_HEIGHT - PADDING_BOTTOM - barHeight;
-          return (
-            <g key={point.label}>
-              <rect
-                x={x}
-                y={y}
-                width={barWidth}
-                height={barHeight}
-                fill="#256143"
-                rx={2}
-              />
-              <text
-                x={x + barWidth / 2}
-                y={CHART_HEIGHT - PADDING_BOTTOM + 16}
-                fontSize={12}
-                fill="#6b6354"
-                textAnchor="middle"
-              >
-                {point.label}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-    </figure>
+    <Card className={cn("overflow-hidden", className)}>
+      <CardContent className="pb-4">
+        <figure>
+          <figcaption className="text-muted-foreground text-sm">{title}</figcaption>
+          <svg
+            role="img"
+            aria-label={`${title}. ${description}.`}
+            viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
+            preserveAspectRatio="xMidYMid meet"
+            className="mt-3 block h-auto w-full"
+          >
+            <title>{title}</title>
+            <desc>{description}</desc>
+            {gridValues.map((fraction: number): ReactElement => {
+              const y: number = CHART_HEIGHT - PADDING_BOTTOM - fraction * plotHeight;
+              return (
+                <g key={fraction}>
+                  <line
+                    x1={PADDING_LEFT}
+                    y1={y}
+                    x2={CHART_WIDTH - 10}
+                    y2={y}
+                    stroke="#e8e1d3"
+                    strokeWidth={1}
+                  />
+                  <text
+                    x={PADDING_LEFT - 8}
+                    y={y + 4}
+                    fontSize={11}
+                    fill="#7a7062"
+                    textAnchor="end"
+                  >
+                    {formatCount(Math.round(maxValue * fraction))}
+                  </text>
+                </g>
+              );
+            })}
+            <line
+              x1={PADDING_LEFT}
+              y1={CHART_HEIGHT - PADDING_BOTTOM}
+              x2={CHART_WIDTH - 10}
+              y2={CHART_HEIGHT - PADDING_BOTTOM}
+              stroke="#d6ccb8"
+              strokeWidth={1}
+            />
+            {points.map((point: TrendPoint, index: number): ReactElement => {
+              const barHeight: number = Math.max(
+                2,
+                (point.value / maxValue) * plotHeight,
+              );
+              const x: number =
+                PADDING_LEFT + index * slotWidth + (slotWidth - barWidth) / 2;
+              const y: number = CHART_HEIGHT - PADDING_BOTTOM - barHeight;
+              return (
+                <g key={point.label}>
+                  <rect
+                    x={x}
+                    y={y}
+                    width={barWidth}
+                    height={barHeight}
+                    fill={point.muted === true ? "#a9d3ba" : "#1f5a3c"}
+                    rx={3}
+                  />
+                  <text
+                    x={x + barWidth / 2}
+                    y={y - 6}
+                    fontSize={11}
+                    fill="#453d31"
+                    textAnchor="middle"
+                  >
+                    {formatCount(point.value)}
+                  </text>
+                  <text
+                    x={x + barWidth / 2}
+                    y={CHART_HEIGHT - PADDING_BOTTOM + 16}
+                    fontSize={12}
+                    fill="#5c5344"
+                    textAnchor="middle"
+                  >
+                    {point.label}
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
+          <p className="eyebrow mt-1">{unitLabel}</p>
+        </figure>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -181,12 +217,20 @@ export function FaqBlock({ items }: FaqBlockProps): ReactElement | null {
     return null;
   }
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-3 md:grid-cols-2">
       {items.map((item: FaqItem): ReactElement => (
-        <div key={item.question} className="card">
-          <h3 className="text-lg">{item.question}</h3>
-          <p className="mt-2 text-bark-600">{item.answer}</p>
-        </div>
+        <Card key={item.question}>
+          <CardContent>
+            <h3 className="flex items-start gap-2 text-base leading-snug font-semibold">
+              <HelpCircle
+                aria-hidden="true"
+                className="text-pine-500 mt-0.5 h-4 w-4 shrink-0"
+              />
+              {item.question}
+            </h3>
+            <p className="text-bark-600 mt-2 text-sm leading-relaxed">{item.answer}</p>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );

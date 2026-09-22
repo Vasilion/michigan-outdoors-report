@@ -1,39 +1,75 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pine-950: #08170f;
-  --color-pine-900: #0e2418;
-  --color-pine-800: #143324;
-  --color-pine-700: #1b4630;
-  --color-pine-600: #256143;
-  --color-pine-500: #327f58;
-  --color-pine-100: #dcece2;
+  --color-pine-950: #061410;
+  --color-pine-900: #0b2218;
+  --color-pine-800: #113022;
+  --color-pine-700: #17432e;
+  --color-pine-600: #1f5a3c;
+  --color-pine-500: #2c774f;
+  --color-pine-400: #4a9a6d;
+  --color-pine-200: #a9d3ba;
+  --color-pine-100: #d9ece1;
+  --color-pine-50: #eef7f1;
 
-  --color-lake-700: #124a63;
-  --color-lake-600: #17607f;
-  --color-lake-500: #1f7ca3;
-  --color-lake-100: #d9ecf4;
+  --color-lake-800: #0d3a4f;
+  --color-lake-700: #114c66;
+  --color-lake-600: #17627f;
+  --color-lake-500: #1f7ea3;
+  --color-lake-300: #7bc0da;
+  --color-lake-100: #d7ecf4;
 
-  --color-blaze-600: #c04a07;
+  --color-blaze-700: #963706;
+  --color-blaze-600: #bf4a08;
   --color-blaze-500: #e2570f;
-  --color-blaze-100: #fbe4d5;
+  --color-blaze-400: #f07b34;
+  --color-blaze-200: #f9c9a9;
+  --color-blaze-100: #fce7d6;
 
   --color-sand-50: #fbf9f5;
-  --color-sand-100: #f4f0e8;
-  --color-sand-200: #e6dfd1;
-  --color-sand-300: #d4cab5;
+  --color-sand-100: #f5f1e9;
+  --color-sand-200: #e8e1d3;
+  --color-sand-300: #d6ccb8;
 
-  --color-bark-700: #3a352c;
-  --color-bark-600: #514a3d;
-  --color-bark-500: #6b6354;
+  --color-bark-900: #241f18;
+  --color-bark-800: #332d24;
+  --color-bark-700: #453d31;
+  --color-bark-600: #5c5344;
+  --color-bark-500: #7a7062;
+  --color-bark-400: #9c9385;
+
+  --color-background: #fbf9f5;
+  --color-foreground: #332d24;
+  --color-card: #ffffff;
+  --color-card-foreground: #332d24;
+  --color-primary: #17432e;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #114c66;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #bf4a08;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #f5f1e9;
+  --color-muted-foreground: #7a7062;
+  --color-border: #e8e1d3;
+  --color-ring: #1f7ea3;
 
   --font-display:
-    "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+    "Times New Roman", serif;
   --font-sans:
     system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, "Cascadia Mono", "Segoe UI Mono", "SF Mono", Menlo, Consolas, monospace;
 
-  --spacing-gutter: 1.25rem;
+  --radius: 0.75rem;
+  --radius-sm: 0.45rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.05rem;
+
+  --shadow-card: 0 1px 2px rgb(36 31 24 / 0.04), 0 1px 3px rgb(36 31 24 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(36 31 24 / 0.05), 0 12px 28px rgb(36 31 24 / 0.08);
 }
+
 @layer base {
   :root {
     color-scheme: light;
@@ -44,10 +80,11 @@
   }
 
   body {
-    background-color: var(--color-sand-50);
-    color: var(--color-bark-700);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-family: var(--font-sans);
-    line-height: 1.6;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
@@ -57,88 +94,98 @@
   h4 {
     font-family: var(--font-display);
     color: var(--color-pine-900);
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.012em;
     text-wrap: balance;
   }
 
   a {
     color: var(--color-lake-700);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    transition:
+      color 120ms ease,
+      text-decoration-color 120ms ease;
   }
 
   a:hover {
     color: var(--color-blaze-600);
+    text-decoration-color: currentColor;
   }
 
   :focus-visible {
-    outline: 3px solid var(--color-lake-500);
+    outline: 3px solid var(--color-ring);
     outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-pine-200);
+    color: var(--color-pine-950);
   }
 }
 
 @layer components {
   .wrap {
     width: 100%;
-    max-width: 72rem;
+    max-width: 76rem;
     margin-inline: auto;
-    padding-inline: var(--spacing-gutter);
+    padding-inline: 1.25rem;
   }
 
   .prose-block p {
-    margin-block: 0.85rem;
+    margin-block: 0.9rem;
     max-width: 68ch;
   }
 
   .prose-block ul {
-    margin-block: 0.85rem;
-    padding-left: 1.25rem;
+    margin-block: 0.9rem;
+    padding-left: 1.15rem;
     list-style: disc;
   }
 
   .prose-block li {
-    margin-block: 0.35rem;
+    margin-block: 0.4rem;
+    max-width: 66ch;
   }
 
-  .card {
-    background: #ffffff;
-    border: 1px solid var(--color-sand-200);
-    border-radius: 0.75rem;
-    padding: 1.25rem;
+  .prose-block h2 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
   }
 
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
+  .prose-block h3 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-bark-500);
+  }
+
+  .numeric {
     font-variant-numeric: tabular-nums;
   }
 
-  .data-table caption {
-    caption-side: top;
-    text-align: left;
-    font-size: 0.875rem;
-    color: var(--color-bark-500);
-    padding-bottom: 0.6rem;
-  }
-
-  .data-table th,
-  .data-table td {
-    text-align: left;
-    padding: 0.55rem 0.75rem;
-    border-bottom: 1px solid var(--color-sand-200);
-  }
-
-  .data-table thead th {
-    background: var(--color-sand-100);
-    font-size: 0.8125rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-bark-600);
-  }
-
-  .data-table td.numeric,
-  .data-table th.numeric {
-    text-align: right;
+  .topo {
+    background-color: var(--color-pine-900);
+    background-image:
+      radial-gradient(
+        ellipse 80% 60% at 72% -15%,
+        color-mix(in srgb, var(--color-pine-600) 55%, transparent),
+        transparent 70%
+      ),
+      repeating-radial-gradient(
+        circle at 20% 125%,
+        transparent 0 38px,
+        color-mix(in srgb, var(--color-pine-400) 12%, transparent) 38px 39px
+      );
   }
 
   .skip-link {
@@ -153,5 +200,14 @@
 
   .skip-link:focus {
     left: 0;
+  }
+
+  .county-path {
+    transition: fill 120ms ease;
+  }
+
+  .county-link:hover .county-path,
+  .county-link:focus-visible .county-path {
+    fill: var(--color-blaze-500);
   }
 }

@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import { JsonLd } from "@/components/JsonLd";
 import { AnswerSummary, Breadcrumbs, LastUpdated } from "@/components/layout";
 import { DataTable } from "@/components/data";
-import type { TableColumn, TableRow } from "@/components/data";
+import type { TableColumn, TableRowData } from "@/components/data";
 import { breadcrumbSchema } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
 import { formatLongDate } from "@/lib/format";
@@ -48,7 +48,7 @@ function statusLabel(status: SeasonStatus): string {
 
 export default function SeasonsPage(): ReactElement {
   const today: string = getMeta().generatedAt.slice(0, 10);
-  const rows: readonly TableRow[] = SEASONS.map((season: Season): TableRow => ({
+  const rows: readonly TableRowData[] = SEASONS.map((season: Season): TableRowData => ({
     season: season.name,
     zone: season.zone,
     opens: formatLongDate(season.startDate),
@@ -57,7 +57,7 @@ export default function SeasonsPage(): ReactElement {
   }));
 
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },
@@ -113,6 +113,6 @@ export default function SeasonsPage(): ReactElement {
           ]),
         ]}
       />
-    </>
+    </div>
   );
 }

@@ -3,18 +3,27 @@ import { use } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
+import {
+  CalendarDays,
+  ChartColumn,
+  HelpCircle,
+  Map as MapIcon,
+  Target,
+} from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { CountyChoropleth } from "@/components/map/county-map";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   AnswerSummary,
   Breadcrumbs,
   LastUpdated,
-  QuickFacts,
   Section,
   SourceNote,
 } from "@/components/layout";
-import type { QuickFact } from "@/components/layout";
+import { Stat, StatGrid } from "@/components/ui/stat";
+import type { StatProps } from "@/components/ui/stat";
 import { DataTable, FaqBlock, TrendChart } from "@/components/data";
-import type { FaqItem, TableColumn, TableRow, TrendPoint } from "@/components/data";
+import type { FaqItem, TableColumn, TableRowData, TrendPoint } from "@/components/data";
 import {
   breadcrumbSchema,
   datasetSchema,
@@ -169,20 +178,37 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
     }),
   );
 
-  const rows: readonly TableRow[] = view.counties.map((entry: CountyTotal): TableRow => {
-    const latest: HarvestSnapshot | null = entry.series.latestFinal;
-    return {
-      county: `${entry.county.name} County`,
-      peninsula: entry.county.peninsula === "UP" ? "Upper" : "Lower",
-      antlered: latest === null ? "—" : formatCount(latest.antlered ?? 0),
-      antlerless: latest === null ? "—" : formatCount(latest.antlerless ?? 0),
-      total: latest === null ? "—" : formatCount(latest.total),
-    };
-  });
+  const rows: readonly TableRowData[] = view.counties.map(
+    (entry: CountyTotal): TableRowData => {
+      const latest: HarvestSnapshot | null = entry.series.latestFinal;
+      return {
+        county: `${entry.county.name} County`,
+        peninsula: entry.county.peninsula === "UP" ? "Upper" : "Lower",
+        antlered: latest === null ? "—" : formatCount(latest.antlered ?? 0),
+        antlerless: latest === null ? "—" : formatCount(latest.antlerless ?? 0),
+        total: latest === null ? "—" : formatCount(latest.total),
+      };
+    },
+  );
+
+  const mapValues: Map<string, number> = new Map<string, number>();
+  const mapNames: Map<string, string> = new Map<string, string>();
+  for (const entry of view.counties) {
+    mapNames.set(entry.county.slug, entry.county.name);
+    const latestTotal: number | undefined = entry.series.latestFinal?.total;
+    if (latestTotal !== undefined) {
+      mapValues.set(entry.county.slug, latestTotal);
+    }
+  }
 
   const top: CountyTotal | undefined = view.counties[0];
-  const facts: QuickFact[] = [
-    { label: `${view.latestYear} statewide`, value: formatCount(view.latestTotal) },
+  const facts: StatProps[] = [
+    {
+      label: `${view.latestYear} statewide`,
+      value: formatCount(view.latestTotal),
+      icon: Target,
+      tone: "accent",
+    },
     { label: "Counties reporting", value: formatCount(view.counties.length) },
     { label: "Seasons on record", value: formatCount(view.seasonYears.length) },
     {
@@ -210,7 +236,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
   ];
 
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs items={[...crumbs]} />
       <h1 className="text-4xl">
         Michigan {view.species.name.toLowerCase()} harvest by county
@@ -219,11 +245,16 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
         <AnswerSummary text={summaryText(view)} />
       </div>
       <div className="mt-8">
-        <QuickFacts facts={facts} />
+        <StatGrid>
+          {facts.map((fact: StatProps): ReactElement => (
+            <Stat key={fact.label} {...fact} />
+          ))}
+        </StatGrid>
       </div>
 
       <Section
         title="Statewide trend"
+        icon={ChartColumn}
         description="Reported harvest by season across Michigan."
       >
         <TrendChart
@@ -234,7 +265,29 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
       </Section>
 
       <Section
+        eyebrow="Where they were reported"
+        title={`${view.latestYear} harvest map`}
+        icon={MapIcon}
+        description="Darker counties reported more. Click any county for its full history."
+      >
+        <Card>
+          <CardContent>
+            <CountyChoropleth
+              title={`Reported ${view.species.pluralName} harvest by Michigan county, ${view.latestYear} season`}
+              unitLabel={`${view.species.pluralName} reported`}
+              values={mapValues}
+              names={mapNames}
+              hrefFor={(slug: string): string =>
+                `/county/${slug}/${view.species.slug}-hunting/`
+              }
+            />
+          </CardContent>
+        </Card>
+      </Section>
+
+      <Section
         title={`Every county, ${view.latestYear} season`}
+        icon={Target}
         description="Sorted by reported total. Each county links to its full harvest history."
       >
         <DataTable
@@ -246,6 +299,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
 
       <Section
         title="County pages"
+        icon={MapIcon}
         description="Harvest history, season dates and public land for each county."
       >
         <ul className="grid grid-cols-2 gap-2 md:grid-cols-4">
@@ -265,11 +319,15 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
       {view.seasons.length === 0 ? null : (
         <Section
           title="Season dates"
+          icon={CalendarDays}
           description="Every Michigan season for this species."
         >
           <ul className="grid gap-3 md:grid-cols-2">
             {view.seasons.map((season: Season): ReactElement => (
-              <li key={`${season.name}-${season.zone}`} className="card">
+              <li
+                key={`${season.name}-${season.zone}`}
+                className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
+              >
                 <p className="font-display text-lg text-pine-800">{season.name}</p>
                 <p className="text-sm text-bark-500">{season.zone}</p>
                 <p className="mt-2">
@@ -294,6 +352,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
 
       <Section
         title="Common questions"
+        icon={HelpCircle}
         description="Answers drawn from the data on this page."
       >
         <FaqBlock items={faqs} />
@@ -332,6 +391,6 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
           faqSchema(faqs),
         ]}
       />
-    </>
+    </div>
   );
 }

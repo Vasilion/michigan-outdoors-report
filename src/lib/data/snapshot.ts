@@ -4,6 +4,8 @@ import type { ZodType } from "zod";
 import {
   accessSitesFileSchema,
   countiesFileSchema,
+  countyShapesFileSchema,
+  stateOutlineFileSchema,
   directoryListingsFileSchema,
   harvestSnapshotsFileSchema,
   lakesFileSchema,
@@ -18,6 +20,8 @@ import {
 import type {
   AccessSite,
   County,
+  CountyShape,
+  StateOutline,
   DirectoryListing,
   HarvestSnapshot,
   Lake,
@@ -93,6 +97,18 @@ export function getDirectoryListings(): readonly DirectoryListing[] {
 
 export function getRedirects(): readonly Redirect[] {
   return readSnapshot("redirects.json", redirectsFileSchema);
+}
+
+export function getCountyShapes(): readonly CountyShape[] {
+  return readSnapshot("county-shapes.json", countyShapesFileSchema);
+}
+
+export function getStateOutline(): StateOutline | null {
+  const rows: readonly StateOutline[] = readSnapshot(
+    "state-outline.json",
+    stateOutlineFileSchema,
+  );
+  return rows[0] ?? null;
 }
 
 export function findCounty(slug: string): County | null {

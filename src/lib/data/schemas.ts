@@ -169,6 +169,24 @@ export const metaSchema = z.object({
   runs: z.array(importerRunSchema),
 });
 
+
+export const ringSchema = z.array(z.tuple([z.number(), z.number()]));
+
+export const countyShapeSchema = z.object({
+  slug: slugSchema,
+  rings: z.array(ringSchema),
+});
+
+export const stateOutlineSchema = z.object({
+  rings: z.array(ringSchema),
+});
+
+export const countyShapesFileSchema = z.array(countyShapeSchema);
+export const stateOutlineFileSchema = z.array(stateOutlineSchema);
+
+export type CountyShape = z.infer<typeof countyShapeSchema>;
+export type StateOutline = z.infer<typeof stateOutlineSchema>;
+
 export const countiesFileSchema = z.array(countySchema);
 export const speciesFileSchema = z.array(speciesSchema);
 export const lakesFileSchema = z.array(lakeSchema);

@@ -69,7 +69,11 @@ const config = [
     },
   },
   {
-    files: ["src/lib/data/schemas.ts", "importers/curated/parse.ts"],
+    files: [
+      "src/lib/data/schemas.ts",
+      "importers/curated/parse.ts",
+      "src/components/ui/*.tsx",
+    ],
     rules: {
       "@typescript-eslint/typedef": "off",
     },

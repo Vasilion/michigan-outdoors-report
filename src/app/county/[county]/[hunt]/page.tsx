@@ -3,18 +3,22 @@ import { use } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
+import { CalendarDays, ChartColumn, Target, TreePine } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { CountyLocator } from "@/components/map/county-map";
 import {
   AnswerSummary,
   Breadcrumbs,
   LastUpdated,
-  QuickFacts,
   Section,
   SourceNote,
 } from "@/components/layout";
-import type { QuickFact } from "@/components/layout";
+import { Stat, StatGrid } from "@/components/ui/stat";
+import type { StatProps } from "@/components/ui/stat";
 import { DataTable, FaqBlock, TrendChart } from "@/components/data";
-import type { FaqItem, TableColumn, TableRow, TrendPoint } from "@/components/data";
+import type { FaqItem, TableColumn, TableRowData, TrendPoint } from "@/components/data";
 import { breadcrumbSchema, datasetSchema, faqSchema } from "@/lib/schema/builders";
 import type { Crumb } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
@@ -194,8 +198,8 @@ export default function CountyHuntPage({ params }: HuntPageProps): ReactElement 
     { name: `${view.species.name} hunting`, path: view.path },
   ];
 
-  const rows: readonly TableRow[] = view.series.rows.map(
-    (row: HarvestSnapshot, index: number): TableRow => {
+  const rows: readonly TableRowData[] = view.series.rows.map(
+    (row: HarvestSnapshot, index: number): TableRowData => {
       const prior: HarvestSnapshot | undefined = view.series.rows[index - 1];
       const rowChange: PercentChange | null =
         prior === undefined ? null : percentChange(row.total, prior.total);
@@ -211,20 +215,30 @@ export default function CountyHuntPage({ params }: HuntPageProps): ReactElement 
             : rowChange.direction === "unchanged"
               ? "even"
               : `${rowChange.direction === "up" ? "+" : "-"}${rowChange.percent}%`,
-        status: row.isFinal ? "Season closed" : "In progress",
+        status: (
+          <Badge variant={row.isFinal ? "closed" : "live"}>
+            {row.isFinal ? "Season closed" : "In progress"}
+          </Badge>
+        ),
       };
     },
   );
 
-  const points: readonly TrendPoint[] = view.series.finalRows.map(
+  const points: readonly TrendPoint[] = view.series.rows.map(
     (row: HarvestSnapshot): TrendPoint => ({
       label: String(row.seasonYear),
       value: row.total,
+      muted: !row.isFinal,
     }),
   );
 
-  const facts: QuickFact[] = [
-    { label: `${latest.seasonYear} total`, value: formatCount(latest.total) },
+  const facts: StatProps[] = [
+    {
+      label: `${latest.seasonYear} total`,
+      value: formatCount(latest.total),
+      icon: Target,
+      tone: "accent",
+    },
     { label: "Antlered", value: formatCount(latest.antlered ?? 0) },
     { label: "Antlerless", value: formatCount(latest.antlerless ?? 0) },
     {
@@ -241,20 +255,43 @@ export default function CountyHuntPage({ params }: HuntPageProps): ReactElement 
   const faqs: readonly FaqItem[] = faqItems(view);
 
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs items={[...crumbs]} />
-      <h1 className="text-4xl">
-        {countyName} County {view.species.name.toLowerCase()} hunting
-      </h1>
-      <div className="mt-6">
-        <AnswerSummary text={summaryText(view)} />
+      <div className="grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_auto]">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="eyebrow">{view.county.peninsula}</p>
+            {view.series.inProgress === null ? null : (
+              <Badge variant="live">
+                {view.series.inProgress.seasonYear} season in progress
+              </Badge>
+            )}
+          </div>
+          <h1 className="mt-2 text-4xl md:text-5xl">
+            {countyName} County {view.species.name.toLowerCase()} hunting
+          </h1>
+          <div className="mt-6">
+            <AnswerSummary text={summaryText(view)} />
+          </div>
+        </div>
+        <Card className="hidden self-start md:block">
+          <CardContent className="p-3">
+            <CountyLocator countySlug={view.county.county.slug} countyName={countyName} />
+          </CardContent>
+        </Card>
       </div>
       <div className="mt-8">
-        <QuickFacts facts={facts} />
+        <StatGrid>
+          {facts.map((fact: StatProps): ReactElement => (
+            <Stat key={fact.label} {...fact} />
+          ))}
+        </StatGrid>
       </div>
 
       <Section
+        eyebrow="Counts, not estimates"
         title="Reported harvest by season"
+        icon={ChartColumn}
         description={`Michigan has required hunters to report every deer since the ${view.series.rows[0]?.seasonYear ?? ""} season, so these are counts of reported animals rather than survey estimates.`}
       >
         <TrendChart
@@ -274,11 +311,15 @@ export default function CountyHuntPage({ params }: HuntPageProps): ReactElement 
       {view.county.seasons.length === 0 ? null : (
         <Section
           title="Season dates"
+          icon={CalendarDays}
           description={`${countyName} County is in the ${view.county.peninsula}, so these seasons apply.`}
         >
           <ul className="grid gap-3 md:grid-cols-2">
             {view.county.seasons.map((season: Season): ReactElement => (
-              <li key={`${season.name}-${season.zone}`} className="card">
+              <li
+                key={`${season.name}-${season.zone}`}
+                className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
+              >
                 <p className="font-display text-lg text-pine-800">{season.name}</p>
                 <p className="text-sm text-bark-500">{season.zone}</p>
                 <p className="mt-2">
@@ -303,6 +344,7 @@ export default function CountyHuntPage({ params }: HuntPageProps): ReactElement 
       {view.county.publicLands.length === 0 ? null : (
         <Section
           title="Public land in the county"
+          icon={TreePine}
           description="State-managed land where hunting may be allowed. Rules vary by unit."
         >
           <ul className="grid gap-2 md:grid-cols-2">
@@ -381,6 +423,6 @@ export default function CountyHuntPage({ params }: HuntPageProps): ReactElement 
           faqSchema(faqs),
         ]}
       />
-    </>
+    </div>
   );
 }

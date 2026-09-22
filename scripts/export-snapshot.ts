@@ -36,6 +36,59 @@ export const EXPORTS: readonly ExportSpec[] = [
       ORDER BY c.slug`,
   },
   {
+    file: "county-shapes.json",
+    sql: `
+      WITH parts AS (
+        SELECT c.id, c.slug, (ST_Dump(c.geom)).geom AS g
+        FROM counties c
+        WHERE c.geom IS NOT NULL
+      ),
+      kept AS (
+        SELECT id, slug, ST_Collect(g) AS g
+        FROM parts
+        WHERE ST_Area(g) > 0.0004
+        GROUP BY id, slug
+      )
+      SELECT json_build_object(
+        'slug', slug,
+        'rings', (
+          SELECT json_agg(ring)
+          FROM (
+            SELECT json_array_elements(
+              json_array_elements(
+                ST_AsGeoJSON(ST_Multi(ST_SimplifyPreserveTopology(g, 0.004)), 4)::json -> 'coordinates'
+              )
+            ) AS ring
+          ) rings
+        )
+      ) AS row
+      FROM kept
+      ORDER BY slug`,
+  },
+  {
+    file: "state-outline.json",
+    sql: `
+      WITH parts AS (
+        SELECT (ST_Dump(c.geom)).geom AS g FROM counties c WHERE c.geom IS NOT NULL
+      ),
+      kept AS (
+        SELECT ST_Union(g) AS g FROM parts WHERE ST_Area(g) > 0.05
+      )
+      SELECT json_build_object(
+        'rings', (
+          SELECT json_agg(ring)
+          FROM (
+            SELECT json_array_elements(
+              json_array_elements(
+                ST_AsGeoJSON(ST_Multi(ST_SimplifyPreserveTopology(ST_Buffer(g, 0.0), 0.05)), 2)::json -> 'coordinates'
+              )
+            ) AS ring
+          ) rings
+        )
+      ) AS row
+      FROM kept`,
+  },
+  {
     file: "species.json",
     sql: `
       SELECT json_build_object(

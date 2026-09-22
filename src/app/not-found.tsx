@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NotFound(): ReactElement {
   const counties: readonly County[] = getCounties().slice(0, 12);
   return (
-    <>
+    <div className="wrap pb-16">
       <h1 className="mt-10 text-4xl">That page is not here</h1>
       <div className="prose-block mt-4">
         <p>
@@ -53,6 +53,6 @@ export default function NotFound(): ReactElement {
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 }

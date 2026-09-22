@@ -9,7 +9,7 @@ type TemplateCase = {
 };
 
 const TEMPLATES: readonly TemplateCase[] = [
-  { name: "home", path: "/", heading: /Michigan hunting and fishing/i },
+  { name: "home", path: "/", heading: /Every Michigan county/i },
   { name: "about", path: "/about/", heading: /About Michigan Outdoors Report/i },
   { name: "methodology", path: "/methodology/", heading: /Methodology/i },
   { name: "data", path: "/data/", heading: /Data downloads/i },

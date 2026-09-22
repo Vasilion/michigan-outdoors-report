@@ -4,7 +4,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, LastUpdated } from "@/components/layout";
 import { DataTable } from "@/components/data";
-import type { TableColumn, TableRow } from "@/components/data";
+import type { TableColumn, TableRowData } from "@/components/data";
 import { breadcrumbSchema } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
 import { getMeta } from "@/lib/data/snapshot";
@@ -23,7 +23,7 @@ const SOURCE_COLUMNS: readonly TableColumn[] = [
   { key: "cadence", label: "Update cadence" },
 ];
 
-const SOURCE_ROWS: readonly TableRow[] = [
+const SOURCE_ROWS: readonly TableRowData[] = [
   {
     source: "Michigan DNR Open Data (ArcGIS)",
     feeds: "Public land boundaries, boating and fishing access sites",
@@ -59,7 +59,7 @@ const SOURCE_ROWS: readonly TableRow[] = [
 export default function MethodologyPage(): ReactElement {
   const updatedAt: string = getMeta().generatedAt.slice(0, 10);
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },
@@ -131,6 +131,6 @@ export default function MethodologyPage(): ReactElement {
           ]),
         ]}
       />
-    </>
+    </div>
   );
 }

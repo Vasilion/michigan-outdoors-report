@@ -3,16 +3,18 @@ import { use } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
+import { HelpCircle, Map as MapIcon, Ruler, TreePine } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { Badge } from "@/components/ui/badge";
 import {
   AnswerSummary,
   Breadcrumbs,
   LastUpdated,
-  QuickFacts,
   Section,
   SourceNote,
 } from "@/components/layout";
-import type { QuickFact } from "@/components/layout";
+import { Stat, StatGrid } from "@/components/ui/stat";
+import type { StatProps } from "@/components/ui/stat";
 import { FaqBlock } from "@/components/data";
 import type { FaqItem } from "@/components/data";
 import { breadcrumbSchema, faqSchema, placeSchema } from "@/lib/schema/builders";
@@ -126,14 +128,17 @@ export default function PublicLandPage({ params }: UnitPageProps): ReactElement 
     { name: view.land.name, path: `/public-land/${view.land.slug}/` },
   ];
 
-  const facts: QuickFact[] = [
-    { label: "Type", value: view.land.typeLabel },
+  const facts: StatProps[] = [
+    { label: "Type", value: view.land.typeLabel, icon: TreePine },
     {
       label: "Acres",
+      icon: Ruler,
+      tone: "accent",
       value: view.land.acres === null ? "Not published" : formatCount(view.land.acres),
     },
     {
       label: "Counties",
+      icon: MapIcon,
       value:
         view.counties.length === 0
           ? "Not mapped"
@@ -169,19 +174,36 @@ export default function PublicLandPage({ params }: UnitPageProps): ReactElement 
   }
 
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs items={[...crumbs]} />
-      <h1 className="text-4xl">{view.land.name}</h1>
+      <p className="eyebrow">{view.land.typeLabel}</p>
+      <h1 className="mt-2 text-4xl md:text-5xl">{view.land.name}</h1>
+      {view.land.huntingStatus === null ? null : (
+        <div className="mt-3">
+          <Badge
+            variant={
+              view.land.huntingStatus.toLowerCase().startsWith("open") ? "open" : "closed"
+            }
+          >
+            Hunting and trapping: {view.land.huntingStatus}
+          </Badge>
+        </div>
+      )}
       <div className="mt-6">
         <AnswerSummary text={summaryText(view)} />
       </div>
       <div className="mt-8">
-        <QuickFacts facts={facts} />
+        <StatGrid>
+          {facts.map((fact: StatProps): ReactElement => (
+            <Stat key={fact.label} {...fact} />
+          ))}
+        </StatGrid>
       </div>
 
       {view.counties.length === 0 ? null : (
         <Section
           title="Counties"
+          icon={MapIcon}
           description="Harvest data, season dates and other public land nearby."
         >
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -219,6 +241,7 @@ export default function PublicLandPage({ params }: UnitPageProps): ReactElement 
 
       <Section
         title="Common questions"
+        icon={HelpCircle}
         description="Answers drawn from the data on this page."
       >
         <FaqBlock items={faqs} />
@@ -246,6 +269,6 @@ export default function PublicLandPage({ params }: UnitPageProps): ReactElement 
           faqSchema(faqs),
         ]}
       />
-    </>
+    </div>
   );
 }

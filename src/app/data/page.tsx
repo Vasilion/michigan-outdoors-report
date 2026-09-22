@@ -21,7 +21,7 @@ export const metadata: Metadata = buildMetadata({
 export default function DataPage(): ReactElement {
   const updatedAt: string = getMeta().generatedAt.slice(0, 10);
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },
@@ -48,7 +48,7 @@ export default function DataPage(): ReactElement {
         {DOWNLOADS.map((spec: DownloadSpec): ReactElement => {
           const rowCount: number = spec.rows().length;
           return (
-            <div key={spec.key} className="card">
+            <div key={spec.key} className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4">
               <h2 className="text-xl">{spec.label}</h2>
               <p className="mt-2 text-bark-600">{spec.description}</p>
               <p className="mt-2 text-sm text-bark-500">
@@ -89,6 +89,6 @@ export default function DataPage(): ReactElement {
           ),
         ]}
       />
-    </>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ import {
   SourceNote,
 } from "@/components/layout";
 import { DataTable, FaqBlock } from "@/components/data";
-import type { FaqItem, TableColumn, TableRow } from "@/components/data";
+import type { FaqItem, TableColumn, TableRowData } from "@/components/data";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema/builders";
 import type { Crumb } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
@@ -139,13 +139,15 @@ export default function SeasonSpeciesPage({ params }: SeasonPageProps): ReactEle
     { name: view.species.name, path: `/seasons/${view.species.slug}/` },
   ];
 
-  const rows: readonly TableRow[] = view.seasons.map((season: Season): TableRow => ({
-    season: season.name,
-    zone: season.zone,
-    opens: formatLongDate(season.startDate),
-    closes: formatLongDate(season.endDate),
-    status: statusLabel(seasonStatus(season, view.today)),
-  }));
+  const rows: readonly TableRowData[] = view.seasons.map(
+    (season: Season): TableRowData => ({
+      season: season.name,
+      zone: season.zone,
+      opens: formatLongDate(season.startDate),
+      closes: formatLongDate(season.endDate),
+      status: statusLabel(seasonStatus(season, view.today)),
+    }),
+  );
 
   const firearm: Season | undefined = view.seasons.find(
     (season: Season): boolean => season.name === "Regular firearm",
@@ -173,7 +175,7 @@ export default function SeasonSpeciesPage({ params }: SeasonPageProps): ReactEle
   });
 
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs items={[...crumbs]} />
       <h1 className="text-4xl">
         Michigan {view.species.name.toLowerCase()} season dates
@@ -198,7 +200,10 @@ export default function SeasonSpeciesPage({ params }: SeasonPageProps): ReactEle
           {view.seasons
             .filter((season: Season): boolean => season.notes !== null)
             .map((season: Season): ReactElement => (
-              <li key={`${season.name}-${season.zone}`} className="card">
+              <li
+                key={`${season.name}-${season.zone}`}
+                className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
+              >
                 <p className="font-display text-lg text-pine-800">{season.name}</p>
                 <p className="mt-2 text-bark-600">{season.notes}</p>
               </li>
@@ -254,6 +259,6 @@ export default function SeasonSpeciesPage({ params }: SeasonPageProps): ReactEle
       </div>
 
       <JsonLd schemas={[breadcrumbSchema(crumbs), faqSchema(faqs)]} />
-    </>
+    </div>
   );
 }

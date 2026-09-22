@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function SearchPage(): ReactElement {
   return (
-    <>
+    <div className="wrap pb-16">
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },
@@ -41,6 +41,6 @@ export default function SearchPage(): ReactElement {
           ]),
         ]}
       />
-    </>
+    </div>
   );
 }

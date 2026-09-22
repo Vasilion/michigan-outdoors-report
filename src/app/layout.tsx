@@ -3,6 +3,7 @@ import type { ReactElement, ReactNode } from "react";
 import "./globals.css";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter, SiteHeader } from "@/components/layout";
+import { Analytics } from "@/components/analytics";
 import { organizationSchema, websiteSchema } from "@/lib/schema/builders";
 import { SITE } from "@/lib/site";
 
@@ -28,11 +29,12 @@ export default function RootLayout({ children }: RootLayoutProps): ReactElement 
           Skip to content
         </a>
         <SiteHeader />
-        <main id="main" className="wrap flex-1 pb-12">
+        <main id="main" className="flex-1">
           {children}
         </main>
         <SiteFooter />
         <JsonLd schemas={[organizationSchema(), websiteSchema()]} />
+        <Analytics />
       </body>
     </html>
   );
