@@ -225,6 +225,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Wild Turkey",
+    "slug": "turkey",
+    "kind": "game",
+    "pluralName": "turkeys",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/turkey",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Wild_turkey",
+    "updatedAt": "2026-09-22"
+  },
+  {
     "name": "Walleye",
     "slug": "walleye",
     "kind": "fish",

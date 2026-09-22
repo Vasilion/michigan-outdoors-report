@@ -2,8 +2,8 @@ import type { HarvestApiResponse } from "./fetch";
 
 export type RawHarvestRow = {
   readonly countyName: string;
-  readonly antlered: number;
-  readonly antlerless: number;
+  readonly antlered: number | null;
+  readonly antlerless: number | null;
   readonly total: number;
   readonly seasonYear: number;
 };
@@ -27,8 +27,8 @@ export function parseHarvestResponse(
     }
     rows.push({
       countyName: row.AreaUnit.trim(),
-      antlered: row.AntleredCount,
-      antlerless: row.AntlerlessCount,
+      antlered: row.AntleredCount ?? null,
+      antlerless: row.AntlerlessCount ?? null,
       total: row.TotalCount,
       seasonYear: row.LicenseYear,
     });
@@ -49,8 +49,14 @@ export function collapseDuplicates(
     }
     merged.set(key, {
       ...existing,
-      antlered: existing.antlered + row.antlered,
-      antlerless: existing.antlerless + row.antlerless,
+      antlered:
+        existing.antlered === null && row.antlered === null
+          ? null
+          : (existing.antlered ?? 0) + (row.antlered ?? 0),
+      antlerless:
+        existing.antlerless === null && row.antlerless === null
+          ? null
+          : (existing.antlerless ?? 0) + (row.antlerless ?? 0),
       total: existing.total + row.total,
     });
   }

@@ -17,7 +17,13 @@
     {
       "importer": "curated",
       "finishedAt": "2026-09-22",
-      "rowsUpserted": 10,
+      "rowsUpserted": 11,
+      "status": "ok"
+    },
+    {
+      "importer": "harvest",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 498,
       "status": "ok"
     },
     {

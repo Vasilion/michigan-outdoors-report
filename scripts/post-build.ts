@@ -32,6 +32,7 @@ function main(): void {
   requireFile("robots.txt");
   requireFile("llms.txt");
   requireFile("sitemap.xml");
+  requireFile("og/default.png");
 
   const sitemapXml: string = readFileSync(join(OUT_DIR, "sitemap.xml"), "utf8");
   const children: string[] = [

@@ -135,6 +135,7 @@ export function generateMetadata({ params }: FishPageProps): Promise<Metadata> {
       description: `${formatCount(totalFish(view.events))} ${view.species.name.toLowerCase()} stocked across ${view.countiesStocked} Michigan counties since 2016, with the waters that got the most fish.`,
       path: `/fishing/${view.species.slug}/`,
       indexable: true,
+      ogImagePath: `/og/species-${view.species.slug}.png`,
       dateModified: view.dataDate,
     });
   });

@@ -143,6 +143,7 @@ export function generateMetadata({ params }: CountyPageProps): Promise<Metadata>
       description,
       path: `/county/${view.county.slug}/`,
       indexable: true,
+      ogImagePath: `/og/county-${view.county.slug}.png`,
       dateModified: view.dataDate,
     });
   });
@@ -276,7 +277,8 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
         <ul className="grid gap-4 md:grid-cols-2">
           {view.gameSpecies.map((species: Species): ReactElement => {
             const series: HarvestSeries | undefined = view.harvest.get(species.slug);
-            const seriesLatest: HarvestSnapshot | null = series?.latestFinal ?? null;
+            const seriesLatest: HarvestSnapshot | null =
+              series?.latestFinal ?? series?.inProgress ?? null;
             if (seriesLatest === null) {
               return (
                 <li
@@ -284,12 +286,13 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
                   className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
                 >
                   <h3 className="text-lg">{species.name}</h3>
-                  <p className="mt-2 text-bark-600">
+                  <p className="text-bark-600 mt-2">
                     No reported harvest published for this county yet.
                   </p>
                 </li>
               );
             }
+            const hasCountyPage: boolean = (series?.finalRows.length ?? 0) >= 2;
             return (
               <li
                 key={species.slug}
@@ -297,17 +300,24 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
               >
                 <h3 className="text-lg">
                   <Link
-                    href={`/county/${view.county.slug}/${species.slug}-hunting/`}
+                    href={
+                      hasCountyPage
+                        ? `/county/${view.county.slug}/${species.slug}-hunting/`
+                        : `/hunting/${species.slug}/`
+                    }
                     prefetch={false}
                   >
-                    {species.name} hunting in {view.county.name} County
+                    {hasCountyPage
+                      ? `${species.name} hunting in ${view.county.name} County`
+                      : `${species.name} harvest statewide`}
                   </Link>
                 </h3>
-                <p className="mt-2 font-display text-3xl text-pine-800">
+                <p className="font-display text-pine-800 mt-2 text-3xl">
                   {formatCount(seriesLatest.total)}
                 </p>
-                <p className="text-sm text-bark-500">
-                  reported in the {seriesLatest.seasonYear} season
+                <p className="text-bark-500 text-sm">
+                  reported in {view.county.name} County, {seriesLatest.seasonYear} season
+                  {seriesLatest.isFinal ? "" : " so far"}
                 </p>
               </li>
             );

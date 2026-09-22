@@ -151,6 +151,7 @@ export function fishingMetadata(params: FishingParams): Metadata {
     description: `${formatCount(totalFish(view.events))} ${view.species.name.toLowerCase()} stocked in ${view.waters.length} ${view.county.name} County waters since 2016, with dates, counts and access.`,
     path: view.path,
     indexable: true,
+    ogImagePath: `/og/county-${view.county.slug}.png`,
     dateModified: view.dataDate,
   });
 }

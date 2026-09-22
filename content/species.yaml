@@ -4,3 +4,9 @@
   kind: game
   officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/deer
   sameAsUrl: https://en.wikipedia.org/wiki/White-tailed_deer
+- slug: turkey
+  name: Wild Turkey
+  pluralName: turkeys
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/turkey
+  sameAsUrl: https://en.wikipedia.org/wiki/Wild_turkey

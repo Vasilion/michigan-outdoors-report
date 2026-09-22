@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "tsx scripts/generate-static-assets.ts && next dev",
-    "build": "tsx scripts/generate-static-assets.ts && next build && tsx scripts/post-build.ts",
+    "build": "tsx scripts/generate-static-assets.ts && tsx scripts/generate-og-images.tsx && next build && tsx scripts/post-build.ts",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --max-warnings=0 && tsx scripts/check-no-comments.ts",
@@ -19,6 +19,7 @@
     "test:e2e": "playwright test",
     "check:seo": "tsx scripts/seo-check.ts",
     "check:links": "tsx scripts/link-check.ts",
+    "og": "tsx scripts/generate-og-images.tsx",
     "db:migrate": "tsx scripts/migrate.ts",
     "db:snapshot": "tsx scripts/export-snapshot.ts",
     "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm check:seo && pnpm check:links"
@@ -38,6 +39,7 @@
     "@axe-core/playwright": "4.13.0",
     "@lhci/cli": "0.15.1",
     "@playwright/test": "1.63.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "22.19.4",
     "@types/pg": "8.23.1",
@@ -53,6 +55,7 @@
     "eslint-config-next": "16.3.6",
     "pg": "8.23.0",
     "prettier": "3.9.8",
+    "satori": "^0.33.5",
     "serve": "^14.2.6",
     "tailwindcss": "4.3.3",
     "tinyglobby": "0.2.17",

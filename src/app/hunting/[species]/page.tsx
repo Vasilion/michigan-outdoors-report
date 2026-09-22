@@ -56,14 +56,20 @@ type CountyTotal = {
 type HubView = {
   readonly species: Species;
   readonly seasonYears: readonly number[];
+  readonly finalYears: readonly number[];
   readonly statewideByYear: ReadonlyMap<number, number>;
   readonly counties: readonly CountyTotal[];
   readonly latestYear: number;
+  readonly latestIsFinal: boolean;
   readonly latestTotal: number;
   readonly priorTotal: number | null;
   readonly seasons: readonly Season[];
   readonly dataDate: string;
 };
+
+function latestRow(series: HarvestSeries): HarvestSnapshot | null {
+  return series.latestFinal ?? series.inProgress;
+}
 
 export function generateStaticParams(): SpeciesParams[] {
   return getSpecies()
@@ -93,6 +99,9 @@ function buildHubView(slug: string): HubView | null {
   if (counties.length === 0) {
     return null;
   }
+  const allYears: number[] = [...statewide.keys()].sort(
+    (a: number, b: number): number => a - b,
+  );
   const finalYears: number[] = [
     ...new Set(
       counties.flatMap((entry: CountyTotal): number[] =>
@@ -100,17 +109,21 @@ function buildHubView(slug: string): HubView | null {
       ),
     ),
   ].sort((a: number, b: number): number => a - b);
-  const latestYear: number = finalYears[finalYears.length - 1] as number;
-  const priorYear: number | undefined = finalYears[finalYears.length - 2];
+  const latestFinalYear: number | undefined = finalYears[finalYears.length - 1];
+  const latestYear: number = latestFinalYear ?? (allYears[allYears.length - 1] as number);
+  const priorYear: number | undefined =
+    latestFinalYear === undefined ? undefined : finalYears[finalYears.length - 2];
   return {
     species,
-    seasonYears: finalYears,
+    seasonYears: allYears,
+    finalYears,
     statewideByYear: statewide,
     counties: [...counties].sort(
       (a: CountyTotal, b: CountyTotal): number =>
-        (b.series.latestFinal?.total ?? 0) - (a.series.latestFinal?.total ?? 0),
+        (latestRow(b.series)?.total ?? 0) - (latestRow(a.series)?.total ?? 0),
     ),
     latestYear,
+    latestIsFinal: latestFinalYear !== undefined,
     latestTotal: statewide.get(latestYear) ?? 0,
     priorTotal: priorYear === undefined ? null : (statewide.get(priorYear) ?? null),
     seasons: getSeasons().filter(
@@ -127,7 +140,10 @@ function summaryText(view: HubView): string {
     change === null
       ? ""
       : ` That is ${change.text} the prior season total of ${formatCount(view.priorTotal as number)}.`;
-  return `Michigan hunters reported ${formatCount(view.latestTotal)} ${view.species.pluralName} across all ${formatCount(view.counties.length)} counties during the ${view.latestYear} season.${comparison} Figures come from Michigan DNR mandatory harvest reporting, read ${formatLongDate(view.dataDate)}.`;
+  const qualifier: string = view.latestIsFinal
+    ? `the ${view.latestYear} season`
+    : `the ${view.latestYear} season so far`;
+  return `Michigan hunters reported ${formatCount(view.latestTotal)} ${view.species.pluralName} across all ${formatCount(view.counties.length)} counties during ${qualifier}.${comparison} Figures come from Michigan DNR mandatory harvest reporting, read ${formatLongDate(view.dataDate)}.`;
 }
 
 export function generateMetadata({ params }: SpeciesPageProps): Promise<Metadata> {
@@ -146,6 +162,7 @@ export function generateMetadata({ params }: SpeciesPageProps): Promise<Metadata
       description: `${formatCount(view.latestTotal)} ${view.species.pluralName} reported statewide in ${view.latestYear}, broken down across all ${view.counties.length} Michigan counties with season dates.`,
       path: `/hunting/${view.species.slug}/`,
       indexable: true,
+      ogImagePath: `/og/species-${view.species.slug}.png`,
       dateModified: view.dataDate,
     });
   });
@@ -171,10 +188,16 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
     { name: `${view.species.name} hunting`, path: `/hunting/${view.species.slug}/` },
   ];
 
+  const countyHref = (entry: CountyTotal): string =>
+    entry.series.finalRows.length >= 2
+      ? `/county/${entry.county.slug}/${view.species.slug}-hunting/`
+      : `/county/${entry.county.slug}/`;
+
   const points: readonly TrendPoint[] = view.seasonYears.map(
     (year: number): TrendPoint => ({
       label: String(year),
       value: view.statewideByYear.get(year) ?? 0,
+      muted: !view.finalYears.includes(year),
     }),
   );
 
@@ -195,7 +218,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
   const mapNames: Map<string, string> = new Map<string, string>();
   for (const entry of view.counties) {
     mapNames.set(entry.county.slug, entry.county.name);
-    const latestTotal: number | undefined = entry.series.latestFinal?.total;
+    const latestTotal: number | undefined = latestRow(entry.series)?.total;
     if (latestTotal !== undefined) {
       mapValues.set(entry.county.slug, latestTotal);
     }
@@ -227,7 +250,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
       answer:
         top === undefined
           ? "No county data is published yet."
-          : `${top.county.name} County reported the most ${view.species.pluralName} in ${view.latestYear}, at ${formatCount(top.series.latestFinal?.total ?? 0)}.`,
+          : `${top.county.name} County reported the most ${view.species.pluralName} in ${view.latestYear}, at ${formatCount(latestRow(top.series)?.total ?? 0)}.`,
     },
     {
       question: `Is reporting a harvested deer required in Michigan?`,
@@ -277,16 +300,19 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
               unitLabel={`${view.species.pluralName} reported`}
               values={mapValues}
               names={mapNames}
-              hrefFor={(slug: string): string =>
-                `/county/${slug}/${view.species.slug}-hunting/`
-              }
+              hrefFor={(slug: string): string => {
+                const entry: CountyTotal | undefined = view.counties.find(
+                  (candidate: CountyTotal): boolean => candidate.county.slug === slug,
+                );
+                return entry === undefined ? `/county/${slug}/` : countyHref(entry);
+              }}
             />
           </CardContent>
         </Card>
       </Section>
 
       <Section
-        title={`Every county, ${view.latestYear} season`}
+        title={`Every county, ${view.latestYear} season${view.latestIsFinal ? "" : " so far"}`}
         icon={Target}
         description="Sorted by reported total. Each county links to its full harvest history."
       >
@@ -305,10 +331,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
         <ul className="grid grid-cols-2 gap-2 md:grid-cols-4">
           {view.counties.map((entry: CountyTotal): ReactElement => (
             <li key={entry.county.slug}>
-              <Link
-                href={`/county/${entry.county.slug}/${view.species.slug}-hunting/`}
-                prefetch={false}
-              >
+              <Link href={countyHref(entry)} prefetch={false}>
                 {entry.county.name}
               </Link>
             </li>
@@ -385,7 +408,7 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
             `Michigan county ${view.species.name.toLowerCase()} hunting pages`,
             view.counties.map((entry: CountyTotal) => ({
               name: `${entry.county.name} County`,
-              path: `/county/${entry.county.slug}/${view.species.slug}-hunting/`,
+              path: countyHref(entry),
             })),
           ),
           faqSchema(faqs),

@@ -104,6 +104,7 @@ export function generateMetadata({ params }: LakePageProps): Promise<Metadata> {
       description: `${view.lake.name} is ${acres} in ${view.county.name} County, Michigan. ${detail}`,
       path: `/lake/${view.lake.countySlug}/${view.lake.slug}/`,
       indexable: true,
+      ogImagePath: `/og/county-${view.lake.countySlug}.png`,
       dateModified: view.lastUpdated,
     });
   });

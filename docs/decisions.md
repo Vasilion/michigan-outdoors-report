@@ -195,3 +195,38 @@ practices point. The chart now sizes with `className="h-auto w-full"` and a view
 - Hunter Access Program parcels are imported by neither name nor page. They are private land
   open to hunting and do not belong in a "public land" count without a clear label.
 - OG images, IndexNow and Search Console submission are Phase 3 and need the live domain.
+
+## 2026-09-22 - Phase 3 slice: turkey, OG images
+
+### Turkey publishes as a statewide hub only, for now
+
+`POST /HarvestReportSummary/TurkeyHarvestReportSummary` on the eLicense host takes the same
+shape as the deer endpoint (`LicenseYear`, `AreaId=1`) and returns county rows without the
+antlered and antlerless split. Only the 2026 season is published, so the two-season gate keeps
+all 83 county turkey pages unbuilt while the statewide hub, which has a real 83-county
+breakdown of 18,908 birds, publishes. When the 2027 season closes, 83 county pages appear with
+no code change.
+
+The hub now handles a species whose only season is still in progress: the trend chart mutes
+the open season, the summary says "so far", and county tables fall back to the in-progress row.
+
+### Links respect the gate
+
+A hub that lists every county has to know which county pages actually exist, or the link
+checker fails with one broken link per county. Both hubs and the choropleth now fall back to
+the county hub for a county whose species page is gated.
+
+### Open Graph images are generated at build time
+
+`scripts/generate-og-images.tsx` renders 113 cards with satori and resvg: one per county with
+that county highlighted on a Michigan silhouette and its latest deer figure, one per species
+hub, and a default. They land in `public/og/` (gitignored, about 5MB) and are wired through
+`buildMetadata`, which previously pointed every page at a `/og-default.png` that did not exist.
+
+Satori cannot parse the variable-axis TTFs that Google Fonts serves by default; it needs static
+instances. The three woff files in `assets/fonts/` are build-time only and never shipped to a
+browser.
+
+Per-page cards for 936 lakes and 583 county-species pages were deliberately not generated: at
+roughly 45KB each that is another 70MB of deploy for pages that are rarely shared. They inherit
+their county card.

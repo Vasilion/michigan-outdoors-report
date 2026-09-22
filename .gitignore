@@ -17,4 +17,5 @@ playwright-report
 public/sitemap*.xml
 public/llms.txt
 public/downloads/
+public/og/
 reports/

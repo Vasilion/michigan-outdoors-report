@@ -72,27 +72,31 @@ tests/e2e/       Playwright against out/
 
 ## Phase status
 
-**Phase 0 (foundation) — done.** Tooling, lint rules, CI, migrations, base layout and design
-system, sitemap/robots/llms.txt generation, schema builders, quality gate framework, data
-snapshot layer and checkers.
+**Phase 0 (foundation)** and **Phase 1 (deer season)** are done.
 
-**Phase 1 (deer season) — done.** 486 pages built, 482 indexable:
+**Phase 2 (lakes and ice) is done.** 2,044 pages, 2,040 indexable:
 
-| Template           | Pages |
-| ------------------ | ----- |
-| County hub         | 83    |
-| County x deer      | 83    |
-| Public land unit   | 305   |
-| Statewide deer hub | 1     |
-| Season pages       | 2     |
-| Editorial          | 8     |
+| Template                            | Pages                             |
+| ----------------------------------- | --------------------------------- |
+| County hub                          | 83                                |
+| County x deer                       | 83                                |
+| County x fish species               | 583                               |
+| Lake                                | 936 of 5,207 (the rest are gated) |
+| Public land unit                    | 305                               |
+| Species hub (deer, turkey, 27 fish) | 29                                |
+| Season pages                        | 2                                 |
+| Editorial                           | 8                                 |
 
-Importers: `counties` (ArcGIS, quarterly), `public-lands` (ArcGIS, monthly), `harvest`
-(DNR eLicense, daily), `curated` (species and season YAML). Four complete deer seasons
-(2022-2025) plus the live 2026 count, every county.
+**Phase 3 is partly done:** wild turkey imports and publishes as a statewide hub, and Open
+Graph cards are generated per county and per species hub at build time.
 
-Not yet done: directory listings (must be seeded by hand from public sources), lakes and
-stocking (Phase 2), OG images and IndexNow (Phase 3, needs the live domain).
+Importers: `counties`, `public-lands`, `lakes`, `access-sites` (ArcGIS), `harvest` (deer and
+turkey, DNR eLicense), `stocking` (DNR fish stocking database), `curated` (species and season
+YAML).
+
+Not yet done: rivers and trout streams, the directory (listings must be seeded by hand from
+public sources), the newsletter and featured-listing flows (both need accounts), IndexNow and
+Search Console submission (both need the live domain).
 
 Neon, Amplify and the domain are still unprovisioned. Importers run against a local Postgres,
 see `docs/local-database.md`.

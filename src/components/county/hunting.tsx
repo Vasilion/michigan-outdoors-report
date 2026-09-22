@@ -155,6 +155,7 @@ export function huntingMetadata(resolved: HuntParams): Metadata {
       description: `${formatCount(latest.total)} deer reported in ${view.county.county.name} County for the ${latest.seasonYear} season, with ${view.series.finalRows.length}-season trends, public land and season dates.`,
       path: view.path,
       indexable: true,
+      ogImagePath: `/og/county-${view.county.county.slug}.png`,
       dateModified: latest.snapshotDate,
     });
   }

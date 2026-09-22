@@ -28,7 +28,7 @@ export function buildMetadata(seo: PageSeo): Metadata {
   const canonical: string = absoluteUrl(seo.path);
   const title: string = truncateAtWord(seo.title, TITLE_HARD_MAX);
   const description: string = truncateAtWord(seo.description, DESCRIPTION_MAX);
-  const images: string[] = [absoluteUrl(seo.ogImagePath ?? "/og-default.png")];
+  const images: string[] = [absoluteUrl(seo.ogImagePath ?? "/og/default.png")];
   return {
     title,
     description,
