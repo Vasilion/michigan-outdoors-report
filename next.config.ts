@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   turbopack: { root: import.meta.dirname },
   typedRoutes: false,
+  experimental: { inlineCss: true },
 };
 
 export default nextConfig;

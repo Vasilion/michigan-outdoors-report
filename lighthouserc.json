@@ -1,8 +1,16 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./out",
-      "numberOfRuns": 1,
+      "startServerCommand": "pnpm exec serve out -l 4322 --no-clipboard",
+      "startServerReadyPattern": "Accepting connections",
+      "url": [
+        "http://localhost:4322/",
+        "http://localhost:4322/about/",
+        "http://localhost:4322/methodology/",
+        "http://localhost:4322/data/",
+        "http://localhost:4322/seasons/"
+      ],
+      "numberOfRuns": 3,
       "settings": {
         "skipAudits": ["canonical", "is-crawlable", "uses-http2"]
       }
@@ -13,8 +21,10 @@
         "categories:seo": ["error", { "minScore": 1 }],
         "categories:accessibility": ["error", { "minScore": 0.95 }],
         "categories:best-practices": ["error", { "minScore": 0.95 }],
-        "largest-contentful-paint": ["error", { "maxNumericValue": 2000 }],
-        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.05 }]
+        "first-contentful-paint": ["error", { "maxNumericValue": 1200 }],
+        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.05 }],
+        "total-blocking-time": ["error", { "maxNumericValue": 200 }]
       }
     },
     "upload": { "target": "filesystem", "outputDir": ".lighthouseci" }
