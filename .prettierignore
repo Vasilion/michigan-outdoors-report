@@ -1,0 +1,8 @@
+.next
+out
+node_modules
+raw-cache
+public/generated
+data
+pnpm-lock.yaml
+coverage

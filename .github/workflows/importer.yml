@@ -1,0 +1,103 @@
+name: Importer
+
+on:
+  workflow_dispatch:
+    inputs:
+      importer:
+        description: Importer to run (matches a directory under importers/)
+        required: true
+        type: string
+
+concurrency:
+  group: importer
+  cancel-in-progress: false
+
+env:
+  SITE_URL: https://michiganoutdoorsreport.com
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Run importer
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          IMPORTER_CONTACT_EMAIL: ${{ secrets.IMPORTER_CONTACT_EMAIL }}
+        run: pnpm exec tsx importers/${{ inputs.importer }}/run.ts
+
+      - name: Export snapshot
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: pnpm db:snapshot
+
+      - name: Data integrity gate
+        run: pnpm exec tsx scripts/data-integrity.ts
+
+      - name: Commit snapshot when it changed
+        id: commit
+        run: |
+          if git diff --quiet -- data; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "snapshot unchanged, nothing to commit"
+          else
+            git config user.name "michigan-outdoors-bot"
+            git config user.email "bot@michiganoutdoorsreport.com"
+            git add data
+            git commit -m "data: ${{ inputs.importer }} snapshot $(date -u +%Y-%m-%d)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open an issue when the importer fails
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Importer failed: ${{ inputs.importer }}`;
+            const body = [
+              `Importer \`${{ inputs.importer }}\` failed on run ${context.runId}.`,
+              '',
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '',
+              'The snapshot was not committed, so the live site still serves the last good data.',
+            ].join('\n');
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'importer-failure',
+            });
+            const match = existing.data.find((issue) => issue.title === title);
+            if (match) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: match.number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['importer-failure'],
+              });
+            }
