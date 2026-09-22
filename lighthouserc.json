@@ -13,11 +13,18 @@
         "http://localhost:4322/lake/roscommon/higgins-lake/",
         "http://localhost:4322/public-land/allegan-state-game-area/",
         "http://localhost:4322/seasons/deer/",
-        "http://localhost:4322/data/"
+        "http://localhost:4322/data/",
+        "http://localhost:4322/hunting/",
+        "http://localhost:4322/fishing/",
+        "http://localhost:4322/seasons/ruffed-grouse/"
       ],
       "numberOfRuns": 3,
       "settings": {
-        "skipAudits": ["canonical", "is-crawlable", "uses-http2"]
+        "skipAudits": [
+          "canonical",
+          "is-crawlable",
+          "uses-http2"
+        ]
       }
     },
     "assert": {

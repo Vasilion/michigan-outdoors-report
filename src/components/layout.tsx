@@ -13,17 +13,18 @@ export type NavItem = {
 
 const PRIMARY_NAV: readonly NavItem[] = [
   { label: "Counties", href: "/#counties" },
-  { label: "Deer harvest", href: "/hunting/deer/" },
+  { label: "Hunting", href: "/hunting/" },
+  { label: "Fishing", href: "/fishing/" },
   { label: "Seasons", href: "/seasons/" },
   { label: "Data", href: "/data/" },
-  { label: "Methodology", href: "/methodology/" },
 ];
 
 const FOOTER_NAV: readonly NavItem[] = [
   { label: "About", href: "/about/" },
   { label: "Methodology", href: "/methodology/" },
   { label: "Data downloads", href: "/data/" },
-  { label: "Deer harvest", href: "/hunting/deer/" },
+  { label: "Hunting", href: "/hunting/" },
+  { label: "Fishing", href: "/fishing/" },
   { label: "Season dates", href: "/seasons/" },
   { label: "Advertise", href: "/advertise/" },
   { label: "Contact", href: "/contact/" },

@@ -10,3 +10,57 @@
   kind: game
   officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/turkey
   sameAsUrl: https://en.wikipedia.org/wiki/Wild_turkey
+- slug: cottontail-rabbit
+  name: Cottontail Rabbit
+  pluralName: cottontail rabbits
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Eastern_cottontail
+- slug: snowshoe-hare
+  name: Snowshoe Hare
+  pluralName: snowshoe hares
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Snowshoe_hare
+- slug: squirrel
+  name: Fox and Gray Squirrel
+  pluralName: squirrels
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Fox_squirrel
+- slug: ruffed-grouse
+  name: Ruffed Grouse
+  pluralName: ruffed grouse
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Ruffed_grouse
+- slug: woodcock
+  name: American Woodcock
+  pluralName: woodcock
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/American_woodcock
+- slug: ring-necked-pheasant
+  name: Ring-necked Pheasant
+  pluralName: pheasants
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Common_pheasant
+- slug: bobwhite-quail
+  name: Bobwhite Quail
+  pluralName: bobwhite quail
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Northern_bobwhite
+- slug: sharp-tailed-grouse
+  name: Sharp-tailed Grouse
+  pluralName: sharp-tailed grouse
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/Sharp-tailed_grouse
+- slug: crow
+  name: Crow
+  pluralName: crows
+  kind: game
+  officialUrl: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+  sameAsUrl: https://en.wikipedia.org/wiki/American_crow

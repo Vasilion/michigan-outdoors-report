@@ -17,8 +17,13 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema/builders";
 import type { Crumb } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
 import { formatLongDate } from "@/lib/format";
-import { getMeta, getSeasons, getSpecies } from "@/lib/data/snapshot";
-import type { Season, Species } from "@/lib/data/schemas";
+import {
+  getHarvestSnapshots,
+  getMeta,
+  getSeasons,
+  getSpecies,
+} from "@/lib/data/snapshot";
+import type { HarvestSnapshot, Season, Species } from "@/lib/data/schemas";
 import { nextOpeningSeason, seasonStatus } from "@/lib/season";
 import type { SeasonStatus } from "@/lib/season";
 import { SITE } from "@/lib/site";
@@ -33,6 +38,7 @@ export type SeasonPageProps = {
 
 type SeasonView = {
   readonly species: Species;
+  readonly hasHarvestPage: boolean;
   readonly seasons: readonly Season[];
   readonly today: string;
   readonly lastVerified: string;
@@ -62,6 +68,9 @@ function buildSeasonView(slug: string): SeasonView | null {
     .sort();
   return {
     species,
+    hasHarvestPage: getHarvestSnapshots().some(
+      (row: HarvestSnapshot): boolean => row.speciesSlug === slug,
+    ),
     seasons,
     today: getMeta().generatedAt.slice(0, 10),
     lastVerified: verified[verified.length - 1] as string,
@@ -234,8 +243,13 @@ export default function SeasonSpeciesPage({ params }: SeasonPageProps): ReactEle
           </p>
           <p>
             Looking for harvest numbers instead? See the{" "}
-            <Link href={`/hunting/${view.species.slug}/`} prefetch={false}>
-              statewide {view.species.name.toLowerCase()} harvest by county
+            <Link
+              href={view.hasHarvestPage ? `/hunting/${view.species.slug}/` : "/hunting/"}
+              prefetch={false}
+            >
+              {view.hasHarvestPage
+                ? `statewide ${view.species.name.toLowerCase()} harvest by county`
+                : "Michigan hunting, harvest and public land"}
             </Link>
             .
           </p>

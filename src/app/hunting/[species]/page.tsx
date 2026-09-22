@@ -73,7 +73,10 @@ function latestRow(series: HarvestSeries): HarvestSnapshot | null {
 
 export function generateStaticParams(): SpeciesParams[] {
   return getSpecies()
-    .filter((species: Species): boolean => species.kind === "game")
+    .filter(
+      (species: Species): boolean =>
+        species.kind === "game" && buildHubView(species.slug) !== null,
+    )
     .map((species: Species): SpeciesParams => ({ species: species.slug }));
 }
 

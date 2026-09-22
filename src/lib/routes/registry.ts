@@ -56,6 +56,8 @@ export type StaticRouteSpec = {
 
 export const STATIC_ROUTES: readonly StaticRouteSpec[] = [
   { path: "/", template: "home", indexable: true },
+  { path: "/hunting/", template: "species-hub", indexable: true },
+  { path: "/fishing/", template: "species-hub", indexable: true },
   { path: "/about/", template: "editorial", indexable: true },
   { path: "/methodology/", template: "editorial", indexable: true },
   { path: "/data/", template: "editorial", indexable: true },

@@ -1,0 +1,26 @@
+species: ring-necked-pheasant
+source_url: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+source_document: 2026 Michigan Small Game Hunting Regulations Summary, pages 5 and 6
+last_verified: 2026-09-22
+license_year: 2026
+seasons:
+  - name: Ring-necked pheasant
+    zone: Zone 1
+    start_date: 2026-10-10
+    end_date: 2026-10-31
+    notes: Zone 1 pheasant management unit covers all of Menominee County and parts of Delta, Dickinson, Iron and Marquette counties. The rest of Zone 1 is closed. Male pheasants only.
+  - name: Ring-necked pheasant
+    zone: Zone 2
+    start_date: 2026-10-20
+    end_date: 2026-11-14
+    notes: Male pheasants only.
+  - name: Ring-necked pheasant
+    zone: Zone 3
+    start_date: 2026-10-20
+    end_date: 2026-11-14
+    notes: Male pheasants only.
+  - name: December pheasant
+    zone: December pheasant management unit
+    start_date: 2026-12-01
+    end_date: 2027-01-01
+    notes: The December pheasant management unit covers all of Zone 3. Male pheasants only.

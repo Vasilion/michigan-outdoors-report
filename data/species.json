@@ -36,6 +36,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Bobwhite Quail",
+    "slug": "bobwhite-quail",
+    "kind": "game",
+    "pluralName": "bobwhite quail",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Northern_bobwhite",
+    "updatedAt": "2026-09-22"
+  },
+  {
     "name": "Brook Trout",
     "slug": "brook-trout",
     "kind": "fish",
@@ -78,6 +87,24 @@
     "pluralName": "coho salmon",
     "officialUrl": null,
     "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Cottontail Rabbit",
+    "slug": "cottontail-rabbit",
+    "kind": "game",
+    "pluralName": "cottontail rabbits",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Eastern_cottontail",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Crow",
+    "slug": "crow",
+    "kind": "game",
+    "pluralName": "crows",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/American_crow",
     "updatedAt": "2026-09-22"
   },
   {
@@ -198,6 +225,33 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Ring-necked Pheasant",
+    "slug": "ring-necked-pheasant",
+    "kind": "game",
+    "pluralName": "pheasants",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Common_pheasant",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Ruffed Grouse",
+    "slug": "ruffed-grouse",
+    "kind": "game",
+    "pluralName": "ruffed grouse",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Ruffed_grouse",
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Sharp-tailed Grouse",
+    "slug": "sharp-tailed-grouse",
+    "kind": "game",
+    "pluralName": "sharp-tailed grouse",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Sharp-tailed_grouse",
+    "updatedAt": "2026-09-22"
+  },
+  {
     "name": "Smallmouth Bass",
     "slug": "smallmouth-bass",
     "kind": "fish",
@@ -207,12 +261,30 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Snowshoe Hare",
+    "slug": "snowshoe-hare",
+    "kind": "game",
+    "pluralName": "snowshoe hares",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Snowshoe_hare",
+    "updatedAt": "2026-09-22"
+  },
+  {
     "name": "Splake",
     "slug": "splake",
     "kind": "fish",
     "pluralName": "splake",
     "officialUrl": null,
     "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Fox and Gray Squirrel",
+    "slug": "squirrel",
+    "kind": "game",
+    "pluralName": "squirrels",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/Fox_squirrel",
     "updatedAt": "2026-09-22"
   },
   {
@@ -249,6 +321,15 @@
     "pluralName": "white sucker",
     "officialUrl": null,
     "sameAsUrl": null,
+    "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "American Woodcock",
+    "slug": "woodcock",
+    "kind": "game",
+    "pluralName": "woodcock",
+    "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "sameAsUrl": "https://en.wikipedia.org/wiki/American_woodcock",
     "updatedAt": "2026-09-22"
   },
   {

@@ -1,5 +1,45 @@
 [
   {
+    "speciesSlug": "bobwhite-quail",
+    "name": "Bobwhite quail",
+    "zone": "Select southern counties",
+    "startDate": "2026-10-20",
+    "endDate": "2026-11-14",
+    "notes": "Open in Branch, Calhoun, Clinton, Eaton, Genesee, Gratiot, Hillsdale, Huron, Ingham, Ionia, Jackson, Kent, Lapeer, Lenawee, Livingston, Macomb, Monroe, Montcalm, Oakland, Saginaw, St. Clair, St. Joseph, Sanilac, Shiawassee, Tuscola, Washtenaw and Wayne counties only. All other counties are closed.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "cottontail-rabbit",
+    "name": "Cottontail rabbit",
+    "zone": "Statewide",
+    "startDate": "2026-09-15",
+    "endDate": "2027-03-31",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "crow",
+    "name": "Crow, first segment",
+    "zone": "Statewide",
+    "startDate": "2026-08-01",
+    "endDate": "2026-09-30",
+    "notes": "Crows cannot be hunted in state parks or recreation areas between Aug. 1 and Sept. 14.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "crow",
+    "name": "Crow, second segment",
+    "zone": "Statewide",
+    "startDate": "2027-02-01",
+    "endDate": "2027-03-31",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
     "speciesSlug": "deer",
     "name": "Early antlerless firearm",
     "zone": "Lower Peninsula",
@@ -87,6 +127,106 @@
     "endDate": "2027-01-01",
     "notes": "Lower Peninsula DMUs excluding 145 and 245. Open on public and private lands.",
     "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/deer",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "ring-necked-pheasant",
+    "name": "Ring-necked pheasant",
+    "zone": "Zone 1",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-31",
+    "notes": "Zone 1 pheasant management unit covers all of Menominee County and parts of Delta, Dickinson, Iron and Marquette counties. The rest of Zone 1 is closed. Male pheasants only.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "ring-necked-pheasant",
+    "name": "Ring-necked pheasant",
+    "zone": "Zone 2",
+    "startDate": "2026-10-20",
+    "endDate": "2026-11-14",
+    "notes": "Male pheasants only.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "ring-necked-pheasant",
+    "name": "Ring-necked pheasant",
+    "zone": "Zone 3",
+    "startDate": "2026-10-20",
+    "endDate": "2026-11-14",
+    "notes": "Male pheasants only.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "ring-necked-pheasant",
+    "name": "December pheasant",
+    "zone": "December pheasant management unit",
+    "startDate": "2026-12-01",
+    "endDate": "2027-01-01",
+    "notes": "The December pheasant management unit covers all of Zone 3. Male pheasants only.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "ruffed-grouse",
+    "name": "Ruffed grouse, first segment",
+    "zone": "Statewide",
+    "startDate": "2026-09-15",
+    "endDate": "2026-11-14",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "ruffed-grouse",
+    "name": "Ruffed grouse, second segment",
+    "zone": "Statewide",
+    "startDate": "2026-12-01",
+    "endDate": "2027-01-01",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "sharp-tailed-grouse",
+    "name": "Sharp-tailed grouse",
+    "zone": "Zone 1",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-31",
+    "notes": "A sharp-tailed grouse stamp is required.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "snowshoe-hare",
+    "name": "Snowshoe hare",
+    "zone": "Statewide",
+    "startDate": "2026-09-15",
+    "endDate": "2027-03-31",
+    "notes": null,
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "squirrel",
+    "name": "Fox and gray squirrel, black phase included",
+    "zone": "Statewide",
+    "startDate": "2026-09-15",
+    "endDate": "2027-03-31",
+    "notes": "Red squirrels and ground squirrels are open year-round and are not listed here.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
+    "lastVerified": "2026-09-22"
+  },
+  {
+    "speciesSlug": "woodcock",
+    "name": "Woodcock",
+    "zone": "Statewide",
+    "startDate": "2026-09-15",
+    "endDate": "2026-10-29",
+    "notes": "A woodcock stamp and HIP registration are required.",
+    "sourceUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
     "lastVerified": "2026-09-22"
   }
 ]

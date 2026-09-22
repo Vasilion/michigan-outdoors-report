@@ -1,0 +1,16 @@
+species: crow
+source_url: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+source_document: 2026 Michigan Small Game Hunting Regulations Summary, pages 5 and 6
+last_verified: 2026-09-22
+license_year: 2026
+seasons:
+  - name: Crow, first segment
+    zone: Statewide
+    start_date: 2026-08-01
+    end_date: 2026-09-30
+    notes: Crows cannot be hunted in state parks or recreation areas between Aug. 1 and Sept. 14.
+  - name: Crow, second segment
+    zone: Statewide
+    start_date: 2027-02-01
+    end_date: 2027-03-31
+    notes: null

@@ -230,3 +230,39 @@ browser.
 Per-page cards for 936 lakes and 583 county-species pages were deliberately not generated: at
 roughly 45KB each that is another 70MB of deploy for pages that are rarely shared. They inherit
 their county card.
+
+## 2026-09-22 - Hunting and fishing index pages, small game
+
+### The nav was hiding half the site
+
+Primary nav pointed straight at `/hunting/deer/` and had no fishing entry at all, so 936 lake
+pages, 583 county-species fishing pages and 27 fish hubs had no route in from the header. The
+fix is the two index pages that were missing rather than a link to an arbitrary species:
+`/hunting/` and `/fishing/`, both registered as static routes and both carrying real content
+(species tables, stat bands, county lists) rather than being bare link farms.
+
+### Small game: season dates only, and the page says why
+
+Only deer and turkey have mandatory harvest reporting, so only they have a county breakdown.
+Probing the eLicense host for Bear, Elk, SmallGame, Waterfowl, Furbearer, Bobcat and Otter
+endpoints returns 404 for all of them. Small game harvest comes from a mail survey of licence
+holders and the DNR does not publish it by county.
+
+There is a `GrouseWoodcock_DashboardTable` feature service with per-county flush rates, but it
+carries no season year and is built from two to four cooperator submissions per county. That is
+a sample, not a statistic, and publishing it as a county figure would be misleading. Left out.
+
+What the DNR does publish for small game is season dates, so nine species were transcribed from
+the 2026 Small Game Hunting Regulations Summary (pages 5 and 6) into `content/seasons/`:
+cottontail rabbit, snowshoe hare, fox and gray squirrel, ruffed grouse, woodcock, ring-necked
+pheasant, bobwhite quail, sharp-tailed grouse and crow. Year-round species carry no dates and
+are named in prose on `/hunting/` instead of being given fake ranges.
+
+Pheasant and sharp-tailed grouse seasons are scoped to "Zone 1/2/3" and quail to a 27-county
+list. Those zone strings are recorded exactly as the digest prints them and are deliberately
+not mapped onto counties, so they appear on the species season page but never on a county page.
+Only Statewide and peninsula-scoped seasons reach county pages.
+
+Adding nine game species without harvest data exposed two gaps: `/hunting/[species]`
+generated a param for every game species regardless of data, and the county hub rendered an
+empty card per speciesless species. Both now filter on having data.

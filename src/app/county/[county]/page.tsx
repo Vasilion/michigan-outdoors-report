@@ -275,53 +275,46 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
         description={`What hunters reported in ${view.county.name} County, by species.`}
       >
         <ul className="grid gap-4 md:grid-cols-2">
-          {view.gameSpecies.map((species: Species): ReactElement => {
-            const series: HarvestSeries | undefined = view.harvest.get(species.slug);
-            const seriesLatest: HarvestSnapshot | null =
-              series?.latestFinal ?? series?.inProgress ?? null;
-            if (seriesLatest === null) {
+          {view.gameSpecies
+            .filter((species: Species): boolean => {
+              const series: HarvestSeries | undefined = view.harvest.get(species.slug);
+              return (series?.latestFinal ?? series?.inProgress ?? null) !== null;
+            })
+            .map((species: Species): ReactElement => {
+              const series: HarvestSeries | undefined = view.harvest.get(species.slug);
+              const seriesLatest: HarvestSnapshot = (series?.latestFinal ??
+                series?.inProgress) as HarvestSnapshot;
+              const hasCountyPage: boolean = (series?.finalRows.length ?? 0) >= 2;
               return (
                 <li
                   key={species.slug}
                   className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
                 >
-                  <h3 className="text-lg">{species.name}</h3>
-                  <p className="text-bark-600 mt-2">
-                    No reported harvest published for this county yet.
+                  <h3 className="text-lg">
+                    <Link
+                      href={
+                        hasCountyPage
+                          ? `/county/${view.county.slug}/${species.slug}-hunting/`
+                          : `/hunting/${species.slug}/`
+                      }
+                      prefetch={false}
+                    >
+                      {hasCountyPage
+                        ? `${species.name} hunting in ${view.county.name} County`
+                        : `${species.name} harvest statewide`}
+                    </Link>
+                  </h3>
+                  <p className="font-display text-pine-800 mt-2 text-3xl">
+                    {formatCount(seriesLatest.total)}
+                  </p>
+                  <p className="text-bark-500 text-sm">
+                    reported in {view.county.name} County, {seriesLatest.seasonYear}{" "}
+                    season
+                    {seriesLatest.isFinal ? "" : " so far"}
                   </p>
                 </li>
               );
-            }
-            const hasCountyPage: boolean = (series?.finalRows.length ?? 0) >= 2;
-            return (
-              <li
-                key={species.slug}
-                className="bg-card text-card-foreground border-border shadow-card rounded-xl border px-5 py-4"
-              >
-                <h3 className="text-lg">
-                  <Link
-                    href={
-                      hasCountyPage
-                        ? `/county/${view.county.slug}/${species.slug}-hunting/`
-                        : `/hunting/${species.slug}/`
-                    }
-                    prefetch={false}
-                  >
-                    {hasCountyPage
-                      ? `${species.name} hunting in ${view.county.name} County`
-                      : `${species.name} harvest statewide`}
-                  </Link>
-                </h3>
-                <p className="font-display text-pine-800 mt-2 text-3xl">
-                  {formatCount(seriesLatest.total)}
-                </p>
-                <p className="text-bark-500 text-sm">
-                  reported in {view.county.name} County, {seriesLatest.seasonYear} season
-                  {seriesLatest.isFinal ? "" : " so far"}
-                </p>
-              </li>
-            );
-          })}
+            })}
         </ul>
       </Section>
 
@@ -421,10 +414,10 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
           eyebrow="Verified against the digest"
           title="Season dates"
           icon={CalendarDays}
-          description={`Deer seasons that apply in ${view.county.name} County, which is in the ${view.peninsula}.`}
+          description={`Seasons that apply in ${view.county.name} County, which is in the ${view.peninsula}. Seasons limited to a named zone or county list are on the species pages instead.`}
         >
           <DataTable
-            caption={`Michigan deer season dates applying to ${view.county.name} County. Status calculated ${formatLongDate(view.dataDate)}.`}
+            caption={`Michigan season dates applying to ${view.county.name} County. Status calculated ${formatLongDate(view.dataDate)}.`}
             columns={SEASON_COLUMNS}
             rows={seasonRows}
           />

@@ -1,0 +1,11 @@
+species: sharp-tailed-grouse
+source_url: https://www.michigan.gov/dnr/things-to-do/hunting/small-game
+source_document: 2026 Michigan Small Game Hunting Regulations Summary, pages 5 and 6
+last_verified: 2026-09-22
+license_year: 2026
+seasons:
+  - name: Sharp-tailed grouse
+    zone: Zone 1
+    start_date: 2026-10-10
+    end_date: 2026-10-31
+    notes: A sharp-tailed grouse stamp is required.
