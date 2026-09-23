@@ -42,8 +42,8 @@ export default function PrivacyPage(): ReactElement {
         </p>
         <h2>Email</h2>
         <p>
-          Anything you send by email is used only to answer you. Newsletter signups are
-          handled by an external provider and you can unsubscribe from any issue.
+          Anything you send by email is used only to answer you. This site does not run a
+          mailing list and does not collect email addresses.
         </p>
         <h2>Changes</h2>
         <p>

@@ -4,6 +4,7 @@ import { ChevronRight, Compass, ExternalLink } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { formatLongDate } from "@/lib/format";
 import { cn } from "@/lib/cn";
+import { gearEnabled } from "@/lib/gear";
 import { Alert } from "@/components/ui/alert";
 
 export type NavItem = {
@@ -11,13 +12,20 @@ export type NavItem = {
   readonly href: string;
 };
 
-const PRIMARY_NAV: readonly NavItem[] = [
+const PRIMARY_NAV_BASE: readonly NavItem[] = [
   { label: "Counties", href: "/#counties" },
   { label: "Hunting", href: "/hunting/" },
   { label: "Fishing", href: "/fishing/" },
+  { label: "Public land", href: "/public-hunting-land/" },
+  { label: "Records", href: "/records/" },
   { label: "Seasons", href: "/seasons/" },
-  { label: "Data", href: "/data/" },
 ];
+
+function primaryNav(): readonly NavItem[] {
+  return gearEnabled()
+    ? [...PRIMARY_NAV_BASE, { label: "Gear", href: "/gear/" }]
+    : PRIMARY_NAV_BASE;
+}
 
 const FOOTER_NAV: readonly NavItem[] = [
   { label: "About", href: "/about/" },
@@ -25,6 +33,8 @@ const FOOTER_NAV: readonly NavItem[] = [
   { label: "Data downloads", href: "/data/" },
   { label: "Hunting", href: "/hunting/" },
   { label: "Fishing", href: "/fishing/" },
+  { label: "Public hunting land", href: "/public-hunting-land/" },
+  { label: "Fishing records", href: "/records/" },
   { label: "Season dates", href: "/seasons/" },
   { label: "Advertise", href: "/advertise/" },
   { label: "Contact", href: "/contact/" },
@@ -48,7 +58,7 @@ export function SiteHeader(): ReactElement {
         </Link>
         <nav aria-label="Primary">
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
-            {PRIMARY_NAV.map((item: NavItem): ReactElement => (
+            {primaryNav().map((item: NavItem): ReactElement => (
               <li key={item.href}>
                 <Link
                   href={item.href}
@@ -79,7 +89,14 @@ export function SiteFooter(): ReactElement {
           <p className="text-sand-300 mt-3 max-w-[40ch] text-sm">{SITE.tagline}</p>
           <p className="text-bark-400 mt-4 text-sm">
             {"© "}
-            {year} {SITE.owner}
+            {year}{" "}
+            <a
+              href={SITE.ownerUrl}
+              className="text-sand-300 hover:text-blaze-200"
+              rel="noopener"
+            >
+              {SITE.owner}
+            </a>
           </p>
         </div>
         <nav aria-label="Footer">

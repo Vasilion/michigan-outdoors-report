@@ -32,9 +32,10 @@ export function readRiverSeeds(client: pg.Client): Promise<readonly RiverSeed[]>
 const UPSERT_SQL: string = `
 INSERT INTO rivers (
   name, slug, county_id, designated_trout_stream, stream_types, trout_regulation,
-  gear_restriction, source_url, source_record_id, fetched_at, updated_at
+  gear_restriction, blue_ribbon, blue_ribbon_miles, blue_ribbon_reach,
+  source_url, source_record_id, fetched_at, updated_at
 )
-SELECT $1, $2, c.id, $4, $5, $6, $7, $8, $9, now(), now()
+SELECT $1, $2, c.id, $4, $5, $6, $7, $10, $11, $12, $8, $9, now(), now()
 FROM counties c
 WHERE c.slug = $3
 ON CONFLICT (county_id, slug) DO UPDATE SET
@@ -43,6 +44,9 @@ ON CONFLICT (county_id, slug) DO UPDATE SET
   stream_types = EXCLUDED.stream_types,
   trout_regulation = EXCLUDED.trout_regulation,
   gear_restriction = EXCLUDED.gear_restriction,
+  blue_ribbon = EXCLUDED.blue_ribbon,
+  blue_ribbon_miles = EXCLUDED.blue_ribbon_miles,
+  blue_ribbon_reach = EXCLUDED.blue_ribbon_reach,
   source_url = EXCLUDED.source_url,
   fetched_at = now(),
   updated_at = CASE
@@ -68,6 +72,9 @@ export function upsertRivers(
       river.gearRestriction,
       sourceUrl,
       `${river.countySlug}:${river.slug}`,
+      river.blueRibbon,
+      river.blueRibbonMiles,
+      river.blueRibbonReach,
     ]);
   }).then((): number => upserted);
 }

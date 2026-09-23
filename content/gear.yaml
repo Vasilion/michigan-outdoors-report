@@ -1,0 +1,358 @@
+categories:
+  - slug: deer-hunting
+    name: Deer Hunting Gear
+    title: Deer Hunting Gear for Michigan
+    intro: >-
+      Michigan's firearm season opens November 15 in weather that runs from 50 degrees and
+      raining to single digits and blowing snow, often in the same week. Lower Peninsula
+      hunters sit more private-land edge cover; Upper Peninsula hunters cover more ground on
+      big blocks of state forest. The picks below are organized around those two realities.
+    speciesSlugs:
+      - deer
+  - slug: turkey-hunting
+    name: Turkey Hunting Gear
+    title: Turkey Hunting Gear for Michigan
+    intro: >-
+      Michigan's spring turkey seasons run through cold, wet mornings in April and warm,
+      green-up mornings in May, and most public-land hunting here is run-and-gun in hardwoods
+      rather than sitting a field edge. Light, packable gear matters more than volume.
+    speciesSlugs:
+      - turkey
+  - slug: small-game
+    name: Small Game Gear
+    title: Small Game Hunting Gear for Michigan
+    intro: >-
+      Rabbit, hare, squirrel, grouse and woodcock seasons in Michigan stretch from September
+      into March, which means the same hunter needs early-season brush protection and
+      late-season snow gear. Most of this list is about staying mobile in thick cover.
+    speciesSlugs:
+      - cottontail-rabbit
+      - snowshoe-hare
+      - squirrel
+      - ruffed-grouse
+      - woodcock
+  - slug: ice-fishing
+    name: Ice Fishing Gear
+    title: Ice Fishing Gear for Michigan
+    intro: >-
+      Michigan ice seasons vary by latitude more than almost any other state: inland lakes in
+      the Upper Peninsula can hold safe ice for four months while southern Lower Peninsula
+      lakes may only give six workable weeks. Gear that travels well between both is worth
+      more than gear built for one.
+    speciesSlugs:
+      - walleye
+      - yellow-perch
+      - bluegill
+      - northern-pike
+  - slug: trout-and-stream
+    name: Trout and Stream Fishing Gear
+    title: Trout and Stream Fishing Gear for Michigan
+    intro: >-
+      Michigan has thousands of miles of designated trout stream and a few dozen Blue Ribbon
+      reaches, most of them cold, clear, and tighter than the water these rods usually get
+      marketed for. Wading gear and line control matter more here than casting distance.
+    speciesSlugs:
+      - brook-trout
+      - brown-trout
+      - rainbow-trout
+  - slug: walleye-and-panfish
+    name: Walleye and Panfish Gear
+    title: Walleye and Panfish Gear for Michigan
+    intro: >-
+      Between Saginaw Bay, the Detroit River, Lake Erie's western basin and several hundred
+      stocked inland lakes, Michigan open-water walleye fishing covers trolling, jigging and
+      drifting. Panfish gear overlaps heavily, so this list covers both.
+    speciesSlugs:
+      - walleye
+      - yellow-perch
+      - bluegill
+      - largemouth-bass
+      - smallmouth-bass
+
+products:
+  - slug: blaze-orange-vest
+    name: Blaze Orange Hunting Vest
+    brand: null
+    category: deer-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Michigan law requires hunters to wear a hat, cap, vest, jacket, rain gear or coat of
+      hunter orange during firearm deer season, and the orange must be the outermost garment
+      and visible from all sides. A vest is the cheapest way to stay legal over whatever else
+      you are already wearing.
+    michiganNote: >-
+      Camouflage patterns of hunter orange are legal in Michigan as long as at least 50
+      percent of the surface area is hunter orange.
+  - slug: insulated-rubber-boots
+    name: Insulated Rubber Hunting Boots
+    brand: null
+    category: deer-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      November 15 in Michigan can be 45 degrees and muddy or 15 degrees with snow on the
+      ground. Rubber over leather keeps scent down and keeps you dry crossing the wet lowland
+      edges where deer bed, and an insulated pair covers the cold half of that range.
+    michiganNote: null
+  - slug: hang-on-treestand
+    name: Lightweight Hang-On Treestand
+    brand: null
+    category: deer-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      Most Michigan state land is hardwood and mixed pine with plenty of straight climbable
+      trees, but the good funnels are often a mile off a two-track. A hang-on you can carry
+      in one trip beats a heavier stand you leave in the truck.
+    michiganNote: >-
+      Portable blinds and stands on Michigan public land must be removed at the end of each
+      day's hunt unless they meet the DNR's rules for leaving equipment overnight. Check the
+      current Hunting Digest before leaving anything out.
+  - slug: deer-drag-harness
+    name: Deer Drag Harness
+    brand: null
+    category: deer-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Michigan's most productive public land is often a long way from a road, and vehicles
+      are not allowed off designated routes on most state forest land. A shoulder harness
+      turns a two-person drag into a one-person drag.
+    michiganNote: null
+  - slug: turkey-vest
+    name: Turkey Hunting Vest with Seat
+    brand: null
+    category: turkey-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 50-100
+    why: >-
+      Run-and-gun hunting in Michigan hardwoods means setting up five or six times a morning.
+      A vest with a built-in kickstand seat lets you sit against any tree on wet spring ground
+      without carrying a separate cushion.
+    michiganNote: null
+  - slug: turkey-mouth-calls
+    name: Diaphragm Turkey Call Pack
+    brand: null
+    category: turkey-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Hands-free calling matters most on the close setups that Michigan timber hunting
+      produces. A multi-pack lets you find the cut that your mouth actually runs before you
+      commit to one.
+    michiganNote: null
+  - slug: turkey-decoy
+    name: Collapsible Hen Turkey Decoy
+    brand: null
+    category: turkey-hunting
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 50-100
+    why: >-
+      Michigan's May seasons overlap with green-up, when visibility in hardwoods drops fast. A
+      decoy that folds into a vest pocket is the version you will actually carry on the fourth
+      setup of the morning.
+    michiganNote: null
+  - slug: upland-brush-pants
+    name: Upland Brush Pants
+    brand: null
+    category: small-game
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 50-100
+    why: >-
+      Michigan grouse and woodcock cover is young aspen, tag alder and thornapple, which
+      shreds ordinary pants in a season. Faced pants are the difference between hunting the
+      thick stuff and walking around it.
+    michiganNote: null
+  - slug: snowshoes
+    name: Backcountry Snowshoes
+    brand: null
+    category: small-game
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      Snowshoe hare season in Michigan runs into March, and the best hare cover in the Upper
+      Peninsula sits under two or three feet of snow when the hunting is best.
+    michiganNote: null
+  - slug: small-game-vest
+    name: Upland Game Vest
+    brand: null
+    category: small-game
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 50-100
+    why: >-
+      A vest with a rear game bag and shell loops covers rabbit, squirrel and bird hunting
+      without a pack. Michigan's long small-game seasons mean it gets worn over a t-shirt in
+      September and a wool layer in January, so buy it loose.
+    michiganNote: null
+  - slug: ice-auger
+    name: Hand or Electric Ice Auger
+    brand: null
+    category: ice-fishing
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      Southern Michigan lakes rarely build the two feet of ice that make a hand auger painful,
+      but Upper Peninsula lakes routinely do. Match the auger to the latitude you fish most.
+    michiganNote: null
+  - slug: ice-fishing-rod-combo
+    name: Ice Fishing Rod and Reel Combo
+    brand: null
+    category: ice-fishing
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Michigan ice anglers usually run more than one rod at a time, so inexpensive combos let
+      you cover a panfish rod and a walleye rod for the price of one open-water setup.
+    michiganNote: >-
+      Line limits when ice fishing differ between inland waters and the Great Lakes, and some
+      waters carry their own rules. Check the current Michigan Fishing Guide before you go.
+  - slug: ice-cleats
+    name: Ice Cleats
+    brand: null
+    category: ice-fishing
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Early and late ice in Michigan is frequently bare and polished by wind, especially on
+      the bigger inland lakes. Cleats are the cheapest safety gear on this list.
+    michiganNote: null
+  - slug: ice-shelter
+    name: Portable Ice Shelter
+    brand: null
+    category: ice-fishing
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 250-plus
+    why: >-
+      A flip-over shelter you can pull by hand keeps you mobile on lakes where the fish move
+      between morning and evening, which is most of Michigan's stocked inland water.
+    michiganNote: >-
+      Shanties left unattended on Michigan ice must be marked with the owner's name and
+      address, and removal deadlines differ between the Upper and Lower Peninsula.
+  - slug: breathable-waders
+    name: Breathable Chest Waders
+    brand: null
+    category: trout-and-stream
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 250-plus
+    why: >-
+      Michigan's designated trout streams are spring-fed and cold year round, and the Blue
+      Ribbon reaches in the northern Lower Peninsula are mostly wade fisheries. Breathable
+      waders cover an April steelhead trip and a July evening hatch with one purchase.
+    michiganNote: null
+  - slug: wading-boots
+    name: Rubber-Soled Wading Boots
+    brand: null
+    category: trout-and-stream
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      Studded rubber soles grip Michigan's sand-and-gravel trout streams well and are far less
+      likely to move invasive species between watersheds than felt, which matters on rivers
+      that connect to the Great Lakes.
+    michiganNote: null
+  - slug: five-weight-fly-rod
+    name: Five Weight Fly Rod Outfit
+    brand: null
+    category: trout-and-stream
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      A nine foot five weight covers almost every trout situation Michigan offers, from small
+      brook trout creeks to the middle stretches of the bigger northern rivers.
+    michiganNote: null
+  - slug: polarized-sunglasses
+    name: Polarized Fishing Sunglasses
+    brand: null
+    category: trout-and-stream
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 50-100
+    why: >-
+      Sight fishing Michigan's clear northern streams depends entirely on cutting glare. This
+      is the cheapest piece of gear that changes how many fish you actually see.
+    michiganNote: null
+  - slug: walleye-jig-kit
+    name: Walleye Jig Assortment
+    brand: null
+    category: walleye-and-panfish
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Jigging covers Saginaw Bay, the Detroit River and most Michigan inland walleye lakes. An
+      assortment in quarter to three-quarter ounce covers both slack inland water and heavy
+      river current.
+    michiganNote: null
+  - slug: trolling-rod
+    name: Trolling Rod and Line Counter Reel
+    brand: null
+    category: walleye-and-panfish
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 100-250
+    why: >-
+      Open-water walleye on Saginaw Bay and Lake Erie's western basin is largely a trolling
+      fishery, and a line counter is how you repeat the depth that produced the last fish.
+    michiganNote: null
+  - slug: panfish-ultralight
+    name: Ultralight Spinning Combo
+    brand: null
+    category: walleye-and-panfish
+    network: amazon
+    asin: null
+    url: null
+    priceBand: under-50
+    why: >-
+      Michigan stocks bluegill and perch into hundreds of inland lakes, and an ultralight is
+      the most enjoyable way to fish them. It doubles as a trout rod on the smaller streams.
+    michiganNote: null
+  - slug: landing-net
+    name: Rubber Landing Net
+    brand: null
+    category: walleye-and-panfish
+    network: amazon
+    asin: null
+    url: null
+    priceBand: 50-100
+    why: >-
+      Rubber mesh does less damage to fish you intend to release, which matters on Michigan
+      waters with slot limits and on trout streams under gear restrictions.
+    michiganNote: null

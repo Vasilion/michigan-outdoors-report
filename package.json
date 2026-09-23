@@ -22,7 +22,9 @@
     "og": "tsx scripts/generate-og-images.tsx",
     "db:migrate": "tsx scripts/migrate.ts",
     "db:snapshot": "tsx scripts/export-snapshot.ts",
-    "verify": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:seo && pnpm check:links"
+    "verify": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:seo && pnpm check:links && pnpm check:affiliates",
+    "check:affiliates": "tsx scripts/check-affiliate-links.ts",
+    "indexnow": "tsx scripts/ping-indexnow.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

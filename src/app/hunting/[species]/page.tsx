@@ -11,6 +11,8 @@ import {
   Target,
 } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { GearCallout } from "@/components/gear";
+import { gearCategoriesForSpecies } from "@/lib/gear";
 import { CountyChoropleth } from "@/components/map/county-map";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -383,6 +385,10 @@ export default function SpeciesHubPage({ params }: SpeciesPageProps): ReactEleme
       >
         <FaqBlock items={faqs} />
       </Section>
+
+      <div className="mt-8">
+        <GearCallout categories={gearCategoriesForSpecies(view.species.slug)} />
+      </div>
 
       <div className="mt-10 grid gap-2">
         <LastUpdated isoDate={view.dataDate} />

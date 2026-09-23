@@ -16,6 +16,9 @@ export type TemplateName =
   | "directory-category"
   | "directory-category-county"
   | "directory-listing"
+  | "gear"
+  | "records"
+  | "land-access"
   | "editorial";
 
 const PASS: GateResult = { indexed: true, reasons: [] };

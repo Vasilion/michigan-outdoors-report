@@ -8,6 +8,7 @@ export type PublicLandType =
   | "national_forest"
   | "state_park"
   | "hunter_access"
+  | "gems"
   | "other";
 
 export type TypeMapping = {
@@ -52,6 +53,11 @@ export const TYPE_MAP: Readonly<Record<string, TypeMapping>> = {
     label: "state recreation area",
     agency: "Michigan DNR Parks and Recreation Division",
   },
+  "grouse enhanced management site": {
+    type: "gems",
+    label: "grouse enhanced management site",
+    agency: "Michigan DNR Wildlife Division",
+  },
   "park hunting land": {
     type: "state_park",
     label: "state park or recreation area",
@@ -67,6 +73,7 @@ export type NormalizedPublicLand = {
   readonly managingAgency: string;
   readonly region: string | null;
   readonly huntingStatus: string | null;
+  readonly description: string | null;
   readonly acres: number | null;
   readonly geometries: readonly GeoJsonGeometry[];
 };
@@ -119,6 +126,7 @@ export function normalizePublicLands(
         managingAgency: mapping.agency,
         region: parcel.region,
         huntingStatus: parcel.huntingStatus,
+        description: parcel.description,
         acres: parcel.acres,
         geometries,
       });
@@ -129,6 +137,7 @@ export function normalizePublicLands(
       ...existing,
       region: existing.region ?? parcel.region,
       huntingStatus: existing.huntingStatus ?? parcel.huntingStatus,
+      description: existing.description ?? parcel.description,
       acres:
         existing.acres === null && parcel.acres === null
           ? null

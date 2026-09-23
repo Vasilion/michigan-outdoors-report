@@ -9,6 +9,7 @@ export type RawLandParcel = {
   readonly county: string | null;
   readonly acres: number | null;
   readonly huntingStatus: string | null;
+  readonly description: string | null;
   readonly geometry: GeoJsonGeometry | null;
 };
 
@@ -26,6 +27,7 @@ export function parseWildlifeProperty(feature: GeoJsonFeature): RawLandParcel | 
     county: stringField(feature.properties, "County"),
     acres: numberField(feature.properties, "Acres"),
     huntingStatus: null,
+    description: null,
     geometry: feature.geometry,
   };
 }
@@ -43,6 +45,26 @@ export function parseParkHuntableLand(feature: GeoJsonFeature): RawLandParcel | 
     county: null,
     acres: numberField(feature.properties, "Acres"),
     huntingStatus: stringField(feature.properties, "HuntTrap"),
+    description: null,
+    geometry: feature.geometry,
+  };
+}
+
+export function parseGemSite(feature: GeoJsonFeature): RawLandParcel | null {
+  const name: string | null = stringField(feature.properties, "gem_name");
+  if (name === null) {
+    return null;
+  }
+  const location: string | null = stringField(feature.properties, "written_location");
+  return {
+    name: `${name} GEMS`,
+    sourceType: "Grouse enhanced management site",
+    landowner: "State",
+    region: null,
+    county: null,
+    acres: numberField(feature.properties, "acres"),
+    huntingStatus: "Open to hunting",
+    description: location,
     geometry: feature.geometry,
   };
 }

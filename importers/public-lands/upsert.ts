@@ -14,14 +14,14 @@ dissolved AS (
 )
 INSERT INTO public_lands (
   name, slug, type, type_label, acres, geom, centroid,
-  managing_agency, official_url, region, hunting_status,
+  managing_agency, official_url, region, hunting_status, description,
   source_url, source_record_id, fetched_at, updated_at
 )
 SELECT
   $1, $2, $3::public_land_type, $4, $5,
   dissolved.geom,
   ST_PointOnSurface(dissolved.geom),
-  $6, NULL, $7, $9, $10, $2, now(), now()
+  $6, NULL, $7, $9, $11, $10, $2, now(), now()
 FROM dissolved
 ON CONFLICT (slug) DO UPDATE SET
   name = EXCLUDED.name,
@@ -33,6 +33,7 @@ ON CONFLICT (slug) DO UPDATE SET
   managing_agency = EXCLUDED.managing_agency,
   region = EXCLUDED.region,
   hunting_status = EXCLUDED.hunting_status,
+  description = EXCLUDED.description,
   source_url = EXCLUDED.source_url,
   fetched_at = now(),
   updated_at = CASE
@@ -74,6 +75,7 @@ export function upsertPublicLands(
       geometries,
       land.huntingStatus,
       sourceUrl,
+      land.description,
     ]);
   }).then((): number => upserted);
 }

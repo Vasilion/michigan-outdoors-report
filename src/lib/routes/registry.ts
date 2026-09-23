@@ -26,6 +26,7 @@ import type {
   HarvestSnapshot,
   Lake,
   PublicLand,
+  RecordSummary,
   River,
   Season,
   Species,
@@ -41,6 +42,13 @@ import {
   riverGate,
 } from "../quality-gate";
 import type { GateResult, TemplateName } from "../quality-gate";
+import {
+  GEAR_MIN_LINKED_PRODUCTS,
+  gearCategoryIndexed,
+  gearEnabled,
+  getGearCategories,
+} from "../gear";
+import { recordSpeciesWithPages } from "../views/records";
 import { accessSitesByRiver, riverKey, stockingByRiver } from "../views/river";
 import { stockingByCountySpecies, stockingBySpecies, stockingKey } from "../views/water";
 
@@ -61,6 +69,8 @@ export type StaticRouteSpec = {
 export const STATIC_ROUTES: readonly StaticRouteSpec[] = [
   { path: "/", template: "home", indexable: true },
   { path: "/hunting/", template: "species-hub", indexable: true },
+  { path: "/public-hunting-land/", template: "land-access", indexable: true },
+  { path: "/records/", template: "records", indexable: true },
   { path: "/fishing/", template: "species-hub", indexable: true },
   { path: "/about/", template: "editorial", indexable: true },
   { path: "/methodology/", template: "editorial", indexable: true },
@@ -383,9 +393,50 @@ export function staticRoutes(): readonly RouteEntry[] {
   }));
 }
 
+export function recordRoutes(): readonly RouteEntry[] {
+  const lastmod: string = snapshotDate();
+  return recordSpeciesWithPages().map((entry: RecordSummary): RouteEntry => ({
+    path: `/records/${entry.speciesSlug}/`,
+    template: "records",
+    lastmod,
+    indexable: true,
+    gateReasons: [],
+  }));
+}
+
+export function gearRoutes(): readonly RouteEntry[] {
+  const lastmod: string = snapshotDate();
+  const enabled: boolean = gearEnabled();
+  const routes: RouteEntry[] = [
+    {
+      path: "/gear/",
+      template: "gear",
+      lastmod,
+      indexable: enabled,
+      gateReasons: enabled ? [] : ["no affiliate network configured"],
+    },
+  ];
+
+  for (const category of getGearCategories()) {
+    const indexed: boolean = gearCategoryIndexed(category.slug);
+    routes.push({
+      path: `/gear/${category.slug}/`,
+      template: "gear",
+      lastmod,
+      indexable: indexed,
+      gateReasons: indexed
+        ? []
+        : [`fewer than ${GEAR_MIN_LINKED_PRODUCTS} products with a working link`],
+    });
+  }
+  return routes;
+}
+
 export function listRoutes(): readonly RouteEntry[] {
   return [
     ...staticRoutes(),
+    ...gearRoutes(),
+    ...recordRoutes(),
     ...countyRoutes(),
     ...countySpeciesHuntingRoutes(),
     ...countySpeciesFishingRoutes(),
@@ -406,7 +457,9 @@ export const SITEMAP_GROUPS: Readonly<Record<string, readonly TemplateName[]>> =
   core: ["home", "editorial"],
   counties: ["county", "county-species-hunting", "county-species-fishing"],
   lakes: ["lake", "river"],
-  land: ["public-land"],
   species: ["species-hub", "seasons"],
   directory: ["directory-category", "directory-category-county", "directory-listing"],
+  gear: ["gear"],
+  records: ["records"],
+  land: ["public-land", "land-access"],
 };

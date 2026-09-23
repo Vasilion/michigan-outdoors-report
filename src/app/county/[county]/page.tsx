@@ -12,6 +12,10 @@ import {
   Waves,
 } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { CountyRecordsSection } from "@/components/records";
+import { LandProgramSection, ManagementUnitSection } from "@/components/land-access";
+import { recordsForCounty } from "@/lib/views/records";
+import { programsForCounty, unitsForCounty } from "@/lib/views/land-access";
 import { CountyLocator } from "@/components/map/county-map";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -478,6 +482,21 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
       >
         <FaqBlock items={faqs} />
       </Section>
+
+      <LandProgramSection
+        countyName={view.county.name}
+        programs={programsForCounty(view.county.slug)}
+      />
+
+      <ManagementUnitSection
+        countyName={view.county.name}
+        units={unitsForCounty(view.county.slug)}
+      />
+
+      <CountyRecordsSection
+        countyName={view.county.name}
+        records={recordsForCounty(view.county.slug)}
+      />
 
       <div className="mt-10 grid gap-2">
         <LastUpdated isoDate={view.dataDate} />

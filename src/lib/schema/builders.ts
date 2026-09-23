@@ -34,7 +34,7 @@ export function organizationSchema(): WithContext<Organization> {
     name: SITE.name,
     url: `${SITE.url}/`,
     description: SITE.description,
-    email: SITE.contactEmail,
+    ...(SITE.contactEmail === null ? {} : { email: SITE.contactEmail }),
     areaServed: { "@type": "State", name: "Michigan" },
   };
 }

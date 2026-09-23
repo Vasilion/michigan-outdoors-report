@@ -1,0 +1,602 @@
+[
+  {
+    "speciesSlug": "american-eel",
+    "speciesName": "American Eel",
+    "entryCount": 4,
+    "countyCount": 3,
+    "firstYear": 1990,
+    "lastYear": 2012,
+    "minLengthIn": null,
+    "bestLengthIn": 43
+  },
+  {
+    "speciesSlug": "atlantic-salmon",
+    "speciesName": "Atlantic Salmon",
+    "entryCount": 177,
+    "countyCount": 15,
+    "firstYear": 1981,
+    "lastYear": 2025,
+    "minLengthIn": 28,
+    "bestLengthIn": 41
+  },
+  {
+    "speciesSlug": "bigmouth-buffalo",
+    "speciesName": "Bigmouth Buffalo",
+    "entryCount": 27,
+    "countyCount": 8,
+    "firstYear": 1995,
+    "lastYear": 2021,
+    "minLengthIn": 30,
+    "bestLengthIn": 42
+  },
+  {
+    "speciesSlug": "black-buffalo",
+    "speciesName": "Black Buffalo",
+    "entryCount": 57,
+    "countyCount": 9,
+    "firstYear": 1992,
+    "lastYear": 2022,
+    "minLengthIn": 30,
+    "bestLengthIn": 42.6
+  },
+  {
+    "speciesSlug": "black-bullhead",
+    "speciesName": "Black Bullhead",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 1999,
+    "lastYear": 1999,
+    "minLengthIn": 14,
+    "bestLengthIn": 17
+  },
+  {
+    "speciesSlug": "black-crappie",
+    "speciesName": "Black Crappie",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 1947,
+    "lastYear": 1947,
+    "minLengthIn": 14,
+    "bestLengthIn": null
+  },
+  {
+    "speciesSlug": "bluegill",
+    "speciesName": "Bluegill",
+    "entryCount": 5618,
+    "countyCount": 82,
+    "firstYear": 1983,
+    "lastYear": 2025,
+    "minLengthIn": 10,
+    "bestLengthIn": 15.5
+  },
+  {
+    "speciesSlug": "bowfin",
+    "speciesName": "Bowfin",
+    "entryCount": 1456,
+    "countyCount": 66,
+    "firstYear": 1981,
+    "lastYear": 2025,
+    "minLengthIn": 27,
+    "bestLengthIn": 38.5
+  },
+  {
+    "speciesSlug": "brook-trout",
+    "speciesName": "Brook Trout",
+    "entryCount": 725,
+    "countyCount": 49,
+    "firstYear": 1991,
+    "lastYear": 2025,
+    "minLengthIn": 14,
+    "bestLengthIn": 33.5
+  },
+  {
+    "speciesSlug": "brown-bullhead",
+    "speciesName": "Brown Bullhead",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 2014,
+    "lastYear": 2014,
+    "minLengthIn": 14,
+    "bestLengthIn": 17.5
+  },
+  {
+    "speciesSlug": "brown-trout",
+    "speciesName": "Brown Trout",
+    "entryCount": 1088,
+    "countyCount": 49,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 24,
+    "bestLengthIn": 43.8
+  },
+  {
+    "speciesSlug": "buffalo-species",
+    "speciesName": "Buffalo Species",
+    "entryCount": 7,
+    "countyCount": 3,
+    "firstYear": 2023,
+    "lastYear": 2025,
+    "minLengthIn": null,
+    "bestLengthIn": 37
+  },
+  {
+    "speciesSlug": "bullhead",
+    "speciesName": "Bullhead",
+    "entryCount": 1194,
+    "countyCount": 78,
+    "firstYear": 1990,
+    "lastYear": 2025,
+    "minLengthIn": 14,
+    "bestLengthIn": 22.2
+  },
+  {
+    "speciesSlug": "burbot",
+    "speciesName": "Burbot",
+    "entryCount": 704,
+    "countyCount": 35,
+    "firstYear": 1980,
+    "lastYear": 2025,
+    "minLengthIn": 26,
+    "bestLengthIn": 40
+  },
+  {
+    "speciesSlug": "channel-catfish",
+    "speciesName": "Channel Catfish",
+    "entryCount": 2582,
+    "countyCount": 74,
+    "firstYear": 1960,
+    "lastYear": 2025,
+    "minLengthIn": 30,
+    "bestLengthIn": 48
+  },
+  {
+    "speciesSlug": "chinook-salmon",
+    "speciesName": "Chinook Salmon",
+    "entryCount": 3144,
+    "countyCount": 39,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 39,
+    "bestLengthIn": 53.5
+  },
+  {
+    "speciesSlug": "cisco",
+    "speciesName": "Cisco",
+    "entryCount": 1035,
+    "countyCount": 25,
+    "firstYear": 1992,
+    "lastYear": 2025,
+    "minLengthIn": 20,
+    "bestLengthIn": 25
+  },
+  {
+    "speciesSlug": "coho-salmon",
+    "speciesName": "Coho Salmon",
+    "entryCount": 1026,
+    "countyCount": 31,
+    "firstYear": 1976,
+    "lastYear": 2025,
+    "minLengthIn": 28,
+    "bestLengthIn": 41
+  },
+  {
+    "speciesSlug": "common-carp",
+    "speciesName": "Common Carp",
+    "entryCount": 2153,
+    "countyCount": 72,
+    "firstYear": 1974,
+    "lastYear": 2025,
+    "minLengthIn": 33,
+    "bestLengthIn": 48
+  },
+  {
+    "speciesSlug": "crappie",
+    "speciesName": "Crappie",
+    "entryCount": 3224,
+    "countyCount": 81,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 14,
+    "bestLengthIn": 19.5
+  },
+  {
+    "speciesSlug": "flathead-catfish",
+    "speciesName": "Flathead Catfish",
+    "entryCount": 973,
+    "countyCount": 39,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 35,
+    "bestLengthIn": 48
+  },
+  {
+    "speciesSlug": "freshwater-drum",
+    "speciesName": "Freshwater Drum",
+    "entryCount": 3257,
+    "countyCount": 51,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 27,
+    "bestLengthIn": 45
+  },
+  {
+    "speciesSlug": "gizzard-shad",
+    "speciesName": "Gizzard Shad",
+    "entryCount": 196,
+    "countyCount": 17,
+    "firstYear": 1990,
+    "lastYear": 2022,
+    "minLengthIn": null,
+    "bestLengthIn": 23
+  },
+  {
+    "speciesSlug": "green-sunfish",
+    "speciesName": "Green Sunfish",
+    "entryCount": 96,
+    "countyCount": 41,
+    "firstYear": 1990,
+    "lastYear": 2025,
+    "minLengthIn": 9,
+    "bestLengthIn": 11.1
+  },
+  {
+    "speciesSlug": "hybrid-sunfish",
+    "speciesName": "Hybrid Sunfish",
+    "entryCount": 185,
+    "countyCount": 53,
+    "firstYear": 1991,
+    "lastYear": 2025,
+    "minLengthIn": 10,
+    "bestLengthIn": 12.5
+  },
+  {
+    "speciesSlug": "kokanee-salmon",
+    "speciesName": "Kokanee Salmon",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 1978,
+    "lastYear": 1978,
+    "minLengthIn": null,
+    "bestLengthIn": 18
+  },
+  {
+    "speciesSlug": "lake-sturgeon",
+    "speciesName": "Lake Sturgeon",
+    "entryCount": 949,
+    "countyCount": 12,
+    "firstYear": 1974,
+    "lastYear": 2025,
+    "minLengthIn": 60,
+    "bestLengthIn": 88
+  },
+  {
+    "speciesSlug": "lake-trout",
+    "speciesName": "Lake Trout",
+    "entryCount": 1580,
+    "countyCount": 40,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 34,
+    "bestLengthIn": 49
+  },
+  {
+    "speciesSlug": "lake-whitefish",
+    "speciesName": "Lake Whitefish",
+    "entryCount": 723,
+    "countyCount": 32,
+    "firstYear": 1990,
+    "lastYear": 2025,
+    "minLengthIn": 23,
+    "bestLengthIn": 32
+  },
+  {
+    "speciesSlug": "largemouth-bass",
+    "speciesName": "Largemouth Bass",
+    "entryCount": 1545,
+    "countyCount": 81,
+    "firstYear": 1934,
+    "lastYear": 2025,
+    "minLengthIn": 21,
+    "bestLengthIn": 28.8
+  },
+  {
+    "speciesSlug": "longnose-gar",
+    "speciesName": "Longnose Gar",
+    "entryCount": 853,
+    "countyCount": 54,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 32,
+    "bestLengthIn": 53.2
+  },
+  {
+    "speciesSlug": "longnose-sucker",
+    "speciesName": "Longnose Sucker",
+    "entryCount": 269,
+    "countyCount": 29,
+    "firstYear": 1986,
+    "lastYear": 2025,
+    "minLengthIn": 17,
+    "bestLengthIn": 28
+  },
+  {
+    "speciesSlug": "menominee-whitefish",
+    "speciesName": "Menominee Whitefish",
+    "entryCount": 309,
+    "countyCount": 22,
+    "firstYear": 1992,
+    "lastYear": 2025,
+    "minLengthIn": 15,
+    "bestLengthIn": 29.5
+  },
+  {
+    "speciesSlug": "mooneye",
+    "speciesName": "Mooneye",
+    "entryCount": 25,
+    "countyCount": 3,
+    "firstYear": 1994,
+    "lastYear": 2000,
+    "minLengthIn": null,
+    "bestLengthIn": 15.2
+  },
+  {
+    "speciesSlug": "muskellunge",
+    "speciesName": "Muskellunge",
+    "entryCount": 1896,
+    "countyCount": 56,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 46,
+    "bestLengthIn": 61
+  },
+  {
+    "speciesSlug": "muskellunge-northern",
+    "speciesName": "Muskellunge Northern",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 2000,
+    "lastYear": 2000,
+    "minLengthIn": 46,
+    "bestLengthIn": 51
+  },
+  {
+    "speciesSlug": "northern-hog-sucker",
+    "speciesName": "Northern Hog Sucker",
+    "entryCount": 65,
+    "countyCount": 15,
+    "firstYear": 1993,
+    "lastYear": 2019,
+    "minLengthIn": 13,
+    "bestLengthIn": 19
+  },
+  {
+    "speciesSlug": "northern-hognose-sucker",
+    "speciesName": "Northern Hognose Sucker",
+    "entryCount": 59,
+    "countyCount": 20,
+    "firstYear": 2020,
+    "lastYear": 2025,
+    "minLengthIn": null,
+    "bestLengthIn": 17.2
+  },
+  {
+    "speciesSlug": "northern-pike",
+    "speciesName": "Northern Pike",
+    "entryCount": 1268,
+    "countyCount": 80,
+    "firstYear": 1961,
+    "lastYear": 2025,
+    "minLengthIn": 36,
+    "bestLengthIn": 52
+  },
+  {
+    "speciesSlug": "pink-salmon",
+    "speciesName": "Pink Salmon",
+    "entryCount": 162,
+    "countyCount": 18,
+    "firstYear": 1987,
+    "lastYear": 2025,
+    "minLengthIn": 21,
+    "bestLengthIn": 32.3
+  },
+  {
+    "speciesSlug": "pumpkinseed",
+    "speciesName": "Pumpkinseed",
+    "entryCount": 2166,
+    "countyCount": 78,
+    "firstYear": 1990,
+    "lastYear": 2025,
+    "minLengthIn": 9,
+    "bestLengthIn": 14
+  },
+  {
+    "speciesSlug": "quillback-carpsucker",
+    "speciesName": "Quillback Carpsucker",
+    "entryCount": 370,
+    "countyCount": 29,
+    "firstYear": 1993,
+    "lastYear": 2025,
+    "minLengthIn": 19,
+    "bestLengthIn": 28.5
+  },
+  {
+    "speciesSlug": "rainbow-trout",
+    "speciesName": "Rainbow Trout",
+    "entryCount": 1606,
+    "countyCount": 37,
+    "firstYear": 1975,
+    "lastYear": 2025,
+    "minLengthIn": 32,
+    "bestLengthIn": 46
+  },
+  {
+    "speciesSlug": "redear-sunfish",
+    "speciesName": "Redear Sunfish",
+    "entryCount": 829,
+    "countyCount": 48,
+    "firstYear": 1990,
+    "lastYear": 2025,
+    "minLengthIn": 10,
+    "bestLengthIn": 33.2
+  },
+  {
+    "speciesSlug": "redhorse-sucker",
+    "speciesName": "Redhorse Sucker",
+    "entryCount": 1561,
+    "countyCount": 60,
+    "firstYear": 1991,
+    "lastYear": 2025,
+    "minLengthIn": 22,
+    "bestLengthIn": 35.5
+  },
+  {
+    "speciesSlug": "rock-bass",
+    "speciesName": "Rock Bass",
+    "entryCount": 3289,
+    "countyCount": 80,
+    "firstYear": 1965,
+    "lastYear": 2025,
+    "minLengthIn": 12,
+    "bestLengthIn": 20
+  },
+  {
+    "speciesSlug": "sauger",
+    "speciesName": "Sauger",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 1976,
+    "lastYear": 1976,
+    "minLengthIn": null,
+    "bestLengthIn": 25.5
+  },
+  {
+    "speciesSlug": "smallmouth-bass",
+    "speciesName": "Smallmouth Bass",
+    "entryCount": 2913,
+    "countyCount": 79,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 21,
+    "bestLengthIn": 27.5
+  },
+  {
+    "speciesSlug": "smelt",
+    "speciesName": "Smelt",
+    "entryCount": 84,
+    "countyCount": 14,
+    "firstYear": 1992,
+    "lastYear": 2024,
+    "minLengthIn": 10,
+    "bestLengthIn": 12
+  },
+  {
+    "speciesSlug": "splake",
+    "speciesName": "Splake",
+    "entryCount": 290,
+    "countyCount": 19,
+    "firstYear": 1997,
+    "lastYear": 2025,
+    "minLengthIn": 25,
+    "bestLengthIn": 35.1
+  },
+  {
+    "speciesSlug": "tiger-muskellunge",
+    "speciesName": "Tiger Muskellunge",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 1919,
+    "lastYear": 1919,
+    "minLengthIn": 46,
+    "bestLengthIn": 54
+  },
+  {
+    "speciesSlug": "walleye",
+    "speciesName": "Walleye",
+    "entryCount": 2448,
+    "countyCount": 69,
+    "firstYear": 1951,
+    "lastYear": 2025,
+    "minLengthIn": 29,
+    "bestLengthIn": 39.5
+  },
+  {
+    "speciesSlug": "warmouth",
+    "speciesName": "Warmouth",
+    "entryCount": 56,
+    "countyCount": 20,
+    "firstYear": 1999,
+    "lastYear": 2025,
+    "minLengthIn": 9,
+    "bestLengthIn": 11
+  },
+  {
+    "speciesSlug": "white-bass",
+    "speciesName": "White Bass",
+    "entryCount": 1780,
+    "countyCount": 32,
+    "firstYear": 1989,
+    "lastYear": 2025,
+    "minLengthIn": 16,
+    "bestLengthIn": 27.5
+  },
+  {
+    "speciesSlug": "white-bass-hybrid",
+    "speciesName": "White Bass Hybrid",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 1996,
+    "lastYear": 1996,
+    "minLengthIn": 16,
+    "bestLengthIn": 27.5
+  },
+  {
+    "speciesSlug": "white-crappie",
+    "speciesName": "White Crappie",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 2000,
+    "lastYear": 2000,
+    "minLengthIn": 14,
+    "bestLengthIn": 19.5
+  },
+  {
+    "speciesSlug": "white-perch",
+    "speciesName": "White Perch",
+    "entryCount": 741,
+    "countyCount": 24,
+    "firstYear": 1994,
+    "lastYear": 2025,
+    "minLengthIn": 11,
+    "bestLengthIn": 15.8
+  },
+  {
+    "speciesSlug": "white-sucker",
+    "speciesName": "White Sucker",
+    "entryCount": 1442,
+    "countyCount": 72,
+    "firstYear": 1982,
+    "lastYear": 2025,
+    "minLengthIn": 21,
+    "bestLengthIn": 29.8
+  },
+  {
+    "speciesSlug": "yellow-bullhead",
+    "speciesName": "Yellow Bullhead",
+    "entryCount": 1,
+    "countyCount": 1,
+    "firstYear": 2003,
+    "lastYear": 2003,
+    "minLengthIn": 14,
+    "bestLengthIn": 16.8
+  },
+  {
+    "speciesSlug": "yellow-perch",
+    "speciesName": "Yellow Perch",
+    "entryCount": 1843,
+    "countyCount": 73,
+    "firstYear": 1947,
+    "lastYear": 2025,
+    "minLengthIn": 14,
+    "bestLengthIn": 21
+  }
+]

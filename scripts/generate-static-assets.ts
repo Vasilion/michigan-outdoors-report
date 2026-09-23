@@ -194,6 +194,14 @@ function writeBuildReport(
   return report;
 }
 
+function writeIndexNowKey(): void {
+  const key: string = process.env.INDEXNOW_KEY ?? "";
+  if (!/^[A-Za-z0-9-]{8,128}$/.test(key)) {
+    return;
+  }
+  writeFileSync(join(PUBLIC_DIR, `${key}.txt`), key, "utf8");
+}
+
 function main(): void {
   const generatedAt: string = getMeta().generatedAt;
   const fallbackDate: string = generatedAt.slice(0, 10);
@@ -201,6 +209,7 @@ function main(): void {
   const indexableCount: number = writeSitemaps(routes, fallbackDate);
   writeDownloads();
   writeLlmsTxt(routes, generatedAt);
+  writeIndexNowKey();
   const report: BuildReport = writeBuildReport(routes, fallbackDate);
 
   process.stdout.write("\nBuild report (pages by template)\n");

@@ -1,5 +1,14 @@
 [
   {
+    "name": "American Eel",
+    "slug": "american-eel",
+    "kind": "fish",
+    "pluralName": "American Eel",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Arctic Grayling",
     "slug": "arctic-grayling",
     "kind": "fish",
@@ -16,6 +25,33 @@
     "officialUrl": null,
     "sameAsUrl": null,
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Bigmouth Buffalo",
+    "slug": "bigmouth-buffalo",
+    "kind": "fish",
+    "pluralName": "Bigmouth Buffalo",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Black Buffalo",
+    "slug": "black-buffalo",
+    "kind": "fish",
+    "pluralName": "Black Buffalo",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Black Bullhead",
+    "slug": "black-bullhead",
+    "kind": "fish",
+    "pluralName": "Black Bullhead",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Black Crappie",
@@ -45,6 +81,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Bowfin",
+    "slug": "bowfin",
+    "kind": "fish",
+    "pluralName": "Bowfin",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Brook Trout",
     "slug": "brook-trout",
     "kind": "fish",
@@ -54,6 +99,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Brown Bullhead",
+    "slug": "brown-bullhead",
+    "kind": "fish",
+    "pluralName": "Brown Bullhead",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Brown Trout",
     "slug": "brown-trout",
     "kind": "fish",
@@ -61,6 +115,33 @@
     "officialUrl": null,
     "sameAsUrl": null,
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Buffalo Species",
+    "slug": "buffalo-species",
+    "kind": "fish",
+    "pluralName": "Buffalo Species",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Bullhead",
+    "slug": "bullhead",
+    "kind": "fish",
+    "pluralName": "Bullhead",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Burbot",
+    "slug": "burbot",
+    "kind": "fish",
+    "pluralName": "Burbot",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Channel Catfish",
@@ -81,6 +162,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Cisco",
+    "slug": "cisco",
+    "kind": "fish",
+    "pluralName": "Cisco",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Coho Salmon",
     "slug": "coho-salmon",
     "kind": "fish",
@@ -90,6 +180,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Common Carp",
+    "slug": "common-carp",
+    "kind": "fish",
+    "pluralName": "Common Carp",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Cottontail Rabbit",
     "slug": "cottontail-rabbit",
     "kind": "game",
@@ -97,6 +196,15 @@
     "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
     "sameAsUrl": "https://en.wikipedia.org/wiki/Eastern_cottontail",
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Crappie",
+    "slug": "crappie",
+    "kind": "fish",
+    "pluralName": "Crappie",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Crow",
@@ -126,6 +234,33 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Flathead Catfish",
+    "slug": "flathead-catfish",
+    "kind": "fish",
+    "pluralName": "Flathead Catfish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Freshwater Drum",
+    "slug": "freshwater-drum",
+    "kind": "fish",
+    "pluralName": "Freshwater Drum",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Gizzard Shad",
+    "slug": "gizzard-shad",
+    "kind": "fish",
+    "pluralName": "Gizzard Shad",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Golden Shiner",
     "slug": "golden-shiner",
     "kind": "fish",
@@ -135,6 +270,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Green Sunfish",
+    "slug": "green-sunfish",
+    "kind": "fish",
+    "pluralName": "Green Sunfish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Hybrid Sunfish",
     "slug": "hybrid-sunfish",
     "kind": "fish",
@@ -142,6 +286,15 @@
     "officialUrl": null,
     "sameAsUrl": null,
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Kokanee Salmon",
+    "slug": "kokanee-salmon",
+    "kind": "fish",
+    "pluralName": "Kokanee Salmon",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Lake Herring",
@@ -189,6 +342,42 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Longnose Gar",
+    "slug": "longnose-gar",
+    "kind": "fish",
+    "pluralName": "Longnose Gar",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Longnose Sucker",
+    "slug": "longnose-sucker",
+    "kind": "fish",
+    "pluralName": "Longnose Sucker",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Menominee Whitefish",
+    "slug": "menominee-whitefish",
+    "kind": "fish",
+    "pluralName": "Menominee Whitefish",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Mooneye",
+    "slug": "mooneye",
+    "kind": "fish",
+    "pluralName": "Mooneye",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Muskellunge",
     "slug": "muskellunge",
     "kind": "fish",
@@ -198,6 +387,33 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Muskellunge Northern",
+    "slug": "muskellunge-northern",
+    "kind": "fish",
+    "pluralName": "Muskellunge Northern",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Northern Hog Sucker",
+    "slug": "northern-hog-sucker",
+    "kind": "fish",
+    "pluralName": "Northern Hog Sucker",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Northern Hognose Sucker",
+    "slug": "northern-hognose-sucker",
+    "kind": "fish",
+    "pluralName": "Northern Hognose Sucker",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Northern Pike",
     "slug": "northern-pike",
     "kind": "fish",
@@ -205,6 +421,33 @@
     "officialUrl": null,
     "sameAsUrl": null,
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Pink Salmon",
+    "slug": "pink-salmon",
+    "kind": "fish",
+    "pluralName": "Pink Salmon",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Pumpkinseed",
+    "slug": "pumpkinseed",
+    "kind": "fish",
+    "pluralName": "Pumpkinseed",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "Quillback Carpsucker",
+    "slug": "quillback-carpsucker",
+    "kind": "fish",
+    "pluralName": "Quillback Carpsucker",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Rainbow Trout",
@@ -225,6 +468,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Redhorse Sucker",
+    "slug": "redhorse-sucker",
+    "kind": "fish",
+    "pluralName": "Redhorse Sucker",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Ring-necked Pheasant",
     "slug": "ring-necked-pheasant",
     "kind": "game",
@@ -234,6 +486,15 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Rock Bass",
+    "slug": "rock-bass",
+    "kind": "fish",
+    "pluralName": "Rock Bass",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "Ruffed Grouse",
     "slug": "ruffed-grouse",
     "kind": "game",
@@ -241,6 +502,15 @@
     "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
     "sameAsUrl": "https://en.wikipedia.org/wiki/Ruffed_grouse",
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Sauger",
+    "slug": "sauger",
+    "kind": "fish",
+    "pluralName": "Sauger",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Sharp-tailed Grouse",
@@ -259,6 +529,15 @@
     "officialUrl": null,
     "sameAsUrl": null,
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Smelt",
+    "slug": "smelt",
+    "kind": "fish",
+    "pluralName": "Smelt",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Snowshoe Hare",
@@ -315,6 +594,51 @@
     "updatedAt": "2026-09-22"
   },
   {
+    "name": "Warmouth",
+    "slug": "warmouth",
+    "kind": "fish",
+    "pluralName": "Warmouth",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "White Bass",
+    "slug": "white-bass",
+    "kind": "fish",
+    "pluralName": "White Bass",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "White Bass Hybrid",
+    "slug": "white-bass-hybrid",
+    "kind": "fish",
+    "pluralName": "White Bass Hybrid",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "White Crappie",
+    "slug": "white-crappie",
+    "kind": "fish",
+    "pluralName": "White Crappie",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "name": "White Perch",
+    "slug": "white-perch",
+    "kind": "fish",
+    "pluralName": "White Perch",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
+  },
+  {
     "name": "White Sucker",
     "slug": "white-sucker",
     "kind": "fish",
@@ -331,6 +655,15 @@
     "officialUrl": "https://www.michigan.gov/dnr/things-to-do/hunting/small-game",
     "sameAsUrl": "https://en.wikipedia.org/wiki/American_woodcock",
     "updatedAt": "2026-09-22"
+  },
+  {
+    "name": "Yellow Bullhead",
+    "slug": "yellow-bullhead",
+    "kind": "fish",
+    "pluralName": "Yellow Bullhead",
+    "officialUrl": null,
+    "sameAsUrl": null,
+    "updatedAt": "2026-09-23"
   },
   {
     "name": "Yellow Perch",

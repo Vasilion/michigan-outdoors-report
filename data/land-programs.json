@@ -1,0 +1,802 @@
+[
+  {
+    "program": "hunter_access",
+    "countySlug": "alcona",
+    "parcelCount": 2,
+    "acres": 154.5,
+    "detail": {
+      "forestAcres": 111,
+      "wetlandAcres": 1,
+      "grasslandAcres": 48,
+      "agriculturalAcres": 12
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "alpena",
+    "parcelCount": 10,
+    "acres": 798.2,
+    "detail": {
+      "forestAcres": 192.5,
+      "wetlandAcres": 4,
+      "grasslandAcres": 80.5,
+      "agriculturalAcres": 450
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "arenac",
+    "parcelCount": 5,
+    "acres": 318.9,
+    "detail": {
+      "forestAcres": 55,
+      "wetlandAcres": 4,
+      "grasslandAcres": 314,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "bay",
+    "parcelCount": 2,
+    "acres": 95.4,
+    "detail": {
+      "forestAcres": 41,
+      "wetlandAcres": 1,
+      "grasslandAcres": 76,
+      "agriculturalAcres": 27
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "berrien",
+    "parcelCount": 6,
+    "acres": 1506.1,
+    "detail": {
+      "forestAcres": 1382,
+      "wetlandAcres": 4,
+      "grasslandAcres": 242,
+      "agriculturalAcres": 713
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "calhoun",
+    "parcelCount": 2,
+    "acres": 107.2,
+    "detail": {
+      "forestAcres": 0,
+      "wetlandAcres": 4,
+      "grasslandAcres": 20,
+      "agriculturalAcres": 72
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "cheboygan",
+    "parcelCount": 3,
+    "acres": 125.6,
+    "detail": {
+      "forestAcres": 145,
+      "wetlandAcres": 0,
+      "grasslandAcres": 15,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "chippewa",
+    "parcelCount": 25,
+    "acres": 4502.4,
+    "detail": {
+      "forestAcres": 579,
+      "wetlandAcres": 47,
+      "grasslandAcres": 3229,
+      "agriculturalAcres": 279
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "gratiot",
+    "parcelCount": 10,
+    "acres": 890.1,
+    "detail": {
+      "forestAcres": 9,
+      "wetlandAcres": 14,
+      "grasslandAcres": 161,
+      "agriculturalAcres": 755
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "hillsdale",
+    "parcelCount": 4,
+    "acres": 226.5,
+    "detail": {
+      "forestAcres": 9,
+      "wetlandAcres": 1,
+      "grasslandAcres": 233,
+      "agriculturalAcres": 4
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "huron",
+    "parcelCount": 3,
+    "acres": 166.1,
+    "detail": {
+      "forestAcres": 0,
+      "wetlandAcres": 0,
+      "grasslandAcres": 167,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "ingham",
+    "parcelCount": 3,
+    "acres": 444.4,
+    "detail": {
+      "forestAcres": 74,
+      "wetlandAcres": 0,
+      "grasslandAcres": 313,
+      "agriculturalAcres": 88
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "ionia",
+    "parcelCount": 2,
+    "acres": 265.3,
+    "detail": {
+      "forestAcres": 60,
+      "wetlandAcres": 0,
+      "grasslandAcres": 135,
+      "agriculturalAcres": 35
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "iosco",
+    "parcelCount": 3,
+    "acres": 696.3,
+    "detail": {
+      "forestAcres": 273,
+      "wetlandAcres": 395,
+      "grasslandAcres": 40,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "isabella",
+    "parcelCount": 4,
+    "acres": 388.6,
+    "detail": {
+      "forestAcres": 110,
+      "wetlandAcres": 1,
+      "grasslandAcres": 304,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "jackson",
+    "parcelCount": 1,
+    "acres": 131.6,
+    "detail": {
+      "forestAcres": 37,
+      "wetlandAcres": 0,
+      "grasslandAcres": 15,
+      "agriculturalAcres": 88
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "kent",
+    "parcelCount": 1,
+    "acres": 152.8,
+    "detail": {
+      "forestAcres": 45,
+      "wetlandAcres": 0,
+      "grasslandAcres": 49,
+      "agriculturalAcres": 56
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "mackinac",
+    "parcelCount": 3,
+    "acres": 485,
+    "detail": {
+      "forestAcres": 0,
+      "wetlandAcres": 0,
+      "grasslandAcres": 0,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "midland",
+    "parcelCount": 3,
+    "acres": 451.9,
+    "detail": {
+      "forestAcres": 223,
+      "wetlandAcres": 20,
+      "grasslandAcres": 226,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "montmorency",
+    "parcelCount": 4,
+    "acres": 1168.7,
+    "detail": {
+      "forestAcres": 649,
+      "wetlandAcres": 5,
+      "grasslandAcres": 412,
+      "agriculturalAcres": 117
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "newaygo",
+    "parcelCount": 2,
+    "acres": 199.3,
+    "detail": {
+      "forestAcres": 0,
+      "wetlandAcres": 0,
+      "grasslandAcres": 94,
+      "agriculturalAcres": 0
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "presque-isle",
+    "parcelCount": 4,
+    "acres": 822.6,
+    "detail": {
+      "forestAcres": 148,
+      "wetlandAcres": 0,
+      "grasslandAcres": 661,
+      "agriculturalAcres": 40
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "saginaw",
+    "parcelCount": 4,
+    "acres": 289.5,
+    "detail": {
+      "forestAcres": 19,
+      "wetlandAcres": 0,
+      "grasslandAcres": 58,
+      "agriculturalAcres": 46
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "sanilac",
+    "parcelCount": 7,
+    "acres": 593.5,
+    "detail": {
+      "forestAcres": 40,
+      "wetlandAcres": 2,
+      "grasslandAcres": 331,
+      "agriculturalAcres": 362
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "hunter_access",
+    "countySlug": "st-clair",
+    "parcelCount": 1,
+    "acres": 147.6,
+    "detail": {
+      "forestAcres": 36,
+      "wetlandAcres": 0,
+      "grasslandAcres": 12,
+      "agriculturalAcres": 87
+    },
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/DNRWILDLandsOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "alcona",
+    "parcelCount": 1,
+    "acres": 79.7,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "alger",
+    "parcelCount": 1725,
+    "acres": 173157.4,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "allegan",
+    "parcelCount": 4,
+    "acres": 413.6,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "antrim",
+    "parcelCount": 63,
+    "acres": 3982.4,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "baraga",
+    "parcelCount": 1714,
+    "acres": 265233.3,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "barry",
+    "parcelCount": 4,
+    "acres": 224.6,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "benzie",
+    "parcelCount": 31,
+    "acres": 1557,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "berrien",
+    "parcelCount": 5,
+    "acres": 224.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "cass",
+    "parcelCount": 18,
+    "acres": 710.1,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "charlevoix",
+    "parcelCount": 113,
+    "acres": 6966.7,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "cheboygan",
+    "parcelCount": 13,
+    "acres": 688.3,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "chippewa",
+    "parcelCount": 286,
+    "acres": 52915.4,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "clare",
+    "parcelCount": 2,
+    "acres": 79.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "crawford",
+    "parcelCount": 12,
+    "acres": 451.7,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "delta",
+    "parcelCount": 489,
+    "acres": 53357.9,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "dickinson",
+    "parcelCount": 448,
+    "acres": 47892.1,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "emmet",
+    "parcelCount": 50,
+    "acres": 3627,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "gogebic",
+    "parcelCount": 1391,
+    "acres": 177344.4,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "grand-traverse",
+    "parcelCount": 53,
+    "acres": 2598.9,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "houghton",
+    "parcelCount": 1392,
+    "acres": 186470.2,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "iron",
+    "parcelCount": 1750,
+    "acres": 201610.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "kalamazoo",
+    "parcelCount": 3,
+    "acres": 100.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "kalkaska",
+    "parcelCount": 64,
+    "acres": 3741.1,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "kent",
+    "parcelCount": 9,
+    "acres": 303.1,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "keweenaw",
+    "parcelCount": 768,
+    "acres": 127989,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "lake",
+    "parcelCount": 11,
+    "acres": 776.9,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "lapeer",
+    "parcelCount": 1,
+    "acres": 107.6,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "leelanau",
+    "parcelCount": 17,
+    "acres": 1177.3,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "luce",
+    "parcelCount": 1135,
+    "acres": 122049.5,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "mackinac",
+    "parcelCount": 142,
+    "acres": 21604.1,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "manistee",
+    "parcelCount": 20,
+    "acres": 964.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "marquette",
+    "parcelCount": 2525,
+    "acres": 312236.9,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "mason",
+    "parcelCount": 15,
+    "acres": 789.2,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "menominee",
+    "parcelCount": 855,
+    "acres": 101482,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "midland",
+    "parcelCount": 1,
+    "acres": 96.2,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "missaukee",
+    "parcelCount": 35,
+    "acres": 1360,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "montmorency",
+    "parcelCount": 7,
+    "acres": 312,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "muskegon",
+    "parcelCount": 3,
+    "acres": 113.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "newaygo",
+    "parcelCount": 7,
+    "acres": 595.4,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "oceana",
+    "parcelCount": 31,
+    "acres": 1344.7,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "ontonagon",
+    "parcelCount": 1443,
+    "acres": 228131.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "osceola",
+    "parcelCount": 15,
+    "acres": 771.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "oscoda",
+    "parcelCount": 4,
+    "acres": 96.8,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "otsego",
+    "parcelCount": 36,
+    "acres": 3571.1,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "ottawa",
+    "parcelCount": 1,
+    "acres": 122.2,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "schoolcraft",
+    "parcelCount": 584,
+    "acres": 65181.9,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "tuscola",
+    "parcelCount": 1,
+    "acres": 79.7,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "van-buren",
+    "parcelCount": 8,
+    "acres": 201.5,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "washtenaw",
+    "parcelCount": 1,
+    "acres": 47.2,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "program": "commercial_forest",
+    "countySlug": "wexford",
+    "parcelCount": 31,
+    "acres": 2039.2,
+    "detail": {},
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/CommercialForestOPENDATA/FeatureServer/0",
+    "updatedAt": "2026-09-23"
+  }
+]

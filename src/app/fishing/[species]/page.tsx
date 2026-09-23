@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { ChartColumn, Fish, HelpCircle, Map as MapIcon, Waves } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { GearCallout } from "@/components/gear";
+import { gearCategoriesForSpecies } from "@/lib/gear";
 import {
   AnswerSummary,
   Breadcrumbs,
@@ -306,6 +308,10 @@ export default function FishSpeciesPage({ params }: FishPageProps): ReactElement
       >
         <FaqBlock items={faqs} />
       </Section>
+
+      <div className="mt-8">
+        <GearCallout categories={gearCategoriesForSpecies(view.species.slug)} />
+      </div>
 
       <div className="mt-10 grid gap-2">
         <LastUpdated isoDate={view.dataDate} />

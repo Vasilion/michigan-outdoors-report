@@ -72,33 +72,47 @@ tests/e2e/       Playwright against out/
 
 ## Phase status
 
-**Phase 0 (foundation)** and **Phase 1 (deer season)** are done.
+**Phases 0 through 3 are done.** 2,439 pages built, 2,428 indexable:
 
-**Phase 2 (lakes and ice) is done.** 2,044 pages, 2,040 indexable:
+| Template                 | Pages                             |
+| ------------------------ | --------------------------------- |
+| County hub               | 83                                |
+| County x deer and turkey | 83 of 913 (the rest are gated)    |
+| County x fish species    | 583                               |
+| Lake                     | 947 of 5,207 (the rest are gated) |
+| River and trout stream   | 309                               |
+| Public land unit         | 324 (includes 19 GEMS sites)      |
+| Fishing records          | 48 (index plus 47 species)        |
+| Public hunting land      | 1                                 |
+| Species hub              | 31 of 77 (the rest are gated)     |
+| Season pages             | 11                                |
+| Gear guides              | 7 (noindex until links are live)  |
+| Editorial                | 8                                 |
 
-| Template                            | Pages                             |
-| ----------------------------------- | --------------------------------- |
-| County hub                          | 83                                |
-| County x deer                       | 83                                |
-| County x fish species               | 583                               |
-| Lake                                | 936 of 5,207 (the rest are gated) |
-| Public land unit                    | 305                               |
-| Species hub (deer, turkey, 27 fish) | 29                                |
-| Season pages                        | 2                                 |
-| Editorial                           | 8                                 |
+**Public land is consolidated across every Michigan access type** — state game areas, state
+forest, huntable park land, the Hunting Access Program (15,128 active acres), Commercial
+Forest (2,176,974 acres), GEMS, and deer/turkey/bear/elk management units. See
+`/public-hunting-land/`.
 
-**Phase 3 is mostly done:** rivers and trout streams (309 pages), wild turkey as a statewide
-hub, `/hunting/` and `/fishing/` index pages, small game season dates, and Open Graph cards
-generated per county and per species hub at build time.
+**Fishing records ship from the DNR Master Angler database** — 60,059 entries from 1919 to
+2025, 57 current state records, and the longest entry per species per county. Ranked by
+length, because the program is length-qualified and only a quarter of entries carry a weight.
 
-Importers: `counties`, `public-lands`, `lakes`, `access-sites` (ArcGIS), `harvest` (deer and
-turkey, DNR eLicense), `stocking` (DNR fish stocking database), `curated` (species and season
-YAML).
+**Affiliate links are generated, never pasted.** Tracking codes live in env only. Gear pages
+stay `noindex` until a category has three products with working links. See
+`docs/affiliates.md`.
 
-Not yet done: the directory (listings must be seeded by hand from public sources), the
-newsletter and featured-listing flows (both need accounts), IndexNow and Search Console
-submission (both need the live domain), and Phase 4 PDF extraction for the annual harvest
-survey and Status of the Fishery Resource reports.
+Importers: `counties`, `public-lands`, `lakes`, `access-sites`, `rivers`, `land-programs`,
+`management-units` (ArcGIS), `harvest` (deer and turkey, DNR eLicense), `stocking` and
+`master-angler` (DNR fisheries), `curated` (species and season YAML).
 
-Neon, Amplify and the domain are still unprovisioned. Importers run against a local Postgres,
-see `docs/local-database.md`.
+Not yet done: site search, consolidated hunting and fishing regulations, and reviews on
+public land areas (deferred until there is traffic). The directory still needs listings
+seeded by hand. Phase 4 PDF extraction for the annual harvest survey is unstarted.
+
+Big-game trophy records are not available: Michigan deer records belong to Commemorative
+Bucks of Michigan, a private nonprofit. County harvest totals are the substitute.
+
+Neon, Amplify and the domain are still unprovisioned — see `docs/go-live.md` for exactly
+what is needed. Importers run against a local Postgres, see `docs/local-database.md`.
+What runs on its own and what does not is documented in `docs/automation.md`.

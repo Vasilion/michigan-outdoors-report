@@ -1,0 +1,1828 @@
+[
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Amasa",
+    "name": "Amasa",
+    "unitYear": 2026,
+    "countySlugs": [
+      "baraga",
+      "dickinson",
+      "gogebic",
+      "houghton",
+      "iron",
+      "marquette",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Baldwin",
+    "name": "Baldwin",
+    "unitYear": 2026,
+    "countySlugs": [
+      "benzie",
+      "grand-traverse",
+      "kalkaska",
+      "lake",
+      "leelanau",
+      "manistee",
+      "mason",
+      "mecosta",
+      "montcalm",
+      "muskegon",
+      "newaygo",
+      "oceana",
+      "osceola",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Baraga",
+    "name": "Baraga",
+    "unitYear": 2026,
+    "countySlugs": [
+      "baraga",
+      "houghton",
+      "keweenaw",
+      "marquette",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Bergland",
+    "name": "Bergland",
+    "unitYear": 2026,
+    "countySlugs": [
+      "gogebic",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Carney",
+    "name": "Carney",
+    "unitYear": 2026,
+    "countySlugs": [
+      "delta",
+      "dickinson",
+      "marquette",
+      "menominee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Dansville",
+    "name": "Dansville",
+    "unitYear": 2026,
+    "countySlugs": [
+      "allegan",
+      "barry",
+      "bay",
+      "berrien",
+      "branch",
+      "calhoun",
+      "cass",
+      "clinton",
+      "eaton",
+      "genesee",
+      "gratiot",
+      "hillsdale",
+      "huron",
+      "ingham",
+      "ionia",
+      "jackson",
+      "kalamazoo",
+      "kent",
+      "lapeer",
+      "lenawee",
+      "livingston",
+      "macomb",
+      "monroe",
+      "montcalm",
+      "oakland",
+      "ottawa",
+      "saginaw",
+      "sanilac",
+      "shiawassee",
+      "st-clair",
+      "st-joseph",
+      "tuscola",
+      "van-buren",
+      "washtenaw",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Drummond",
+    "name": "Drummond",
+    "unitYear": 2026,
+    "countySlugs": [
+      "chippewa"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Gladwin",
+    "name": "Gladwin",
+    "unitYear": 2026,
+    "countySlugs": [
+      "arenac",
+      "bay",
+      "clare",
+      "gladwin",
+      "iosco",
+      "isabella",
+      "mecosta",
+      "midland",
+      "ogemaw",
+      "osceola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Gwinn",
+    "name": "Gwinn",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "delta",
+      "dickinson",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Newberry",
+    "name": "Newberry",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "chippewa",
+      "delta",
+      "luce",
+      "mackinac",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "bear",
+    "unitCode": "Red Oak",
+    "name": "Red Oak",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alcona",
+      "alpena",
+      "antrim",
+      "charlevoix",
+      "cheboygan",
+      "crawford",
+      "emmet",
+      "grand-traverse",
+      "iosco",
+      "kalkaska",
+      "missaukee",
+      "montmorency",
+      "ogemaw",
+      "oscoda",
+      "otsego",
+      "presque-isle",
+      "roscommon",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/2",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "001",
+    "name": "DMU-001 Alcona County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alcona"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "003",
+    "name": "DMU-003 Allegan County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "allegan"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "004",
+    "name": "DMU-004 Alpena County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alpena"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "005",
+    "name": "DMU-005 Antrim County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "antrim"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "006",
+    "name": "DMU-006 Arenac County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "arenac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "007",
+    "name": "DMU-007 Big Bay Unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "baraga",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "008",
+    "name": "DMU-008 Barry County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "barry"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "009",
+    "name": "DMU-009 Bay County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "bay"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "010",
+    "name": "DMU-010 Benzie County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "benzie"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "011",
+    "name": "DMU-011 Berrien County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "berrien"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "012",
+    "name": "DMU-012 Branch County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "branch"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "013",
+    "name": "DMU-013 Calhoun County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "calhoun"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "014",
+    "name": "DMU-014 Cass County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "cass"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "015",
+    "name": "DMU-015 Charlevoix County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "charlevoix"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "016",
+    "name": "DMU-016 Cheboygan County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "cheboygan"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "017",
+    "name": "DMU-017 Sault Ste. Marie unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "chippewa",
+      "mackinac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "018",
+    "name": "DMU-018 Clare County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "clare"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "019",
+    "name": "DMU-019 Clinton County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "clinton"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "020",
+    "name": "DMU-020 Crawford County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "crawford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "021",
+    "name": "DMU-021 Manistique unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "delta",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "022",
+    "name": "DMU-022 Crystal Falls unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "dickinson",
+      "iron"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "023",
+    "name": "DMU-023 Eaton County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "eaton"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "024",
+    "name": "DMU-024 Emmet County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "emmet"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "025",
+    "name": "DMU-025 Genesee County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "genesee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "026",
+    "name": "DMU-026 Gladwin County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "gladwin"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "027",
+    "name": "DMU-027 Watersmeet unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "gogebic",
+      "houghton",
+      "iron",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "028",
+    "name": "DMU-028 Grand Traverse County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "grand-traverse"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "029",
+    "name": "DMU-029 Gratiot County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "gratiot"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "030",
+    "name": "DMU-030 Hillsdale County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "hillsdale"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "031",
+    "name": "DMU-031 Nissula unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "baraga",
+      "houghton",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "032",
+    "name": "DMU-032 Huron County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "huron"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "033",
+    "name": "DMU-033 Ingham County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "ingham"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "034",
+    "name": "DMU-034 Ionia County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "ionia"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "035",
+    "name": "DMU-035 Iosco County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "iosco"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "036",
+    "name": "DMU-036 Amasa-Michigamme unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "baraga",
+      "dickinson",
+      "iron",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "037",
+    "name": "DMU-037 Isabella County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "isabella"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "038",
+    "name": "DMU-038 Jackson County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "jackson"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "039",
+    "name": "DMU-039 Kalamazoo County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "kalamazoo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "040",
+    "name": "DMU-040 Kalkaska County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "kalkaska"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "041",
+    "name": "DMU-041 Kent County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "kent"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "042",
+    "name": "DMU-042 Keweenaw unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "houghton",
+      "keweenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "043",
+    "name": "DMU-043 Lake County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "lake"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "044",
+    "name": "DMU-044 Lapeer County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "lapeer"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "045",
+    "name": "DMU-045 Leelanau County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "leelanau"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "046",
+    "name": "DMU-046 Lenawee County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "lenawee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "047",
+    "name": "DMU-047 Livingston County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "livingston"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "048",
+    "name": "DMU-048 Newberry unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "chippewa",
+      "luce",
+      "mackinac",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "050",
+    "name": "DMU-050 Macomb County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "macomb"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "051",
+    "name": "DMU-051 Manistee County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "manistee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "053",
+    "name": "DMU-053 Mason County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "mason"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "054",
+    "name": "DMU-054 Mecosta County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "mecosta"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "055",
+    "name": "DMU-055 Menominee unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "delta",
+      "menominee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "056",
+    "name": "DMU-056 Midland County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "midland"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "057",
+    "name": "DMU-057 Missaukee County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "missaukee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "058",
+    "name": "DMU-058 Monroe County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "monroe"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "059",
+    "name": "DMU-059 Montcalm County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "montcalm"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "060",
+    "name": "DMU-060 Montmorency County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "montmorency"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "061",
+    "name": "DMU-061 Muskegon County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "muskegon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "062",
+    "name": "DMU-062 Newaygo County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "newaygo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "063",
+    "name": "DMU-063 Oakland County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "oakland"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "064",
+    "name": "DMU-064 Oceana County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "oceana"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "065",
+    "name": "DMU-065 Ogemaw County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "ogemaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "066",
+    "name": "DMU-066 Ontonagon unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "gogebic",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "067",
+    "name": "DMU-067 Osceola County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "osceola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "068",
+    "name": "DMU-068 Oscoda County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "oscoda"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "069",
+    "name": "DMU-069 Otsego County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "otsego"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "070",
+    "name": "DMU-070 Ottawa County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "ottawa"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "071",
+    "name": "DMU-071 Presque Isle County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "presque-isle"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "072",
+    "name": "DMU-072 Roscommon County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "roscommon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "073",
+    "name": "DMU-073 Saginaw County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "saginaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "074",
+    "name": "DMU-074 St. Clair County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "st-clair"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "075",
+    "name": "DMU-075 St. Joseph County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "st-joseph"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "076",
+    "name": "DMU-076 Sanilac County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "sanilac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "078",
+    "name": "DMU-078 Shiawassee County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "shiawassee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "079",
+    "name": "DMU-079 Tuscola County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "080",
+    "name": "DMU-080 Van Buren County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "van-buren"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "081",
+    "name": "DMU-081 Washtenaw County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "washtenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "082",
+    "name": "DMU-082 Wayne County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "083",
+    "name": "DMU-083 Wexford County",
+    "unitYear": 2026,
+    "countySlugs": [
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "115",
+    "name": "DMU-115 Beaver Island unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "charlevoix"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "117",
+    "name": "DMU-117 Drummond Island unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "chippewa"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "121",
+    "name": "DMU-121 Bay De Noc unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "delta",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "122",
+    "name": "DMU-122 Norway unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "dickinson",
+      "menominee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "127",
+    "name": "DMU-127 Ironwood unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "gogebic"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "131",
+    "name": "DMU-131 Twin Lakes unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "houghton",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "145",
+    "name": "DMU-145 North Manitou Island unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "leelanau"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "149",
+    "name": "DMU-149 Bois Blanc (and Round Is.) unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "mackinac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "152",
+    "name": "DMU-152 Gwinn unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "dickinson",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "155",
+    "name": "DMU-155 Gladstone unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "delta",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "161",
+    "name": "DMU-161 Muskegon south unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "muskegon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "162",
+    "name": "DMU-162 South Newaygo County unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "newaygo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "174",
+    "name": "DMU-174 St. Clair Flats unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "st-clair"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "245",
+    "name": "DMU-245 South Fox Island unit",
+    "unitYear": 2026,
+    "countySlugs": [],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "249",
+    "name": "DMU-249 Trout Lake unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "chippewa",
+      "luce",
+      "mackinac"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "252",
+    "name": "DMU-252 Rock Unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "delta",
+      "marquette"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "255",
+    "name": "DMU-255 LaBranche unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "delta",
+      "dickinson",
+      "marquette",
+      "menominee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "261",
+    "name": "DMU-261 Muskegon north unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "muskegon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "262",
+    "name": "DMU-262 North Newaygo County unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "newaygo"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "273",
+    "name": "DMU-273 Shiawassee Unit (SRSGA and SNWR)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "saginaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "311",
+    "name": "DMU-311 Keeler multi-county unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "berrien",
+      "cass",
+      "van-buren"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "312",
+    "name": "DMU-312 Sherwood multicounty unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "branch",
+      "kalamazoo",
+      "st-joseph"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "332",
+    "name": "DMU-332 Greenleaf unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "huron",
+      "sanilac",
+      "tuscola"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "333",
+    "name": "DMU-333 Lansing core CWD area",
+    "unitYear": 2026,
+    "countySlugs": [
+      "clinton",
+      "eaton",
+      "ingham",
+      "ionia",
+      "shiawassee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "341",
+    "name": "DMU-341 Sparta unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "kent",
+      "muskegon",
+      "ottawa"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "349",
+    "name": "DMU-349 Engadine unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "luce",
+      "mackinac",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "351",
+    "name": "DMU-351 Mideast Upper Peninsula",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "chippewa",
+      "delta",
+      "luce",
+      "mackinac",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "352",
+    "name": "DMU-352 Midwest Upper Peninsula unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "baraga",
+      "delta",
+      "dickinson",
+      "gogebic",
+      "houghton",
+      "iron",
+      "marquette",
+      "ontonagon"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "354",
+    "name": "DMU-354 Lakeview unit (Mecosta - Montcalm)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "mecosta",
+      "montcalm"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "359",
+    "name": "DMU-359 Mecosta-Montcalm core CWD area",
+    "unitYear": 2026,
+    "countySlugs": [
+      "mecosta",
+      "montcalm"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "361",
+    "name": "DMU-361 Muskegon north unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "muskegon",
+      "newaygo",
+      "oceana"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "419",
+    "name": "DMU-419 Lansing CWD management zone",
+    "unitYear": 2026,
+    "countySlugs": [
+      "clinton",
+      "eaton",
+      "ingham",
+      "ionia",
+      "shiawassee"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "452",
+    "name": "DMU-452 TB Core area",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alcona",
+      "alpena",
+      "montmorency",
+      "oscoda"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "486",
+    "name": "DMU-486 Southern Lower Peninsula multicounty unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "allegan",
+      "barry",
+      "bay",
+      "berrien",
+      "branch",
+      "calhoun",
+      "cass",
+      "clinton",
+      "eaton",
+      "genesee",
+      "gratiot",
+      "hillsdale",
+      "huron",
+      "ingham",
+      "ionia",
+      "isabella",
+      "jackson",
+      "kalamazoo",
+      "kent",
+      "lapeer",
+      "lenawee",
+      "livingston",
+      "mecosta",
+      "midland",
+      "montcalm",
+      "muskegon",
+      "newaygo",
+      "oakland",
+      "ottawa",
+      "saginaw",
+      "sanilac",
+      "shiawassee",
+      "st-joseph",
+      "tuscola",
+      "van-buren",
+      "washtenaw"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "487",
+    "name": "DMU-487 Northeast Lower Peninsula multicounty unit",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alcona",
+      "alpena",
+      "iosco",
+      "montmorency",
+      "oscoda",
+      "presque-isle"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "deer",
+    "unitCode": "499",
+    "name": "DMU-499 Urban deer management zone",
+    "unitYear": 2026,
+    "countySlugs": [
+      "macomb",
+      "oakland",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/3",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "elk",
+    "unitCode": "H-Winter",
+    "name": "H (Winter season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "cheboygan",
+      "otsego"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/4",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "elk",
+    "unitCode": "I-Winter",
+    "name": "I (Winter season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "montmorency",
+      "otsego"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/4",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "elk",
+    "unitCode": "X-Winter",
+    "name": "X (Winter season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alpena",
+      "antrim",
+      "charlevoix",
+      "cheboygan",
+      "crawford",
+      "emmet",
+      "montmorency",
+      "oscoda",
+      "otsego",
+      "presque-isle"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/4",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "turkey",
+    "unitCode": "I-Fall",
+    "name": "I (Fall season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alcona",
+      "allegan",
+      "alpena",
+      "antrim",
+      "arenac",
+      "barry",
+      "bay",
+      "benzie",
+      "berrien",
+      "branch",
+      "calhoun",
+      "cass",
+      "charlevoix",
+      "cheboygan",
+      "clare",
+      "clinton",
+      "crawford",
+      "eaton",
+      "emmet",
+      "genesee",
+      "gladwin",
+      "grand-traverse",
+      "gratiot",
+      "hillsdale",
+      "huron",
+      "ingham",
+      "ionia",
+      "iosco",
+      "isabella",
+      "jackson",
+      "kalamazoo",
+      "kalkaska",
+      "kent",
+      "lake",
+      "lapeer",
+      "leelanau",
+      "lenawee",
+      "livingston",
+      "macomb",
+      "manistee",
+      "mason",
+      "mecosta",
+      "midland",
+      "missaukee",
+      "montcalm",
+      "montmorency",
+      "muskegon",
+      "newaygo",
+      "oakland",
+      "oceana",
+      "ogemaw",
+      "osceola",
+      "oscoda",
+      "otsego",
+      "ottawa",
+      "presque-isle",
+      "roscommon",
+      "saginaw",
+      "sanilac",
+      "shiawassee",
+      "st-clair",
+      "st-joseph",
+      "tuscola",
+      "van-buren",
+      "washtenaw",
+      "wayne",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/5",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "turkey",
+    "unitCode": "M-Spring",
+    "name": "M (Spring season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alger",
+      "baraga",
+      "chippewa",
+      "delta",
+      "dickinson",
+      "gogebic",
+      "houghton",
+      "iron",
+      "keweenaw",
+      "luce",
+      "mackinac",
+      "marquette",
+      "menominee",
+      "ontonagon",
+      "schoolcraft"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/5",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "turkey",
+    "unitCode": "NM-Spring",
+    "name": "NM (Spring season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "alcona",
+      "alpena",
+      "antrim",
+      "arenac",
+      "benzie",
+      "charlevoix",
+      "cheboygan",
+      "clare",
+      "crawford",
+      "emmet",
+      "gladwin",
+      "grand-traverse",
+      "iosco",
+      "kalkaska",
+      "lake",
+      "leelanau",
+      "manistee",
+      "mason",
+      "mecosta",
+      "missaukee",
+      "montmorency",
+      "newaygo",
+      "oceana",
+      "ogemaw",
+      "osceola",
+      "oscoda",
+      "otsego",
+      "presque-isle",
+      "roscommon",
+      "wexford"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/5",
+    "updatedAt": "2026-09-23"
+  },
+  {
+    "speciesSlug": "turkey",
+    "unitCode": "ZZ-Spring",
+    "name": "ZZ (Spring season)",
+    "unitYear": 2026,
+    "countySlugs": [
+      "allegan",
+      "barry",
+      "bay",
+      "berrien",
+      "branch",
+      "calhoun",
+      "cass",
+      "clinton",
+      "eaton",
+      "genesee",
+      "gratiot",
+      "hillsdale",
+      "huron",
+      "ingham",
+      "ionia",
+      "isabella",
+      "jackson",
+      "kalamazoo",
+      "kent",
+      "lapeer",
+      "lenawee",
+      "livingston",
+      "macomb",
+      "midland",
+      "monroe",
+      "montcalm",
+      "muskegon",
+      "oakland",
+      "ottawa",
+      "saginaw",
+      "sanilac",
+      "shiawassee",
+      "st-clair",
+      "st-joseph",
+      "tuscola",
+      "van-buren",
+      "washtenaw",
+      "wayne"
+    ],
+    "sourceUrl": "https://services3.arcgis.com/Jdnp1TjADvSDxMAX/arcgis/rest/services/WILDGameSpeciesManagementUnitsAndZonesOPENDATA/FeatureServer/5",
+    "updatedAt": "2026-09-23"
+  }
+]

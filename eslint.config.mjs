@@ -71,6 +71,7 @@ const config = [
   {
     files: [
       "src/lib/data/schemas.ts",
+      "src/lib/gear.ts",
       "importers/curated/parse.ts",
       "src/components/ui/*.tsx",
     ],

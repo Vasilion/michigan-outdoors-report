@@ -101,3 +101,52 @@ export function numberField(
   const value: unknown = properties[key];
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
+
+export type CentroidFeature = {
+  readonly attributes: Readonly<Record<string, unknown>>;
+  readonly centroid: { readonly x: number; readonly y: number } | null;
+};
+
+type CentroidPage = {
+  readonly features?: readonly CentroidFeature[];
+  readonly exceededTransferLimit?: boolean;
+};
+
+function centroidUrl(layer: ArcGisLayer, offset: number, where: string): string {
+  const params: string[] = [
+    `where=${encodeURIComponent(where)}`,
+    "outFields=*",
+    "returnGeometry=false",
+    "returnCentroid=true",
+    "outSR=4326",
+    `resultOffset=${offset}`,
+    `resultRecordCount=${PAGE_SIZE}`,
+    "f=json",
+  ];
+  return `${layerUrl(layer)}/query?${params.join("&")}`;
+}
+
+function fetchCentroidPage(
+  layer: ArcGisLayer,
+  where: string,
+  offset: number,
+  collected: CentroidFeature[],
+): Promise<readonly CentroidFeature[]> {
+  return fetchJson<CentroidPage>(centroidUrl(layer, offset, where), {
+    cacheKey: `${layer.service}-${layer.layerId}-centroid-${offset}`,
+  }).then((page: CentroidPage): Promise<readonly CentroidFeature[]> => {
+    const features: readonly CentroidFeature[] = page.features ?? [];
+    const next: CentroidFeature[] = collected.concat(features);
+    if (features.length < PAGE_SIZE) {
+      return Promise.resolve(next);
+    }
+    return fetchCentroidPage(layer, where, offset + PAGE_SIZE, next);
+  });
+}
+
+export function fetchLayerCentroids(
+  layer: ArcGisLayer,
+  where: string = "1=1",
+): Promise<readonly CentroidFeature[]> {
+  return fetchCentroidPage(layer, where, 0, []);
+}

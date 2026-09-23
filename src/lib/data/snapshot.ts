@@ -16,6 +16,13 @@ import {
   seasonsFileSchema,
   speciesFileSchema,
   stockingEventsFileSchema,
+  landProgramsFileSchema,
+  managementUnitsFileSchema,
+  stateRecordsFileSchema,
+  countyRecordsFileSchema,
+  waterRecordsFileSchema,
+  greatLakesRecordsFileSchema,
+  recordSummaryFileSchema,
 } from "./schemas";
 import type {
   AccessSite,
@@ -32,6 +39,13 @@ import type {
   SnapshotMeta,
   Species,
   StockingEvent,
+  LandProgram,
+  ManagementUnit,
+  StateRecord,
+  CountyRecord,
+  WaterRecord,
+  GreatLakesRecord,
+  RecordSummary,
 } from "./schemas";
 
 export const DATA_DIR: string = join(process.cwd(), "data");
@@ -122,4 +136,32 @@ export function findSpecies(slug: string): Species | null {
 export function latestDataDate(dates: readonly string[]): string {
   const sorted: string[] = [...dates].sort();
   return sorted[sorted.length - 1] ?? getMeta().generatedAt.slice(0, 10);
+}
+
+export function getLandPrograms(): readonly LandProgram[] {
+  return readSnapshot("land-programs.json", landProgramsFileSchema);
+}
+
+export function getManagementUnits(): readonly ManagementUnit[] {
+  return readSnapshot("management-units.json", managementUnitsFileSchema);
+}
+
+export function getStateRecords(): readonly StateRecord[] {
+  return readSnapshot("state-records.json", stateRecordsFileSchema);
+}
+
+export function getCountyRecords(): readonly CountyRecord[] {
+  return readSnapshot("county-records.json", countyRecordsFileSchema);
+}
+
+export function getWaterRecords(): readonly WaterRecord[] {
+  return readSnapshot("water-records.json", waterRecordsFileSchema);
+}
+
+export function getGreatLakesRecords(): readonly GreatLakesRecord[] {
+  return readSnapshot("great-lakes-records.json", greatLakesRecordsFileSchema);
+}
+
+export function getRecordSummary(): readonly RecordSummary[] {
+  return readSnapshot("record-summary.json", recordSummaryFileSchema);
 }

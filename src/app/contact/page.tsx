@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { JsonLd } from "@/components/JsonLd";
+import { ContactRoute } from "@/components/contact-route";
 import { Breadcrumbs } from "@/components/layout";
 import { breadcrumbSchema } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
@@ -24,13 +25,7 @@ export default function ContactPage(): ReactElement {
       />
       <h1 className="text-4xl">Contact</h1>
       <div className="prose-block mt-6">
-        <p>
-          Email{" "}
-          <a href="mailto:contact@michiganoutdoorsreport.com">
-            contact@michiganoutdoorsreport.com
-          </a>
-          .
-        </p>
+        <ContactRoute purpose="To reach this site," />
         <h2>Data corrections</h2>
         <p>
           Include the page URL, the figure you believe is wrong, and the value you think

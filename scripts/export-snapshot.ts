@@ -133,6 +133,9 @@ export const EXPORTS: readonly ExportSpec[] = [
         'slug', r.slug,
         'countySlug', c.slug,
         'designatedTroutStream', r.designated_trout_stream,
+        'blueRibbon', r.blue_ribbon,
+        'blueRibbonMiles', r.blue_ribbon_miles,
+        'blueRibbonReach', r.blue_ribbon_reach,
         'streamTypes', r.stream_types,
         'troutRegulation', r.trout_regulation,
         'gearRestriction', r.gear_restriction,
@@ -160,6 +163,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'managingAgency', p.managing_agency,
         'region', p.region,
         'huntingStatus', p.hunting_status,
+        'description', p.description,
         'officialUrl', p.official_url,
         'centroid', CASE WHEN p.centroid IS NULL THEN NULL ELSE json_build_object(
           'lat', round(ST_Y(p.centroid)::numeric, 5),
@@ -288,6 +292,186 @@ export const EXPORTS: readonly ExportSpec[] = [
       FROM directory_listings d
       JOIN counties c ON c.id = d.county_id
       ORDER BY d.slug`,
+  },
+  {
+    file: "land-programs.json",
+    sql: `
+      SELECT json_build_object(
+        'program', lp.program,
+        'countySlug', c.slug,
+        'parcelCount', lp.parcel_count,
+        'acres', round(lp.acres::numeric, 1),
+        'detail', lp.detail,
+        'sourceUrl', lp.source_url,
+        'updatedAt', to_char(lp.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
+      ) AS row
+      FROM land_program_counties lp
+      JOIN counties c ON c.id = lp.county_id
+      ORDER BY lp.program, c.slug`,
+  },
+  {
+    file: "management-units.json",
+    sql: `
+      SELECT json_build_object(
+        'speciesSlug', u.species_slug,
+        'unitCode', u.unit_code,
+        'name', u.name,
+        'unitYear', u.unit_year,
+        'countySlugs', COALESCE((
+          SELECT json_agg(c.slug ORDER BY c.slug)
+          FROM management_unit_counties mc
+          JOIN counties c ON c.id = mc.county_id
+          WHERE mc.management_unit_id = u.id), '[]'::json),
+        'sourceUrl', u.source_url,
+        'updatedAt', to_char(u.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
+      ) AS row
+      FROM management_units u
+      ORDER BY u.species_slug, u.unit_code`,
+  },
+  {
+    file: "state-records.json",
+    sql: `
+      SELECT json_build_object(
+        'speciesSlug', e.species_slug,
+        'speciesName', e.species_name,
+        'anglerName', e.angler_name,
+        'caughtYear', e.caught_year,
+        'waterName', e.water_name,
+        'countySlug', c.slug,
+        'lengthIn', e.length_in,
+        'weightLb', e.weight_lb,
+        'method', e.method,
+        'minLengthIn', e.min_length_in,
+        'sourceUrl', e.source_url,
+        'updatedAt', to_char(e.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
+      ) AS row
+      FROM master_angler_entries e
+      LEFT JOIN counties c ON c.id = e.county_id
+      WHERE e.state_record
+      ORDER BY e.species_name`,
+  },
+  {
+    file: "county-records.json",
+    sql: `
+      WITH ranked AS (
+        SELECT
+          e.*,
+          row_number() OVER (
+            PARTITION BY e.county_id, e.species_slug
+            ORDER BY e.length_in DESC NULLS LAST, e.weight_lb DESC NULLS LAST, e.caught_year DESC
+          ) AS rn,
+          count(*) OVER (PARTITION BY e.county_id, e.species_slug) AS entries
+        FROM master_angler_entries e
+        WHERE e.county_id IS NOT NULL AND e.length_in IS NOT NULL
+      )
+      SELECT json_build_object(
+        'countySlug', c.slug,
+        'speciesSlug', r.species_slug,
+        'speciesName', r.species_name,
+        'anglerName', r.angler_name,
+        'caughtYear', r.caught_year,
+        'waterName', r.water_name,
+        'lakeSlug', l.slug,
+        'riverSlug', rv.slug,
+        'lengthIn', r.length_in,
+        'weightLb', r.weight_lb,
+        'method', r.method,
+        'entryCount', r.entries::int,
+        'stateRecord', r.state_record,
+        'updatedAt', to_char(r.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
+      ) AS row
+      FROM ranked r
+      JOIN counties c ON c.id = r.county_id
+      LEFT JOIN lakes l ON l.id = r.lake_id
+      LEFT JOIN rivers rv ON rv.id = r.river_id
+      WHERE r.rn = 1
+      ORDER BY c.slug, r.species_slug`,
+  },
+  {
+    file: "water-records.json",
+    sql: `
+      WITH ranked AS (
+        SELECT
+          e.*,
+          row_number() OVER (
+            PARTITION BY coalesce(e.lake_id, 0), coalesce(e.river_id, 0), e.species_slug
+            ORDER BY e.length_in DESC NULLS LAST, e.weight_lb DESC NULLS LAST, e.caught_year DESC
+          ) AS rn,
+          count(*) OVER (
+            PARTITION BY coalesce(e.lake_id, 0), coalesce(e.river_id, 0), e.species_slug
+          ) AS entries
+        FROM master_angler_entries e
+        WHERE (e.lake_id IS NOT NULL OR e.river_id IS NOT NULL) AND e.length_in IS NOT NULL
+      )
+      SELECT json_build_object(
+        'countySlug', c.slug,
+        'lakeSlug', l.slug,
+        'riverSlug', rv.slug,
+        'speciesSlug', r.species_slug,
+        'speciesName', r.species_name,
+        'anglerName', r.angler_name,
+        'caughtYear', r.caught_year,
+        'lengthIn', r.length_in,
+        'weightLb', r.weight_lb,
+        'method', r.method,
+        'entryCount', r.entries::int,
+        'stateRecord', r.state_record,
+        'updatedAt', to_char(r.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
+      ) AS row
+      FROM ranked r
+      JOIN counties c ON c.id = r.county_id
+      LEFT JOIN lakes l ON l.id = r.lake_id
+      LEFT JOIN rivers rv ON rv.id = r.river_id
+      WHERE r.rn = 1
+      ORDER BY c.slug, l.slug NULLS LAST, rv.slug NULLS LAST, r.species_slug`,
+  },
+  {
+    file: "great-lakes-records.json",
+    sql: `
+      WITH ranked AS (
+        SELECT
+          e.*,
+          row_number() OVER (
+            PARTITION BY e.water_name, e.species_slug
+            ORDER BY e.length_in DESC NULLS LAST, e.weight_lb DESC NULLS LAST, e.caught_year DESC
+          ) AS rn,
+          count(*) OVER (PARTITION BY e.water_name, e.species_slug) AS entries
+        FROM master_angler_entries e
+        WHERE e.county_id IS NULL AND e.water_name IS NOT NULL AND e.length_in IS NOT NULL
+      )
+      SELECT json_build_object(
+        'waterName', r.water_name,
+        'speciesSlug', r.species_slug,
+        'speciesName', r.species_name,
+        'anglerName', r.angler_name,
+        'caughtYear', r.caught_year,
+        'lengthIn', r.length_in,
+        'weightLb', r.weight_lb,
+        'method', r.method,
+        'entryCount', r.entries::int,
+        'stateRecord', r.state_record,
+        'updatedAt', to_char(r.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
+      ) AS row
+      FROM ranked r
+      WHERE r.rn = 1
+      ORDER BY r.water_name, r.species_slug`,
+  },
+  {
+    file: "record-summary.json",
+    sql: `
+      SELECT json_build_object(
+        'speciesSlug', e.species_slug,
+        'speciesName', e.species_name,
+        'entryCount', count(*)::int,
+        'countyCount', count(DISTINCT e.county_id)::int,
+        'firstYear', min(e.caught_year),
+        'lastYear', max(e.caught_year),
+        'minLengthIn', max(e.min_length_in),
+        'bestLengthIn', max(e.length_in)
+      ) AS row
+      FROM master_angler_entries e
+      GROUP BY e.species_slug, e.species_name
+      ORDER BY e.species_slug`,
   },
   {
     file: "redirects.json",

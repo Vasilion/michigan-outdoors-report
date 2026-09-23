@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { Anchor, Fish, HelpCircle, Map as MapIcon, Waves } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { WaterRecordsSection } from "@/components/records";
+import { recordsForWater } from "@/lib/views/records";
 import {
   AnswerSummary,
   Breadcrumbs,
@@ -339,6 +341,11 @@ export default function LakePage({ params }: LakePageProps): ReactElement {
           ))}
         </ul>
       </Section>
+
+      <WaterRecordsSection
+        waterName={view.lake.name}
+        records={recordsForWater(view.county.slug, view.lake.slug, "lake")}
+      />
 
       <div className="mt-10 grid gap-2">
         <LastUpdated isoDate={view.lastUpdated} />

@@ -9,6 +9,45 @@ export type TroutDesignation = {
   readonly gearRestriction: string | null;
 };
 
+export type BlueRibbonReach = {
+  readonly miles: number;
+  readonly reach: string | null;
+};
+
+export function blueRibbonByName(
+  features: readonly GeoJsonFeature[],
+): Map<string, BlueRibbonReach> {
+  const miles: Map<string, number> = new Map<string, number>();
+  const reaches: Map<string, Set<string>> = new Map<string, Set<string>>();
+  for (const feature of features) {
+    const rawName: string | null = stringField(feature.properties, "Name");
+    if (rawName === null) {
+      continue;
+    }
+    const key: string = cleanRiverName(rawName).toLowerCase();
+    const length: unknown = feature.properties["LengthMi"];
+    if (typeof length === "number" && Number.isFinite(length)) {
+      miles.set(key, (miles.get(key) ?? 0) + length);
+    }
+    const upstream: string | null = stringField(feature.properties, "UpstreamLimit");
+    const downstream: string | null = stringField(feature.properties, "DownstreamLimit");
+    if (upstream !== null && downstream !== null) {
+      const bucket: Set<string> = reaches.get(key) ?? new Set<string>();
+      bucket.add(`${upstream} downstream to ${downstream}`);
+      reaches.set(key, bucket);
+    }
+  }
+  const result: Map<string, BlueRibbonReach> = new Map<string, BlueRibbonReach>();
+  for (const [key, total] of miles) {
+    const list: string[] = [...(reaches.get(key) ?? new Set<string>())].sort();
+    result.set(key, {
+      miles: Math.round(total * 10) / 10,
+      reach: list.length === 1 ? (list[0] as string) : null,
+    });
+  }
+  return result;
+}
+
 export type RiverSeed = {
   readonly name: string;
   readonly countySlug: string;
@@ -19,6 +58,9 @@ export type NormalizedRiver = {
   readonly slug: string;
   readonly countySlug: string;
   readonly designated: boolean;
+  readonly blueRibbon: boolean;
+  readonly blueRibbonMiles: number | null;
+  readonly blueRibbonReach: string | null;
   readonly streamTypes: readonly string[];
   readonly regulation: string | null;
   readonly gearRestriction: string | null;
@@ -113,6 +155,7 @@ export function normalizeRivers(
   seeds: readonly RiverSeed[],
   knownNames: ReadonlySet<string>,
   trout: ReadonlyMap<string, TroutDesignation>,
+  blueRibbon: ReadonlyMap<string, BlueRibbonReach>,
 ): readonly NormalizedRiver[] {
   const byKey: Map<string, NormalizedRiver> = new Map<string, NormalizedRiver>();
   for (const seed of seeds) {
@@ -130,11 +173,15 @@ export function normalizeRivers(
       continue;
     }
     const designation: TroutDesignation | undefined = trout.get(lower);
+    const ribbon: BlueRibbonReach | undefined = blueRibbon.get(lower);
     byKey.set(key, {
       name,
       slug,
       countySlug: seed.countySlug,
       designated: designation?.designated ?? false,
+      blueRibbon: ribbon !== undefined,
+      blueRibbonMiles: ribbon?.miles ?? null,
+      blueRibbonReach: ribbon?.reach ?? null,
       streamTypes: designation?.streamTypes ?? [],
       regulation: designation?.regulation ?? null,
       gearRestriction: designation?.gearRestriction ?? null,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { JsonLd } from "@/components/JsonLd";
+import { ContactRoute } from "@/components/contact-route";
 import { Breadcrumbs } from "@/components/layout";
 import { breadcrumbSchema } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
@@ -49,13 +50,7 @@ export default function AdvertisePage(): ReactElement {
           <li>Ranking within a data table.</li>
           <li>Editorial recommendations in gear roundups.</li>
         </ul>
-        <p>
-          Rates and availability: email{" "}
-          <a href="mailto:contact@michiganoutdoorsreport.com">
-            contact@michiganoutdoorsreport.com
-          </a>
-          .
-        </p>
+        <ContactRoute purpose="For rates and availability," />
       </div>
       <JsonLd
         schemas={[

@@ -320,3 +320,78 @@ Lighthouse CI covers one URL per template, which is now fourteen. At three runs 
 alone took over ten minutes, so `numberOfRuns` drops to two. The budgets pass with roughly 300ms
 of headroom on LCP and a perfect score everywhere else, so the extra run was buying precision
 nobody was spending.
+
+## 2026-09-22 — Public land consolidation and fishing records
+
+**Added four DNR sources nobody consolidates in one place.**
+
+- **Hunter Access Program** (`DNRWILDLandsOPENDATA` layer 0) — 378 parcels, 114 active,
+  15,128 active acres across 25 counties. Leased private land open to public hunting.
+- **Commercial Forest** (`CommercialForestOPENDATA` layer 0) — 17,337 parcels,
+  2,176,974 acres across 50 counties. Private timber land open to public foot access by
+  statute.
+- **GEMS** (`pub_GEMS` layer 7) — 19 named Grouse Enhanced Management Sites, promoted to
+  full `public_lands` rows (305 → 324 named units).
+- **Game management units** (`WILDGameSpeciesManagementUnitsAndZonesOPENDATA`) — 133 units
+  across deer, turkey, bear and elk, with 497 unit-county links.
+
+**Parcel programs aggregate to counties; they do not get their own pages.** HAP and
+Commercial Forest parcels are unnamed. 17,337 pages named "Commercial Forest parcel 13167"
+would be pure thin content. Parcels land in `land_program_parcels` with a centroid, and a
+PostGIS `ST_Contains` join aggregates them into `land_program_counties`. Zero parcels fell
+outside a county boundary on the first run, so the join is sound.
+
+**Commercial Forest has no county field, so centroids come from ArcGIS directly.**
+`returnCentroid=true` with `returnGeometry=false` returns a centroid per feature without
+transferring polygons — 17,337 parcels at attribute size instead of ~8.6 MB of geometry.
+
+**Master Angler is the fishing records source** (`Master_Angler_20220328` layer 0) —
+60,059 entries, 1919 to 2025, 57 current state records, every row carrying coordinates.
+
+**Records rank by length, not weight.** Length is present on 59,298 of 60,059 entries
+(99%); weight on only 14,957 (25%). Master Angler is a length-qualified program — the
+source carries a `CurrentMinLength` per species. Ranking by weight would have silently
+discarded three quarters of the data. Weight displays wherever the angler reported it.
+
+**The 9,241 entries with no county are correct, not a defect.** They are Great Lakes and
+connecting-water catches — Lake Michigan (4,643), Saginaw Bay, Lake Huron, Lake Erie, Lake
+Superior, Grand Traverse Bay. Those waters lie outside county land boundaries, so the
+point-in-county join legitimately finds nothing. They export to `great-lakes-records.json`
+and render in their own section rather than being dropped or force-assigned.
+
+**Record pages gate at 25+ entries and 5+ counties** — 47 of 60 species qualify. Below
+that a county leaderboard is a handful of rows and reads as thin.
+
+**Angler names are published.** Master Angler is an opt-in public recognition program and
+the DNR publishes the names itself. Names appear on record rows, but no page is _about_ a
+person — there are no angler pages and no angler search. A takedown request should be
+honoured on request.
+
+**Big-game trophy records are not available and will not be scraped.** Michigan deer
+records belong to Commemorative Bucks of Michigan, a private nonprofit with a proprietary
+record book. County harvest totals are the data-backed substitute and already ship.
+
+## 2026-09-22 — Affiliate links are generated, never pasted
+
+`content/gear.yaml` stores an ASIN or a plain product URL. Tracking codes live only in env
+(`NEXT_PUBLIC_AMAZON_TAG`, `NEXT_PUBLIC_AVANTLINK_ID`, `NEXT_PUBLIC_IMPACT_ID`) and are
+appended at build time. No tracking code is committed. With no network configured the gear
+pages still render (the editorial reasoning stands alone) but go `noindex` and drop out of
+the sitemap until a category has three products with working links. `pnpm check:affiliates`
+validates the file and HTTP-checks every resolvable link in CI, so a discontinued product
+fails the build instead of rotting.
+
+## 2026-09-22 — IndexNow closes the loop between data and search engines
+
+The importer workflow diffs route `lastmod` values against `data/route-lastmod.json` and
+submits only changed URLs, then commits the new state alongside the snapshot. Gated on
+`INDEXNOW_KEY`; a run with the key unset logs what it would have sent and moves on. The key
+file at `/{key}.txt` is written at build time from the same env var.
+
+## 2026-09-22 — Contact address is env-gated
+
+`SITE.contactEmail` reads `NEXT_PUBLIC_CONTACT_EMAIL` and is `null` when unset. Rather than
+advertising a mailbox that does not exist, the contact and advertise pages fall back to the
+public repository's issue tracker, and `organizationSchema` omits the `email` property
+entirely. Newsletter language is removed from the privacy policy; the site collects no
+email addresses.

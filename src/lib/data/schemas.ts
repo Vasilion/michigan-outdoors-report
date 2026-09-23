@@ -51,6 +51,9 @@ export const riverSchema = z.object({
   slug: slugSchema,
   countySlug: slugSchema,
   designatedTroutStream: z.boolean(),
+  blueRibbon: z.boolean(),
+  blueRibbonMiles: z.number().nullable(),
+  blueRibbonReach: z.string().nullable(),
   streamTypes: z.string().nullable(),
   troutRegulation: z.string().nullable(),
   gearRestriction: z.string().nullable(),
@@ -67,6 +70,7 @@ export const publicLandSchema = z.object({
     "national_forest",
     "state_park",
     "hunter_access",
+    "gems",
     "other",
   ]),
   typeLabel: z.string().min(1),
@@ -75,6 +79,7 @@ export const publicLandSchema = z.object({
   managingAgency: z.string().min(1),
   region: z.string().nullable(),
   huntingStatus: z.string().nullable(),
+  description: z.string().nullable(),
   officialUrl: z.url().nullable(),
   centroid: coordinateSchema.nullable(),
   sourceUrl: z.url(),
@@ -221,3 +226,112 @@ export type DirectoryListing = z.infer<typeof directoryListingSchema>;
 export type Redirect = z.infer<typeof redirectSchema>;
 export type ImporterRun = z.infer<typeof importerRunSchema>;
 export type SnapshotMeta = z.infer<typeof metaSchema>;
+
+export const landProgramSchema = z.object({
+  program: z.enum(["hunter_access", "commercial_forest"]),
+  countySlug: slugSchema,
+  parcelCount: z.number().int().nonnegative(),
+  acres: z.number().nonnegative(),
+  detail: z.record(z.string(), z.unknown()),
+  sourceUrl: z.url(),
+  updatedAt: isoDateSchema,
+});
+
+export const managementUnitSchema = z.object({
+  speciesSlug: slugSchema,
+  unitCode: z.string().min(1),
+  name: z.string().min(1),
+  unitYear: z.number().int().nullable(),
+  countySlugs: z.array(slugSchema),
+  sourceUrl: z.url(),
+  updatedAt: isoDateSchema,
+});
+
+export const stateRecordSchema = z.object({
+  speciesSlug: slugSchema,
+  speciesName: z.string().min(1),
+  anglerName: z.string().nullable(),
+  caughtYear: z.number().int(),
+  waterName: z.string().nullable(),
+  countySlug: slugSchema.nullable(),
+  lengthIn: z.number().nullable(),
+  weightLb: z.number().nullable(),
+  method: z.string().nullable(),
+  minLengthIn: z.number().nullable(),
+  sourceUrl: z.url(),
+  updatedAt: isoDateSchema,
+});
+
+export const countyRecordSchema = z.object({
+  countySlug: slugSchema,
+  speciesSlug: slugSchema,
+  speciesName: z.string().min(1),
+  anglerName: z.string().nullable(),
+  caughtYear: z.number().int(),
+  waterName: z.string().nullable(),
+  lakeSlug: slugSchema.nullable(),
+  riverSlug: slugSchema.nullable(),
+  lengthIn: z.number(),
+  weightLb: z.number().nullable(),
+  method: z.string().nullable(),
+  entryCount: z.number().int().positive(),
+  stateRecord: z.boolean(),
+  updatedAt: isoDateSchema,
+});
+
+export const waterRecordSchema = z.object({
+  countySlug: slugSchema,
+  lakeSlug: slugSchema.nullable(),
+  riverSlug: slugSchema.nullable(),
+  speciesSlug: slugSchema,
+  speciesName: z.string().min(1),
+  anglerName: z.string().nullable(),
+  caughtYear: z.number().int(),
+  lengthIn: z.number(),
+  weightLb: z.number().nullable(),
+  method: z.string().nullable(),
+  entryCount: z.number().int().positive(),
+  stateRecord: z.boolean(),
+  updatedAt: isoDateSchema,
+});
+
+export const greatLakesRecordSchema = z.object({
+  waterName: z.string().min(1),
+  speciesSlug: slugSchema,
+  speciesName: z.string().min(1),
+  anglerName: z.string().nullable(),
+  caughtYear: z.number().int(),
+  lengthIn: z.number(),
+  weightLb: z.number().nullable(),
+  method: z.string().nullable(),
+  entryCount: z.number().int().positive(),
+  stateRecord: z.boolean(),
+  updatedAt: isoDateSchema,
+});
+
+export const recordSummarySchema = z.object({
+  speciesSlug: slugSchema,
+  speciesName: z.string().min(1),
+  entryCount: z.number().int().nonnegative(),
+  countyCount: z.number().int().nonnegative(),
+  firstYear: z.number().int(),
+  lastYear: z.number().int(),
+  minLengthIn: z.number().nullable(),
+  bestLengthIn: z.number().nullable(),
+});
+
+export const landProgramsFileSchema = z.array(landProgramSchema);
+export const managementUnitsFileSchema = z.array(managementUnitSchema);
+export const stateRecordsFileSchema = z.array(stateRecordSchema);
+export const countyRecordsFileSchema = z.array(countyRecordSchema);
+export const waterRecordsFileSchema = z.array(waterRecordSchema);
+export const greatLakesRecordsFileSchema = z.array(greatLakesRecordSchema);
+export const recordSummaryFileSchema = z.array(recordSummarySchema);
+
+export type LandProgram = z.infer<typeof landProgramSchema>;
+export type ManagementUnit = z.infer<typeof managementUnitSchema>;
+export type StateRecord = z.infer<typeof stateRecordSchema>;
+export type CountyRecord = z.infer<typeof countyRecordSchema>;
+export type WaterRecord = z.infer<typeof waterRecordSchema>;
+export type GreatLakesRecord = z.infer<typeof greatLakesRecordSchema>;
+export type RecordSummary = z.infer<typeof recordSummarySchema>;

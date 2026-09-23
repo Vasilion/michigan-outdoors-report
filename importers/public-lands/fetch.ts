@@ -18,3 +18,12 @@ export function fetchWildlifeProperties(): Promise<readonly GeoJsonFeature[]> {
 export function fetchParkHuntableLands(): Promise<readonly GeoJsonFeature[]> {
   return fetchLayer(PARKS_HUNTABLE_LAYER, true);
 }
+
+export const GEMS_LAYER: ArcGisLayer = {
+  service: "pub_GEMS",
+  layerId: 7,
+};
+
+export function fetchGemSites(): Promise<readonly GeoJsonFeature[]> {
+  return fetchLayer(GEMS_LAYER, true);
+}

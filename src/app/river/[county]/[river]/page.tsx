@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { Anchor, Fish, HelpCircle, Map as MapIcon, Waves } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { WaterRecordsSection } from "@/components/records";
+import { recordsForWater } from "@/lib/views/records";
 import {
   AnswerSummary,
   Breadcrumbs,
@@ -57,8 +59,11 @@ function summaryText(view: RiverView): string {
   const designation: string = view.river.designatedTroutStream
     ? ` It is a designated trout stream${view.river.streamTypes === null ? "" : ` (${view.river.streamTypes})`}.`
     : "";
+  const ribbon: string = view.river.blueRibbon
+    ? ` The DNR rates ${view.river.blueRibbonMiles === null ? "part of it" : `${view.river.blueRibbonMiles} miles`} as a Blue Ribbon trout stream, its top quality designation.`
+    : "";
   parts.push(
-    `${view.river.name} runs through ${view.county.name} County, Michigan.${designation}`,
+    `${view.river.name} runs through ${view.county.name} County, Michigan.${designation}${ribbon}`,
   );
   if (view.speciesStocked.length > 0 && view.lastStockedOn !== null) {
     parts.push(
@@ -181,6 +186,12 @@ export default function RiverPage({ params }: RiverPageProps): ReactElement {
   );
 
   const faqs: FaqItem[] = [];
+  if (view.river.blueRibbon) {
+    faqs.push({
+      question: `Is ${view.river.name} a Blue Ribbon trout stream?`,
+      answer: `Yes. The Michigan DNR designates ${view.river.blueRibbonMiles === null ? "a stretch of" : `${view.river.blueRibbonMiles} miles of`} ${view.river.name} as a Blue Ribbon trout stream, which is its highest quality trout water rating. Michigan has only a few dozen such streams.`,
+    });
+  }
   if (view.river.designatedTroutStream) {
     faqs.push({
       question: `Is ${view.river.name} a designated trout stream?`,
@@ -221,6 +232,9 @@ export default function RiverPage({ params }: RiverPageProps): ReactElement {
             <p className="eyebrow">{view.county.name} County</p>
             {view.river.designatedTroutStream ? (
               <Badge variant="accent">Designated trout stream</Badge>
+            ) : null}
+            {view.river.blueRibbon ? (
+              <Badge variant="open">Blue Ribbon trout stream</Badge>
             ) : null}
           </div>
           <h1 className="mt-2 text-4xl md:text-5xl">{view.river.name}</h1>
@@ -298,6 +312,17 @@ export default function RiverPage({ params }: RiverPageProps): ReactElement {
               {view.river.gearRestriction === null ? null : (
                 <li>Gear restriction: {view.river.gearRestriction}</li>
               )}
+              {view.river.blueRibbon ? (
+                <li>
+                  Blue Ribbon trout stream
+                  {view.river.blueRibbonMiles === null
+                    ? ""
+                    : `, ${view.river.blueRibbonMiles} miles`}
+                  {view.river.blueRibbonReach === null
+                    ? ""
+                    : `: ${view.river.blueRibbonReach}`}
+                </li>
+              ) : null}
             </ul>
           </div>
           <VerifyNotice href={SITE.dnrDigestUrl}>
@@ -354,6 +379,11 @@ export default function RiverPage({ params }: RiverPageProps): ReactElement {
           ))}
         </ul>
       </Section>
+
+      <WaterRecordsSection
+        waterName={view.river.name}
+        records={recordsForWater(view.county.slug, view.river.slug, "river")}
+      />
 
       <div className="mt-10 grid gap-2">
         <LastUpdated isoDate={view.lastUpdated} />
