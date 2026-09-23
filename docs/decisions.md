@@ -309,3 +309,14 @@ collapsed it to `'\([^)]*\)'` in the source, and inside a JS template literal `\
 name and linked nothing. Both queries now use POSIX bracket classes, `'[(][^)]*[)]'` and
 `'[[:space:]]+'`, which carry no backslashes and cannot be mangled by an escaping layer. The
 symptom was silent: the importer reported success and linked zero rows.
+
+### Local verify now matches CI, and Lighthouse runs twice
+
+`pnpm verify` ran typecheck, lint, tests, build and the two checkers but not `format:check`,
+which CI does run. A commit went red on formatting alone because two files were touched after
+the last `pnpm format`. `verify` now includes `format:check`, so the local gate is the CI gate.
+
+Lighthouse CI covers one URL per template, which is now fourteen. At three runs each that step
+alone took over ten minutes, so `numberOfRuns` drops to two. The budgets pass with roughly 300ms
+of headroom on LCP and a perfect score everywhere else, so the extra run was buying precision
+nobody was spending.

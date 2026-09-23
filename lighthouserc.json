@@ -19,7 +19,7 @@
         "http://localhost:4322/seasons/ruffed-grouse/",
         "http://localhost:4322/river/manistee/manistee-river/"
       ],
-      "numberOfRuns": 3,
+      "numberOfRuns": 2,
       "settings": {
         "skipAudits": ["canonical", "is-crawlable", "uses-http2"]
       }

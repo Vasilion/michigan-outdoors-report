@@ -22,7 +22,7 @@
     "og": "tsx scripts/generate-og-images.tsx",
     "db:migrate": "tsx scripts/migrate.ts",
     "db:snapshot": "tsx scripts/export-snapshot.ts",
-    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm check:seo && pnpm check:links"
+    "verify": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm check:seo && pnpm check:links"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
