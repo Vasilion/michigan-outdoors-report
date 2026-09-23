@@ -131,17 +131,17 @@ export const EXPORTS: readonly ExportSpec[] = [
       SELECT json_build_object(
         'name', r.name,
         'slug', r.slug,
-        'countySlugs', COALESCE((
-          SELECT json_agg(c.slug ORDER BY c.slug)
-          FROM river_counties rc
-          JOIN counties c ON c.id = rc.county_id
-          WHERE rc.river_id = r.id), '[]'::json),
+        'countySlug', c.slug,
         'designatedTroutStream', r.designated_trout_stream,
+        'streamTypes', r.stream_types,
+        'troutRegulation', r.trout_regulation,
+        'gearRestriction', r.gear_restriction,
         'sourceUrl', r.source_url,
         'updatedAt', to_char(r.updated_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')
       ) AS row
       FROM rivers r
-      ORDER BY r.slug`,
+      JOIN counties c ON c.id = r.county_id
+      ORDER BY c.slug, r.slug`,
   },
   {
     file: "public-lands.json",
@@ -183,6 +183,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'lakeSlug', lk.slug,
         'lakeCountySlug', lkc.slug,
         'riverSlug', rv.slug,
+        'riverCountySlug', rvc.slug,
         'countySlug', c.slug,
         'amenities', a.amenities,
         'sourceUrl', a.source_url,
@@ -193,6 +194,7 @@ export const EXPORTS: readonly ExportSpec[] = [
       LEFT JOIN lakes lk ON lk.id = a.lake_id AND lk.county_id IS NOT NULL
       LEFT JOIN counties lkc ON lkc.id = lk.county_id
       LEFT JOIN rivers rv ON rv.id = a.river_id
+      LEFT JOIN counties rvc ON rvc.id = rv.county_id
       ORDER BY a.slug`,
   },
   {
@@ -204,6 +206,7 @@ export const EXPORTS: readonly ExportSpec[] = [
         'lakeSlug', lk.slug,
         'lakeCountySlug', lkc.slug,
         'riverSlug', rv.slug,
+        'riverCountySlug', rvc.slug,
         'countySlug', c.slug,
         'speciesSlug', s.slug,
         'strain', e.strain,
@@ -218,6 +221,7 @@ export const EXPORTS: readonly ExportSpec[] = [
       LEFT JOIN lakes lk ON lk.id = e.lake_id AND lk.county_id IS NOT NULL
       LEFT JOIN counties lkc ON lkc.id = lk.county_id
       LEFT JOIN rivers rv ON rv.id = e.river_id
+      LEFT JOIN counties rvc ON rvc.id = rv.county_id
       ORDER BY e.stocked_on, e.water_name, s.slug, e.source_record_id`,
   },
   {

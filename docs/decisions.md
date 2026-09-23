@@ -266,3 +266,46 @@ Only Statewide and peninsula-scoped seasons reach county pages.
 Adding nine game species without harvest data exposed two gaps: `/hunting/[species]`
 generated a param for every game species regardless of data, and the county hub rendered an
 empty card per speciesless species. Both now filter on having data.
+
+## 2026-09-22 - Rivers and trout streams
+
+### Rivers are keyed per county, which deviates from the spec's URL
+
+Section 7 specifies `/river/[river]`, a statewide page per river. The hydrography does not
+support that. "Black River" resolves to 333 flowline segments across 11 counties and both
+peninsulas, so it is several unrelated rivers; "Grand River" is 276 segments across 7 counties
+and is one river. MDNRID is per segment, not per river, so there is no identity key to tell
+those apart without geometry work.
+
+Rivers therefore live at `/river/[county]/[river]`, mirroring lakes. A genuine multi-county
+river gets one page per county, each carrying that county's own stocking and access records,
+which is the data a reader actually wants. Pages for waters sharing a name link to each other
+under "Other waters named X" and say plainly that they may be separate rivers. Nothing is
+indexed yet, so no URL was broken by this; if the statewide model is ever wanted back, it is a
+redirect away.
+
+### The river list is built from records, not from the hydrography
+
+Importing all 176,973 flowline segments to publish a few hundred pages would be wasteful, so
+the river set is seeded from the waters that actually have data: river-typed stocking events
+and access sites typed River/Stream. The flowline layer is fetched only to confirm a name is a
+real hydrography feature (54,786 named segments covering 4,746 distinct waters), and the trout
+regulations layer only for designation. 309 rivers qualify, 251 of them designated trout
+streams.
+
+### Trout designation is aggregated by name, and says so when it is mixed
+
+`DNRFisheriesTroutRegsOPENDATA` carries StreamType and RegulationDesc per segment but no county.
+Designations are aggregated by stream name: where every named segment agrees, the page states
+the regulation; where reaches differ, it lists the types it found and says classification
+varies by reach rather than picking one. Every trout section carries the verify-with-the-DNR
+notice, because type determines season, gear and size limits.
+
+### A regex died passing through a template literal
+
+The link queries used `'\([^)]*\)'` to strip parentheticals from water names. A later edit
+collapsed it to `'\([^)]*\)'` in the source, and inside a JS template literal `\(` resolves to
+`(` before Postgres ever sees it, so the pattern became a capture group that blanked the whole
+name and linked nothing. Both queries now use POSIX bracket classes, `'[(][^)]*[)]'` and
+`'[[:space:]]+'`, which carry no backslashes and cannot be mangled by an escaping layer. The
+symptom was silent: the importer reported success and linked zero rows.

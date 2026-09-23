@@ -15,6 +15,7 @@ import {
   getLakes,
   getMeta,
   getPublicLands,
+  getRivers,
   getSeasons,
   getSpecies,
 } from "../data/snapshot";
@@ -25,6 +26,7 @@ import type {
   HarvestSnapshot,
   Lake,
   PublicLand,
+  River,
   Season,
   Species,
   StockingEvent,
@@ -36,8 +38,10 @@ import {
   directoryIndexGate,
   lakeGate,
   publicLandGate,
+  riverGate,
 } from "../quality-gate";
 import type { GateResult, TemplateName } from "../quality-gate";
+import { accessSitesByRiver, riverKey, stockingByRiver } from "../views/river";
 import { stockingByCountySpecies, stockingBySpecies, stockingKey } from "../views/water";
 
 export type RouteEntry = {
@@ -172,6 +176,30 @@ export function lakeRoutes(): readonly RouteEntry[] {
     return entry(
       "/lake/" + lake.countySlug + "/" + lake.slug + "/",
       "lake",
+      lastmod,
+      gate,
+    );
+  });
+}
+
+export function riverRoutes(): readonly RouteEntry[] {
+  const stocking: Map<string, StockingEvent[]> = stockingByRiver();
+  const sites: Map<string, AccessSite[]> = accessSitesByRiver();
+  return getRivers().map((river: River): RouteEntry => {
+    const key: string = riverKey(river.countySlug, river.slug);
+    const events: StockingEvent[] = stocking.get(key) ?? [];
+    const gate: GateResult = riverGate({
+      accessSites: (sites.get(key) ?? []).length,
+      stockingEvents: events.length,
+      countyCount: 1,
+    });
+    const lastmod: string = newest(
+      [river.updatedAt, ...events.map((event: StockingEvent): string => event.stockedOn)],
+      river.updatedAt,
+    );
+    return entry(
+      "/river/" + river.countySlug + "/" + river.slug + "/",
+      "river",
       lastmod,
       gate,
     );
@@ -362,6 +390,7 @@ export function listRoutes(): readonly RouteEntry[] {
     ...countySpeciesHuntingRoutes(),
     ...countySpeciesFishingRoutes(),
     ...lakeRoutes(),
+    ...riverRoutes(),
     ...publicLandRoutes(),
     ...speciesHubRoutes(),
     ...seasonRoutes(),

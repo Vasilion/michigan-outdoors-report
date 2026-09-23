@@ -35,7 +35,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "list=${{ inputs.importers }}" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event.schedule }}" = "0 12 1 * *" ]; then
-            echo "list=counties public-lands lakes access-sites curated harvest stocking" >> "$GITHUB_OUTPUT"
+            echo "list=counties public-lands lakes access-sites curated harvest stocking rivers" >> "$GITHUB_OUTPUT"
           else
             echo "list=harvest stocking" >> "$GITHUB_OUTPUT"
           fi

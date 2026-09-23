@@ -87,16 +87,18 @@ tests/e2e/       Playwright against out/
 | Season pages                        | 2                                 |
 | Editorial                           | 8                                 |
 
-**Phase 3 is partly done:** wild turkey imports and publishes as a statewide hub, and Open
-Graph cards are generated per county and per species hub at build time.
+**Phase 3 is mostly done:** rivers and trout streams (309 pages), wild turkey as a statewide
+hub, `/hunting/` and `/fishing/` index pages, small game season dates, and Open Graph cards
+generated per county and per species hub at build time.
 
 Importers: `counties`, `public-lands`, `lakes`, `access-sites` (ArcGIS), `harvest` (deer and
 turkey, DNR eLicense), `stocking` (DNR fish stocking database), `curated` (species and season
 YAML).
 
-Not yet done: rivers and trout streams, the directory (listings must be seeded by hand from
-public sources), the newsletter and featured-listing flows (both need accounts), IndexNow and
-Search Console submission (both need the live domain).
+Not yet done: the directory (listings must be seeded by hand from public sources), the
+newsletter and featured-listing flows (both need accounts), IndexNow and Search Console
+submission (both need the live domain), and Phase 4 PDF extraction for the annual harvest
+survey and Status of the Fishery Resource reports.
 
 Neon, Amplify and the domain are still unprovisioned. Importers run against a local Postgres,
 see `docs/local-database.md`.

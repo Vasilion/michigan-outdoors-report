@@ -182,3 +182,21 @@ test("the county hub links its lakes and fish species", ({
       page.getByRole("link", { name: "Higgins Lake", exact: true }).first().click(),
     )
     .then((): Promise<void> => expect(page.locator("h1")).toHaveText(/Higgins Lake/i)));
+
+test("a river page shows trout designation, stocking and access", ({
+  page,
+}: {
+  page: Page;
+}): Promise<void> =>
+  page
+    .goto("/river/manistee/manistee-river/")
+    .then((): Promise<void> => expect(page.locator("h1")).toHaveText(/Manistee River/i))
+    .then((): Promise<void> =>
+      expect(page.getByText(/designated trout stream/i).first()).toBeVisible(),
+    )
+    .then((): Promise<void> =>
+      expect(page.getByRole("heading", { name: "Stocking history" })).toBeVisible(),
+    )
+    .then((): Promise<void> =>
+      expect(page.getByRole("heading", { name: "Trout regulations" })).toBeVisible(),
+    ));

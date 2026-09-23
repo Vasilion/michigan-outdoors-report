@@ -7,8 +7,9 @@ import {
   sumAcres,
 } from "../data/aggregate";
 import { lakeGateFor, stockingByCountySpecies, stockingKey, totalFish } from "./water";
+import { riversByCounty } from "./river";
 import { findCounty, getMeta, getSeasons, getSpecies } from "../data/snapshot";
-import type { AccessSite, Lake, StockingEvent } from "../data/schemas";
+import type { AccessSite, Lake, River, StockingEvent } from "../data/schemas";
 import type {
   County,
   HarvestSnapshot,
@@ -73,6 +74,7 @@ export type CountyView = {
   readonly gameSpecies: readonly Species[];
   readonly harvest: ReadonlyMap<string, HarvestSeries>;
   readonly lakes: readonly Lake[];
+  readonly rivers: readonly River[];
   readonly accessSites: readonly AccessSite[];
   readonly fishSpecies: readonly CountyFishSpecies[];
   readonly dataDate: string;
@@ -128,11 +130,16 @@ export function buildCountyView(slug: string): CountyView | null {
     (a: CountyFishSpecies, b: CountyFishSpecies): number => b.fish - a.fish,
   );
 
+  const rivers: readonly River[] = [...(riversByCounty().get(slug) ?? [])].sort(
+    (a: River, b: River): number => a.name.localeCompare(b.name),
+  );
+
   return {
     county,
     peninsula: peninsulaLabel(county.peninsula),
     neighbors,
     lakes,
+    rivers,
     accessSites: sites,
     fishSpecies,
     publicLands: lands,

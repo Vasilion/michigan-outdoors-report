@@ -42,6 +42,7 @@ import type {
   HarvestSnapshot,
   Lake,
   PublicLand,
+  River,
   Season,
   Species,
 } from "@/lib/data/schemas";
@@ -342,7 +343,9 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
         </Section>
       )}
 
-      {view.lakes.length === 0 && view.fishSpecies.length === 0 ? null : (
+      {view.lakes.length === 0 &&
+      view.fishSpecies.length === 0 &&
+      view.rivers.length === 0 ? null : (
         <Section
           eyebrow={`${formatCount(view.lakes.length)} lakes mapped`}
           title="Fishing"
@@ -394,6 +397,26 @@ export default function CountyPage({ params }: CountyPageProps): ReactElement {
                         {formatCount(Math.round(lake.acres))} ac
                       </span>
                     )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {view.rivers.length === 0 ? null : (
+            <div className="mt-6">
+              <p className="eyebrow">Rivers and streams</p>
+              <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                {view.rivers.map((river: River): ReactElement => (
+                  <li key={river.slug}>
+                    <Link
+                      href={`/river/${river.countySlug}/${river.slug}/`}
+                      prefetch={false}
+                    >
+                      {river.name}
+                    </Link>
+                    {river.designatedTroutStream ? (
+                      <span className="text-muted-foreground"> trout</span>
+                    ) : null}
                   </li>
                 ))}
               </ul>

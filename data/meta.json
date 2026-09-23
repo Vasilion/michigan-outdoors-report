@@ -45,6 +45,12 @@
       "status": "ok"
     },
     {
+      "importer": "rivers",
+      "finishedAt": "2026-09-22",
+      "rowsUpserted": 309,
+      "status": "ok"
+    },
+    {
       "importer": "stocking",
       "finishedAt": "2026-09-22",
       "rowsUpserted": 12669,

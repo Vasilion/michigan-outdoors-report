@@ -49,8 +49,11 @@ export const lakeSchema = z.object({
 export const riverSchema = z.object({
   name: z.string().min(1),
   slug: slugSchema,
-  countySlugs: z.array(slugSchema),
+  countySlug: slugSchema,
   designatedTroutStream: z.boolean(),
+  streamTypes: z.string().nullable(),
+  troutRegulation: z.string().nullable(),
+  gearRestriction: z.string().nullable(),
   sourceUrl: z.url(),
   updatedAt: isoDateSchema,
 });
@@ -86,6 +89,7 @@ export const accessSiteSchema = z.object({
   lakeSlug: slugSchema.nullable(),
   lakeCountySlug: slugSchema.nullable(),
   riverSlug: slugSchema.nullable(),
+  riverCountySlug: slugSchema.nullable(),
   countySlug: slugSchema,
   amenities: z.array(z.string()),
   sourceUrl: z.url(),
@@ -98,6 +102,7 @@ export const stockingEventSchema = z.object({
   lakeSlug: slugSchema.nullable(),
   lakeCountySlug: slugSchema.nullable(),
   riverSlug: slugSchema.nullable(),
+  riverCountySlug: slugSchema.nullable(),
   countySlug: slugSchema.nullable(),
   speciesSlug: slugSchema,
   strain: z.string().nullable(),

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { Anchor, ChartColumn, Fish, Map as MapIcon, Waves } from "lucide-react";
+import { ChartColumn, Fish, Map as MapIcon, Waves } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import {
   AnswerSummary,
@@ -19,14 +19,10 @@ import { breadcrumbSchema, itemListSchema } from "@/lib/schema/builders";
 import type { Crumb } from "@/lib/schema/builders";
 import { buildMetadata } from "@/lib/seo";
 import { formatCount, formatLongDate } from "@/lib/format";
-import {
-  getAccessSites,
-  getCounties,
-  getMeta,
-  getSpecies,
-} from "@/lib/data/snapshot";
-import type { County, Lake, Species, StockingEvent } from "@/lib/data/schemas";
+import { getAccessSites, getCounties, getMeta, getSpecies } from "@/lib/data/snapshot";
+import type { County, Lake, River, Species, StockingEvent } from "@/lib/data/schemas";
 import { stockingBySpecies, totalFish } from "@/lib/views/water";
+import { riversWithPages } from "@/lib/views/river";
 import { lakesWithPages } from "@/lib/views/water";
 
 export const metadata: Metadata = buildMetadata({
@@ -95,6 +91,11 @@ export default function FishingIndexPage(): ReactElement {
     0,
   );
 
+  const pagedRivers: readonly River[] = riversWithPages();
+  const troutStreams: readonly River[] = pagedRivers.filter(
+    (river: River): boolean => river.designatedTroutStream,
+  );
+
   const biggest: readonly Lake[] = [...pagedLakes]
     .sort((a: Lake, b: Lake): number => (b.acres ?? 0) - (a.acres ?? 0))
     .slice(0, 12);
@@ -137,9 +138,9 @@ export default function FishingIndexPage(): ReactElement {
     { label: "Species stocked", value: formatCount(rows.length), icon: ChartColumn },
     { label: "Lakes with a page", value: formatCount(pagedLakes.length), icon: Waves },
     {
-      label: "Public access sites",
-      value: formatCount(getAccessSites().length),
-      icon: Anchor,
+      label: "Designated trout streams",
+      value: formatCount(troutStreams.length),
+      icon: Waves,
     },
   ];
 
@@ -185,6 +186,30 @@ export default function FishingIndexPage(): ReactElement {
           columns={LAKE_COLUMNS}
           rows={lakeRows}
         />
+      </Section>
+
+      <Section
+        eyebrow={`${formatCount(troutStreams.length)} designated trout streams`}
+        title="Rivers and streams"
+        icon={Waves}
+        description="Rivers are listed per county, because Michigan reuses stream names and the records that matter are county-specific. Trout designations come from the DNR trout regulations layer."
+      >
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-3 lg:grid-cols-4">
+          {[...troutStreams]
+            .sort((a: River, b: River): number => a.name.localeCompare(b.name))
+            .slice(0, 40)
+            .map((river: River): ReactElement => (
+              <li key={`${river.countySlug}-${river.slug}`}>
+                <Link href={`/river/${river.countySlug}/${river.slug}/`} prefetch={false}>
+                  {river.name}
+                </Link>
+              </li>
+            ))}
+        </ul>
+        <p className="text-muted-foreground mt-4 text-sm">
+          {formatCount(pagedRivers.length)} rivers and streams have a page. The rest are
+          on their county pages.
+        </p>
       </Section>
 
       <Section
